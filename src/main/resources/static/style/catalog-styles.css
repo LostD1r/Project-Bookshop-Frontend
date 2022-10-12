@@ -1,0 +1,133 @@
+.container{
+    height: 100%;
+    width: 100vw;
+    background: #201F1F;
+}
+
+.header{
+    height: 100px;
+    width: 100%;
+    position: fixed;
+    display: flex;
+    background: #333131;
+    box-shadow: 0 2px 15px;
+}
+
+.logo{
+    height: 100px;
+    width: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo img{
+    margin-left: 15px;
+    height: 80%;
+    width: 80%;
+}
+
+.nav-buttons{
+    height: 100px;
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+}
+
+.nav-button{
+    padding: 10px 10px 10px 10px;
+    font-size: 34px;
+    color: white;
+    border: none;
+    border-radius: 35px;
+    background-color: inherit;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.nav-button:hover{
+    /* background: #615e5e;
+    box-shadow: 0px 0px 2px 2px #615e5e; */
+    background: white;
+    color: black;
+
+}
+
+.search-bar{
+    height: 100px;
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-bar-background{
+    height: 50px;
+    width: 400px;
+    display: flex;
+    background: #9E9494;
+    border-radius: 5px;
+    justify-content: left;
+    align-items: center;
+}
+
+.search-bar input[type = text]{
+    height: 80%;
+    width: 85%;
+    border: none;
+    border-radius: 5px;
+    margin-left: 4px;
+    font-size: 25px;
+}
+
+.search-bar-background img{
+    height: 40px;
+    width: 40px;
+    padding-left: 6px;
+}
+
+.cart{
+    height: 100px;
+    width: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.cart img{
+    height: 65%;
+    width: 65%;
+}
+
+.account{
+    height: 100px;
+    width: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.account a img{
+    height: 60px;
+    width: 60px;
+    border-radius: 10px;
+    background: white;
+}
+
+.account a button{
+    border-radius: 10px;
+}
+
+.content{
+    height: 1200px;
+    width: 100vw;
+    padding-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" media="all" href="/static/style/catalog-styles.css" data-th-href="@{/style/catalog-styles.css}" />
+    <link rel="stylesheet" href="/static/style/reset.css" media="all" data-th-href="@{/style/reset.css}"/>
+    <script src="../static/scripts/catalog-scripts.js" th:src="@{/scripts/catalog-scripts.js}"></script>
+    <title>Title</title>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="header">
+                <div class="logo">
+                    <a href="/">
+                        <img src="../static/Photos/Logo3.png" th:src="@{/Photos/Logo3.png}" alt="Іконка логотипу">
+                    </a>
+                </div>
+                <div class="nav-buttons">
+                    <a href="/about-us">
+                        <button class="nav-button">
+                            Про нас
+                        </button>
+                    </a>
+                    <a href="/news">
+                        <button class="nav-button">
+                            Новини
+                        </button>
+                    </a>
+                    <a href="/catalog">
+                        <button class="nav-button">
+                            Каталог
+                        </button>
+                    </a>
+                </div>
+                <div class="search-bar">
+                    <div class="search-bar-background">
+                        <input type="text" placeholder="Пошук...">
+                        <a href="make-search">
+                            <img src="../static/Photos/search-icon.png" th:src="@{/Photos/search-icon.png}" alt="Іконка пошуку">
+                        </a>
+                    </div>
+                </div>
+                <div class="cart">
+                    <a href="#cart">
+                        <img src="../static/Photos/cart-icon.png" th:src="@{/Photos/cart-icon.png}" alt="Інонка корзини">
+                    </a>
+                </div>
+                <div class="account">
+                    <a href="#account-button" >
+                        <button id="open-form-button">
+                            <img src="../static/Photos/account-icon.png" th:src="@{/Photos/account-icon.png}" alt="Іконка аккаунту">
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="content">
+            <div class="side-bar">
+                <div class="filters">
+
+                </div>
+            </div>
+            <div class="books">
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>

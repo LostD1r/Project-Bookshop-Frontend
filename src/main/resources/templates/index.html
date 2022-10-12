@@ -14,22 +14,22 @@
     <div class="container">
         <div class="header">
             <div class="logo">
-                <a href="/">
-                    <img src="../static/Photos/Logo3.png" th:src="@{/Photos/Logo3.png}" alt="Логотип">
+                <a href="#index.html">
+                    <img src="../static/Photos/Logo3.png" th:src="@{/Photos/Logo3.png}" alt="Іконка логотипу">
                 </a>
             </div>
             <div class="nav-buttons">
-                <a href="#about-us">
+                <a href="/about-us">
                     <button class="nav-button">
                         Про нас
                     </button>
                 </a>
-                <a href="#news">
+                <a href="/news">
                     <button class="nav-button">
                         Новини
                     </button>
                 </a>
-                <a href="#catalog">
+                <a href="/catalog">
                     <button class="nav-button">
                         Каталог
                     </button>
@@ -49,21 +49,22 @@
                 </a>
             </div>
             <div class="account">
-                <a href="#account-button">
-                    <img src="../static/Photos/account-icon.png" th:src="@{/Photos/account-icon.png}" alt="Іконка аккаунту">
+                <a href="#account-button" >
+                    <button id="open-form-button">
+                        <img src="../static/Photos/account-icon.png" th:src="@{/Photos/account-icon.png}" alt="Іконка аккаунту">
+                    </button>
                 </a>
             </div>
         </div>
-
         <div class="content">
-            <div class="shelf-one-text">
+            <div class="shelf-header">
                 Топ книг
             </div>
-            <div class="shelf-one">
+            <div class="shelf">
                 <ul>
                     <li>
                         <a href="#book-one">
-                            <img src="../static/Photos/Latin_dictionary.jpg" th:src="@{/Photos/Latin_dictionary.jpg}" alt="">
+                            <img src="../static/Photos/Latin_dictionary.jpg" th:src="@{/Photos/Latin_dictionary.jpg}" alt="Фото книжки">
                         </a>
                         <div class="text-box-wrapper">
                             TEST
@@ -71,30 +72,29 @@
                     </li>
                 </ul>
             </div>
-            <div class="shelf-two-text">
+            <div class="shelf-header">
                 Цікаві книги
             </div>
-            <div class="shelf-two">
+            <div class="shelf">
                 <ul>
                     <li>
                         <a href="#book-one">
-                            <img src="../static/Photos/Latin_dictionary.jpg" alt="">
+                            <img src="../static/Photos/Latin_dictionary.jpg" alt="Фото книжки">
                         </a>
                         <div class="text-box-wrapper">
                             TEST
                         </div>
                     </li>
-
                 </ul>
             </div>
-            <div class="shelf-three-text">
+            <div class="shelf-header">
                 Бестселлери
             </div>
-            <div class="shelf-two">
+            <div class="shelf">
                 <ul>
                     <li>
                         <a href="#book-one">
-                            <img src="../static/Photos/Latin_dictionary.jpg" alt="">
+                            <img src="../static/Photos/Latin_dictionary.jpg" alt="Фото Книжки">
                         </a>
                         <div class="text-box-wrapper">
                             TEST
@@ -105,9 +105,10 @@
         </div>
         <div class="footer">
             <div class="logo-footer">
-                <img src="../static/Photos/Logo3.png" th:src="@{/Photos/Logo3.png}" alt="">
+                <img src="../static/Photos/Logo3.png" th:src="@{/Photos/Logo3.png}" alt="Іконка логотипу">
             </div>
             <div class="numbers">
+                <p>Номер такий то: +123456789</p>
                 <p>Номер такий то: +123456789</p>
                 <p>Номер такий то: +123456789</p>
                 <p>Номер такий то: +123456789</p>
@@ -115,24 +116,22 @@
             <div class="messengers">
                 <div class="icon-box">
                     <a href="">
-                        <img src="../static/Photos/instagram-icon.png" th:src="@{/Photos/instagram-icon.png}" alt="">
+                        <img src="../static/Photos/instagram-icon.png" th:src="@{/Photos/instagram-icon.png}" alt="Іконка інстаграму">
                     </a>
                 </div>
                 <div class="icon-box">
                     <a href="">
-                        <img src="../static/Photos/telegram-icon-2.png" th:src="@{/Photos/telegram-icon-2.png}" alt="">
+                        <img src="../static/Photos/telegram-icon-2.png" th:src="@{/Photos/telegram-icon-2.png}" alt="Іконка телеграму">
                     </a>
                 </div>
                 <div class="icon-box">
                     <a href="">
-                        <img src="../static/Photos/facebook-icon.png" th:src="@{/Photos/facebook-icon.png}" alt="">
+                        <img src="../static/Photos/facebook-icon.png" th:src="@{/Photos/facebook-icon.png}" alt="Іконка фейсбуку">
                     </a>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="popup">
-        
+
     </div>
 </body>
 </html>
