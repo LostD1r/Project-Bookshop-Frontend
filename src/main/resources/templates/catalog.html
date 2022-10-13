@@ -135,13 +135,16 @@
             </div>
             <div class="books">
                 <div class="shelf">
-                    <ul>
+                    <ul th:each="book : ${books}">
                         <li>
                             <a href="#book-one">
-                                <img src="../static/Photos/Latin_dictionary.jpg" th:src="@{/Photos/Latin_dictionary.jpg}" alt="Фото книжки">
+                                <img th:src="${book.image}" th:alt="${book.price}">
                             </a>
                             <div class="text-box-wrapper">
-                                TEST
+
+                                <br>
+                                <p th:text="${book.name}">Price</p><br>
+                                <p th:text="${book.price}">Price</p>
                             </div>
                         </li>
                     </ul>
