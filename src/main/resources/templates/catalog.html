@@ -7,6 +7,7 @@
     <link rel="stylesheet" type="text/css" media="all" href="/static/style/catalog-styles.css" data-th-href="@{/style/catalog-styles.css}" />
     <link rel="stylesheet" href="/static/style/reset.css" media="all" data-th-href="@{/style/reset.css}"/>
     <script src="../static/scripts/catalog-scripts.js" th:src="@{/scripts/catalog-scripts.js}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
     <title>Title</title>
 </head>
 <body>
@@ -60,11 +61,91 @@
         <div class="content">
             <div class="side-bar">
                 <div class="filters">
-
+                    <ul>
+                        <li>
+                            <form>
+                                <div class="multiselect-genres">
+                                    <div class="selectBox-genres" onclick="showCheckboxesGenres()">
+                                        <select>
+                                            <option>Жанри</option>
+                                        </select>
+                                        <div class="overSelect-genres"></div>
+                                    </div>
+                                    <div id="checkboxes-genres">
+                                        <label for="one-genres">
+                                            <input type="checkbox" id="one-genres"/>First checkbox</label>
+                                        <label for="two-genres">
+                                            <input type="checkbox" id="two-genres"/>Second checkbox</label>
+                                        <label for="three-genres">
+                                            <input type="checkbox" id="three-genres"/>Third checkbox</label>
+                                        <label for="fourth-genres">
+                                            <input type="checkbox" id="fourth-genres"/>Third checkbox</label>
+                                        <label for="fifth-genres">
+                                            <input type="checkbox" id="fifth-genres"/>Third checkbox</label>
+                                        <label for="six-genres">
+                                            <input type="checkbox" id="six-genres"/>Third checkbox</label>
+                                        <label for="seven-genres">
+                                            <input type="checkbox" id="seven-genres"/>Third checkbox</label>
+                                        <label for="eight-genres">
+                                            <input type="checkbox" id="eight-genres"/>Third checkbox</label>
+                                        <label for="nine-genres">
+                                            <input type="checkbox" id="nine-genres"/>Third checkbox</label>
+                                    </div>
+                                </div>
+                            </form>
+                            <form>
+                                <div class="multiselect-publishing">
+                                    <div class="selectBox-publishing" onclick="showCheckboxesPublishing()">
+                                        <select>
+                                            <option>Видавництва</option>
+                                        </select>
+                                        <div class="overSelect-publishing"></div>
+                                    </div>
+                                    <div id="checkboxes-publishing">
+                                        <label for="one-publishing">
+                                            <input type="checkbox" id="one-publishing"/>First checkbox</label>
+                                        <label for="two-publishing">
+                                            <input type="checkbox" id="two-publishing"/>Second checkbox</label>
+                                        <label for="three-publishing">
+                                            <input type="checkbox" id="three-publishing"/>Third checkbox</label>
+                                    </div>
+                                </div>
+                            </form>
+                            <form>
+                                <div class="multiselect-authors">
+                                    <div class="selectBox-authors" onclick="showCheckboxesAuthors()">
+                                        <select>
+                                            <option>Автори</option>
+                                        </select>
+                                        <div class="overSelect-authors"></div>
+                                    </div>
+                                    <div id="checkboxes-authors">
+                                        <label for="one-authors">
+                                            <input type="checkbox" id="one-authors"/>First checkbox</label>
+                                        <label for="two-authors">
+                                            <input type="checkbox" id="two-authors"/>Second checkbox</label>
+                                        <label for="three-authors">
+                                            <input type="checkbox" id="three-authors"/>Third checkbox</label>
+                                    </div>
+                                </div>
+                            </form>
+                        </li>
+                    </ul>
                 </div>
             </div>
             <div class="books">
-
+                <div class="shelf">
+                    <ul>
+                        <li>
+                            <a href="#book-one">
+                                <img src="../static/Photos/Latin_dictionary.jpg" th:src="@{/Photos/Latin_dictionary.jpg}" alt="Фото книжки">
+                            </a>
+                            <div class="text-box-wrapper">
+                                TEST
+                            </div>
+                        </li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>

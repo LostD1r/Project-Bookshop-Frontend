@@ -1,3 +1,7 @@
+body{
+    overflow: hidden;
+}
+
 .container{
     height: 100%;
     width: 100vw;
@@ -11,6 +15,7 @@
     display: flex;
     background: #333131;
     box-shadow: 0 2px 15px;
+    z-index: 1;
 }
 
 .logo{
@@ -126,8 +131,163 @@
     width: 100vw;
     padding-top: 100px;
     display: flex;
+    /*flex-direction: column;*/
+    /*align-items: center;*/
+    /*justify-content: center;*/
+    color: white;
+}
+
+.side-bar{
+    height: 400px;
+    width: 250px;
+    background: #333131;
+    position: fixed;
+    z-index: 0;
+    box-shadow: 0 2px 15px black;
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.filters{
+    height: 40%;
+    width: 200px;
+    display: flex;
+    margin-left: 20px;
+    /*justify-content: center;*/
+    /*text-align: center;*/
+}
+
+.filters ul li{
+    width: 100px;
+    padding-bottom: 10px;
+}
+
+/*CHECKBOXES*/
+.multiselect-genres, .multiselect-publishing, .multiselect-authors {
+    width: 200px;
+}
+
+.selectBox-genres, .selectBox-publishing, .selectBox-authors {
+    position: relative;
+}
+
+.selectBox-genres select, .selectBox-publishing select, .selectBox-authors select {
+    color: white;
+    background: #333131;
+    border-top: 2px solid #201F1F;
+    border-left: 2px solid #201F1F;
+    border-right: 2px solid #201F1F;
+    font-size: 20px;
+    width: 100%;
+    font-weight: bold;
+    padding: 5px;
+}
+
+.overSelect-genres, .overSelect-publishing, .overSelect-authors {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+#checkboxes-genres, #checkboxes-publishing, #checkboxes-authors{
+    display: none;
+    border-left: 2px solid #201F1F;
+    border-right: 2px solid #201F1F;
+    border-bottom: 2px solid #201F1F;
+    max-height: 120px;
+    overflow-y: auto;
+}
+
+#checkboxes-genres label, #checkboxes-publishing label, #checkboxes-authors label{
+    display: block;
+    padding: 5px;
+    background: #393838;
+}
+
+#checkboxes-genres label:hover, #checkboxes-publishing label:hover, #checkboxes-authors label:hover{
+    box-shadow: 0 2px 7px black inset;
+}
+
+.books{
+    width: 100vw;
+    height: 100vh;
+    background: #201F1F;
+    margin-left: 300px;
+    margin-top: 50px;
+}
+
+.shelf{
+    height: 765px;
+    width: 1580px;
+    display: flex;
+    /*align-items: center;*/
+    overflow-x: hidden;
+    overflow-y: auto;
+    white-space: revert;
+    padding-top: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
+    transition: 0.6s;
+    border-radius: 25px;
+    border: 2px solid #615e5e;
+}
+
+.shelf:hover{
+    box-shadow: 0px 0px 30px 2px #615e5e, 0px 0px 15px 2px #615e5e inset;
+}
+
+.shelf li{
+    height: 250px;
+    width: 180px;
+    display: inline-flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    color: white;
+    border-radius: 20px;
+    border: 2px solid gray;
+    margin: 0 5px;
+    background: #383636;
+    transition: 0.2s linear;
+}
+
+.shelf li:hover{
+    box-shadow: 3px 3px 5px 4px #444242, 0px 0px 5px 4px #444242 inset;
+}
+
+.shelf li a{
+    height: 140px;
+    width: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.text-box-wrapper{
+    height: 50px;
+    width: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 5px;
+}
+
+.shelf li a img{
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+}
+
+.shelf-header{
+    height: fit-content;
+    width: fit-content;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 35px;
+    margin-bottom: 25px;
+    margin-top: 25px;
 }
