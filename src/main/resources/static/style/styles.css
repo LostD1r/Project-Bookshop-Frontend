@@ -117,10 +117,6 @@
     background: white;
 }
 
-.account a button{
-    border-radius: 10px;
-}
-
 .content{
     height: 1200px;
     width: 100vw;
@@ -272,41 +268,3 @@
     border-radius: 25px;
 }
 
-.modal-form{
-    /*display: none; !* Скрыто по умолчанию *!*/
-    position: fixed; /* Оставаться на месте */
-    /*z-index: 1; !* Сидеть на вершине *!*/
-    left: 0;
-    top: 0;
-    width: 300px; /* Полная ширина */
-    height: 400px; /* Полная высота */
-    /*overflow: auto; !* Включите прокрутку, если это необходимо *!*/
-    /*background-color: rgb(0,0,0); !* Цвет запасной вариант *!*/
-    /*background-color: rgba(0,0,0,0.4); !* Черный с непрозрачностью *!*/
-    background-color: white;
-    visibility: visible;
-}
-
-/* Модальное содержание/коробка */
-.modal-form-content{
-    background-color: #fefefe;
-    margin: 15% auto; /* 15% сверху и по центру */
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%; /* Может быть больше или меньше, в зависимости от размера экрана */
-}
-
-/* Кнопка закрытия */
-.close{
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.close:hover,
-.close:focus{
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-}

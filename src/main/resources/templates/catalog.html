@@ -121,11 +121,14 @@
                                     </div>
                                     <div id="checkboxes-authors">
                                         <label for="one-authors">
-                                            <input type="checkbox" id="one-authors"/>First checkbox</label>
+                                            <input type="checkbox" id="one-authors"/>First checkbox
+                                        </label>
                                         <label for="two-authors">
-                                            <input type="checkbox" id="two-authors"/>Second checkbox</label>
+                                            <input type="checkbox" id="two-authors"/>Second checkbox
+                                        </label>
                                         <label for="three-authors">
-                                            <input type="checkbox" id="three-authors"/>Third checkbox</label>
+                                            <input type="checkbox" id="three-authors"/>Third checkbox
+                                        </label>
                                     </div>
                                 </div>
                             </form>
@@ -141,8 +144,16 @@
                                 <img th:src="${book.image}" th:alt="${book.price}">
                             </a>
                             <div class="text-box-wrapper">
-                                <p th:text="${book.name}">Price</p><br>
-                                <p th:text="${book.price}">Price</p>
+                                <p>
+                                    <span class="book-name-span" th:text="${book.name}">Назва книги</span>
+                                    <span th:text="${book.publishing}">Видавництво</span><br>
+                                    <span th:text="${book.author}">Автор</span>
+                                </p>
+                            </div>
+                            <div class="price-box-wrapper">
+                                <p th:text="${book.price}">
+                                    0.005$
+                                </p>
                             </div>
                         </li>
                     </ul>
