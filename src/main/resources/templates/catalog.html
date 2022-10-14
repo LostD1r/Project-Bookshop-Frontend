@@ -138,15 +138,16 @@
             </div>
             <div class="books">
                 <div class="shelf">
-                    <ul th:each="book : ${books}">
-                        <li>
+                    <ul >
+                        <li th:each="book : ${books}">
                             <a href="#book-one">
                                 <img th:src="${book.image}" th:alt="${book.price}">
                             </a>
                             <div class="text-box-wrapper">
                                 <p>
-                                    <span class="book-name-span" th:text="${book.name}">Назва книги</span>
-                                    <span th:text="${book.publishing}">Видавництво</span><br>
+                                    <span class="book-name-span" th:text="${book.name}">Назва книги</span><br>
+                                    <span th:text="${book.name}">Видавництво</span><br>
+                                    <br>
                                     <span th:text="${book.author}">Автор</span>
                                 </p>
                             </div>
