@@ -1,7 +1,11 @@
 package com.bookshop.bookshop.controllers;
 
+import com.bookshop.bookshop.dto.AuthorDTO;
 import com.bookshop.bookshop.dto.BookDTO;
+import com.bookshop.bookshop.dto.PublishingDTO;
+import com.bookshop.bookshop.service.AuthorService;
 import com.bookshop.bookshop.service.BookService;
+import com.bookshop.bookshop.service.PublishingService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -13,20 +17,23 @@ import java.util.List;
 @RequestMapping({"", "/"})
 public class CatalogController {
     private final BookService bookService;
+    private final AuthorService authorService;
+    private final PublishingService publishingService;
 
-    public CatalogController(BookService bookService) {
+    public CatalogController(BookService bookService, AuthorService authorService, PublishingService publishingService) {
         this.bookService = bookService;
+        this.authorService = authorService;
+        this.publishingService = publishingService;
     }
 
     @GetMapping("/catalog")
     private String catalog(Model model){
         List<BookDTO> list = bookService.getAll();
+        List<AuthorDTO> authorList = authorService.getAll();
+        List<PublishingDTO> pubsList = publishingService.getAll();
         model.addAttribute("books", list);
-        for(var book : list){
-            System.out.println(book.getId());
-            System.out.println(book.getName());
-            System.out.println(book.getPrice());
-        }
+        model.addAttribute("authors", authorList);
+        model.addAttribute("pubs", pubsList);
         return "catalog";
     }
 }

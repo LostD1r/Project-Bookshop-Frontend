@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -111,7 +111,7 @@
                                     </div>
                                 </div>
                             </form>
-                            <form>
+                            <form th:type="GET">
                                 <div class="multiselect-authors">
                                     <div class="selectBox-authors" onclick="showCheckboxesAuthors()">
                                         <select>
@@ -119,15 +119,9 @@
                                         </select>
                                         <div class="overSelect-authors"></div>
                                     </div>
-                                    <div id="checkboxes-authors">
-                                        <label for="one-authors">
-                                            <input type="checkbox" id="one-authors"/>First checkbox
-                                        </label>
-                                        <label for="two-authors">
-                                            <input type="checkbox" id="two-authors"/>Second checkbox
-                                        </label>
-                                        <label for="three-authors">
-                                            <input type="checkbox" id="three-authors"/>Third checkbox
+                                    <div th:id="checkboxes-authors">
+                                        <label for="one-authors" th:each="author : ${authors}">
+                                            <input type="checkbox" id="one-authors" th:text="${author.name}"/>
                                         </label>
                                     </div>
                                 </div>

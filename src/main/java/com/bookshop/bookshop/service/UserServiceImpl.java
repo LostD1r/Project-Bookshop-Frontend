@@ -27,6 +27,12 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public boolean save(UserDTO userDTO) {
+        User userFromDB = userRepository.findFirstByName(userDTO.getUsername());
+
+        if (userFromDB != null){
+            throw new RuntimeException("Name taken");
+        }
+
         if(!Objects.equals(userDTO.getPassword(), userDTO.getMatchingPassword())){
             throw new RuntimeException("Password is not equals");
         }
