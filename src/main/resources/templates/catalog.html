@@ -101,13 +101,22 @@
                                         </select>
                                         <div class="overSelect-publishing"></div>
                                     </div>
-                                    <div id="checkboxes-publishing">
-                                        <label for="one-publishing">
-                                            <input type="checkbox" id="one-publishing"/>First checkbox</label>
-                                        <label for="two-publishing">
-                                            <input type="checkbox" id="two-publishing"/>Second checkbox</label>
-                                        <label for="three-publishing">
-                                            <input type="checkbox" id="three-publishing"/>Third checkbox</label>
+                                    <div id="boxes-publishing">
+                                        <a href="https://google.com" target="_blank">
+                                            <label>
+                                                First checkbox
+                                            </label>
+                                        </a>
+                                        <a href="https://google.com" target="_blank">
+                                            <label>
+                                                Second checkbox
+                                            </label>
+                                        </a>
+                                        <a href="https://google.com" target="_blank">
+                                            <label>
+                                                Third checkbox
+                                            </label>
+                                        </a>
                                     </div>
                                 </div>
                             </form>
@@ -119,10 +128,12 @@
                                         </select>
                                         <div class="overSelect-authors"></div>
                                     </div>
-                                    <div th:id="checkboxes-authors">
-                                        <label for="one-authors" th:each="author : ${authors}">
-                                            <input type="checkbox" id="one-authors" th:text="${author.name}"/>
-                                        </label>
+                                    <div id="boxes-authors" th:id="checkboxes-authors">
+                                        <a href="https://google.com" target="_blank">
+                                            <label>
+                                                    TEST
+                                            </label>
+                                        </a>
                                     </div>
                                 </div>
                             </form>

@@ -154,8 +154,6 @@ body{
     width: 200px;
     display: flex;
     margin-left: 20px;
-    /*justify-content: center;*/
-    /*text-align: center;*/
 }
 
 .filters ul li{
@@ -201,8 +199,8 @@ body{
 }
 
 #checkboxes-genres,
-#checkboxes-publishing,
-#checkboxes-authors{
+#boxes-publishing,
+#boxes-authors{
     display: none;
     border-left: 2px solid #201F1F;
     border-right: 2px solid #201F1F;
@@ -212,16 +210,22 @@ body{
 }
 
 #checkboxes-genres label,
-#checkboxes-publishing label,
-#checkboxes-authors label{
+#boxes-publishing label,
+#boxes-authors label{
     display: block;
     padding: 5px;
     background: #393838;
 }
 
+#boxes-publishing a,
+#boxes-authors a{
+    text-decoration: none;
+    color: white;
+}
+
 #checkboxes-genres label:hover,
-#checkboxes-publishing label:hover,
-#checkboxes-authors label:hover{
+#boxes-publishing label:hover,
+#boxes-authors label:hover{
     box-shadow: 0 2px 7px black inset;
 }
 
