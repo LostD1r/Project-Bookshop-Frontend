@@ -32,7 +32,7 @@ function showCheckboxesGenres() {
 }
 
 function showCheckboxesPublishing() {
-    let checkboxes = document.getElementById("checkboxes-publishing");
+    let checkboxes = document.getElementById("boxes-publishing");
     if (!expanded)
     {
         checkboxes.style.display = "block";
@@ -45,7 +45,7 @@ function showCheckboxesPublishing() {
     }
 }
 function showCheckboxesAuthors() {
-    let checkboxes = document.getElementById("checkboxes-authors");
+    let checkboxes = document.getElementById("boxes-authors");
     if (!expanded)
     {
         checkboxes.style.display = "block";
