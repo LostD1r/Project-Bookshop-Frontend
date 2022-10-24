@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" media="all" href="/static/style/login-page-styles.css" data-th-href="@{/style/login-page-styles.css}" />
+    <link rel="stylesheet" href="/static/style/reset.css" media="all" data-th-href="@{/style/reset.css}" />
+    <script src="../static/scripts/login-page-scripts.js" th:src="@{/scripts/login-page-scripts.js}"></script>
+    <title>Title</title>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <div class="login-form">
+                <div class="auth-method-buttons">
+                    <button id="auth-method-button-registry" type="button" onclick="changeColorLogin()">
+                        Registry
+                    </button><button id="auth-method-button-login" type="button" onclick="changeColorRegistry()">
+                        Login
+                    </button>
+                </div>
+                    <!--Registry form-->
+                <form id="registry-form" action="">
+                    <input id="login-input-registry" class="login-input-registry" type="hidden" placeholder="Type your login for registration">
+                    <input id="email-input-registry" class="email-input-registry" type="hidden" placeholder="Type your email for registration">
+                    <input id="password-input-registry" class="password-input-registry" type="hidden" placeholder="Type your password for registration">
+                    <input id="password-reinput-registry" class="password-reinput-registry" type="hidden" placeholder="Type your password again for registration">
+                    <button id="submit-form-registry" class="submit-form-registry" type="submit">
+                        Зареєструватися
+                    </button>
+                </form>
+                    <!--Login form-->
+                <form id="login-form" action="">
+                    <input id="login-input-login" class="login-input-login" type="text" placeholder="Type your login">
+                    <input id="password-input-login" class="password-input-login" type="password" placeholder="Type your password">
+                    <button id="submit-form-login" class="submit-form-login" type="submit">
+                        Увійти
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
