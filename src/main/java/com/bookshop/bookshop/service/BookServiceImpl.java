@@ -3,6 +3,7 @@ package com.bookshop.bookshop.service;
 import com.bookshop.bookshop.Mappers.BookMapper;
 import com.bookshop.bookshop.dao.BookRepository;
 import com.bookshop.bookshop.dto.BookDTO;
+import com.bookshop.bookshop.models.Book;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -36,6 +37,7 @@ public class BookServiceImpl implements BookService{
 
     @Override
     public BookDTO getById(Long id) {
-        return null;
+        Book book = bookRepository.findById(id).orElse(new Book());
+        return BookMapper.MAPPER.fromBook(book);
     }
 }

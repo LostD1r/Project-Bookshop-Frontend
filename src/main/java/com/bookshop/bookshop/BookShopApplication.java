@@ -20,8 +20,7 @@ public class BookShopApplication {
         ConfigurableApplicationContext context = SpringApplication.run(BookShopApplication.class, args);
         PasswordEncoder encoder = context.getBean(PasswordEncoder.class);
         System.out.println(encoder.encode("pass"));
-
-        BookDTO dto = new BookDTO(5L, "Тошнота", "фаіваціав", "dsfrwefd", 13.2, "asdfsd", null);
     }
 
 }
+
