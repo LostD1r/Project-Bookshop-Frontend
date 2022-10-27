@@ -28,6 +28,6 @@ public class User {
     private String email;
     @Enumerated(EnumType.STRING)
     private Role role;
-    @OneToOne(cascade = CascadeType.REMOVE)
+    @OneToOne(cascade = CascadeType.REMOVE, mappedBy = "user")
     private Bucket bucket;
 }

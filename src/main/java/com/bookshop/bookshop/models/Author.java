@@ -23,9 +23,6 @@ public class Author {
     private long id;
     private String name;
     private String description;
-    @OneToMany
-    @JoinTable(name = "authors_books",
-    joinColumns = @JoinColumn(name = "author_id"),
-    inverseJoinColumns = @JoinColumn(name = "book_id"))
+    @OneToMany(mappedBy = "author")
     private List<Book> book;
 }

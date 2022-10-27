@@ -22,10 +22,10 @@ public class OrderDetails {
     @SequenceGenerator(name = SEQ_NAME, sequenceName = SEQ_NAME)
     private long id;
     @ManyToOne
-    @JoinColumn(name = "order_id")
+    @JoinColumn(name = "order_id", referencedColumnName = "id")
     private Order order;
     @ManyToOne
-    @JoinColumn(name = "book_id")
+    @JoinColumn(name = "book_id", referencedColumnName = "id")
     private Book book;
     private BigDecimal amount;
     private BigDecimal price;

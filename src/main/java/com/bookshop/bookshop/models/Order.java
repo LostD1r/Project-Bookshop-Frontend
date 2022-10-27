@@ -30,11 +30,11 @@ public class Order {
     @UpdateTimestamp
     private LocalDateTime updated;
     @ManyToOne
-    @JoinColumn(name = "user_id")
+    @JoinColumn(name = "user_id", referencedColumnName = "id")
     private User user;
     private BigDecimal sum;
     private String address;
-    @OneToMany(cascade = CascadeType.ALL)
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "order")
     private List<OrderDetails> details;
     @Enumerated(EnumType.STRING)
     private OrderStatus orderStatus;
