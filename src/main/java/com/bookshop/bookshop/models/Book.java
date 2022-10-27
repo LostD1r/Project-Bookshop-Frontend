@@ -28,7 +28,7 @@ public class Book {
     private String characteristic;
     private BigDecimal price;
     @ManyToOne
-    @JoinColumn(name = "author_id")
+    @JoinColumn(name = "author_id", referencedColumnName = "id")
     private Author author;
     @ManyToMany
     @JoinTable(name = "books_genres",
@@ -36,7 +36,10 @@ public class Book {
             inverseJoinColumns = @JoinColumn(name = "book_id"))
     private List<Genre> genres;
     @ManyToOne
-    @JoinColumn(name = "publishing_id")
+    @JoinColumn(name = "publishing_id", referencedColumnName = "id")
     private Publishing publishing;
     private String image;
+
+    @OneToMany(mappedBy = "book")
+    private List<OrderDetails> orderDetails;
 }

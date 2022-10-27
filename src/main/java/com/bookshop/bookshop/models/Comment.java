@@ -25,10 +25,10 @@ public class Comment {
     @SequenceGenerator(name = SEQ_NAME, sequenceName = SEQ_NAME)
     private long id;
     @ManyToOne
-    @JoinColumn(name = "user_id")
+    @JoinColumn(name = "user_id", referencedColumnName = "id")
     private User user;
     @ManyToOne
-    @JoinColumn(name = "book_id")
+    @JoinColumn(name = "book_id", referencedColumnName = "id")
     private Book book;
     @CreationTimestamp
     private LocalDateTime created;
