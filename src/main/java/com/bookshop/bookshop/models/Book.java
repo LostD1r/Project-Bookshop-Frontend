@@ -1,19 +1,18 @@
 package com.bookshop.bookshop.models;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.springframework.web.bind.annotation.Mapping;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.List;
 
-@Data
+@Setter
+@Getter
+@ToString
+@Entity
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity
 @Builder
 @Table(name = "books")
 public class Book {
