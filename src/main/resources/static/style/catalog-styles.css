@@ -198,7 +198,7 @@ body{
     bottom: 0;
 }
 
-#checkboxes-genres,
+#boxes-genres,
 #boxes-publishing,
 #boxes-authors{
     display: none;
@@ -209,7 +209,7 @@ body{
     overflow-y: auto;
 }
 
-#checkboxes-genres label,
+#boxes-genres label,
 #boxes-publishing label,
 #boxes-authors label{
     display: block;
@@ -217,13 +217,14 @@ body{
     background: #393838;
 }
 
+#boxes-genres a,
 #boxes-publishing a,
 #boxes-authors a{
     text-decoration: none;
     color: white;
 }
 
-#checkboxes-genres label:hover,
+#boxes-genres label:hover,
 #boxes-publishing label:hover,
 #boxes-authors label:hover{
     box-shadow: 0 2px 7px black inset;

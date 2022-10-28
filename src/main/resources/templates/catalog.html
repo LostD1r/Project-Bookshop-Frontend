@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<html lang="en" xmlns:th="http://thymeleaf.org" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -71,25 +71,14 @@
                                         </select>
                                         <div class="overSelect-genres"></div>
                                     </div>
-                                    <div id="checkboxes-genres">
-                                        <label for="one-genres">
-                                            <input type="checkbox" id="one-genres"/>First checkbox</label>
-                                        <label for="two-genres">
-                                            <input type="checkbox" id="two-genres"/>Second checkbox</label>
-                                        <label for="three-genres">
-                                            <input type="checkbox" id="three-genres"/>Third checkbox</label>
-                                        <label for="fourth-genres">
-                                            <input type="checkbox" id="fourth-genres"/>Third checkbox</label>
-                                        <label for="fifth-genres">
-                                            <input type="checkbox" id="fifth-genres"/>Third checkbox</label>
-                                        <label for="six-genres">
-                                            <input type="checkbox" id="six-genres"/>Third checkbox</label>
-                                        <label for="seven-genres">
-                                            <input type="checkbox" id="seven-genres"/>Third checkbox</label>
-                                        <label for="eight-genres">
-                                            <input type="checkbox" id="eight-genres"/>Third checkbox</label>
-                                        <label for="nine-genres">
-                                            <input type="checkbox" id="nine-genres"/>Third checkbox</label>
+                                    <div id="boxes-genres">
+                                        <ul>
+                                            <a href="https://google.com" target="_blank">
+                                                <label>
+                                                    First checkbox
+                                                </label>
+                                            </a>
+                                        </ul>
                                     </div>
                                 </div>
                             </form>
@@ -102,22 +91,10 @@
                                         <div class="overSelect-publishing"></div>
                                     </div>
                                     <div id="boxes-publishing">
-                                        <ul>
-                                            <li>
-                                                <a href="https://google.com" target="_blank">
-                                                    <label>
-                                                        First checkbox
-                                                    </label>
-                                                </a>
-                                            </li>
+                                        <ul th:each="pub : ${pubs}">
                                             <a href="https://google.com" target="_blank">
-                                                <label>
-                                                    Second checkbox
-                                                </label>
-                                            </a>
-                                            <a href="https://google.com" target="_blank">
-                                                <label>
-                                                    Third checkbox
+                                                <label th:text="${pub.name}">
+                                                    First checkbox
                                                 </label>
                                             </a>
                                         </ul>
@@ -133,11 +110,13 @@
                                         <div class="overSelect-authors"></div>
                                     </div>
                                     <div id="boxes-authors">
-                                        <a href="https://google.com" target="_blank">
-                                            <label>
-                                                TEST
-                                            </label>
-                                        </a>
+                                        <ul th:each="author : ${authors}">
+                                            <a href="https://google.com" target="_blank">
+                                                <label th:text="${author.name}">
+                                                    TEST
+                                                </label>
+                                            </a>
+                                        </ul>
                                     </div>
                                 </div>
                             </form>

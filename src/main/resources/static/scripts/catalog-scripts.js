@@ -1,7 +1,7 @@
 let expanded = false;
 
 function showCheckboxesGenres() {
-    let checkboxes = document.getElementById("checkboxes-genres");
+    let checkboxes = document.getElementById("boxes-genres");
     if (!expanded)
     {
         checkboxes.style.display = "block";
