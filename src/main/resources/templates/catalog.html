@@ -50,7 +50,7 @@
                     </a>
                 </div>
                 <div class="account">
-                    <a href="#account-button" >
+                    <a href="/registration" >
                         <button id="open-form-button">
                             <img src="../static/Photos/account-icon.png" th:src="@{/Photos/account-icon.png}" alt="Іконка аккаунту">
                         </button>
@@ -102,21 +102,15 @@
                                         <div class="overSelect-publishing"></div>
                                     </div>
                                     <div id="boxes-publishing">
-                                        <a href="https://google.com" target="_blank">
-                                            <label>
-                                                First checkbox
-                                            </label>
-                                        </a>
-                                        <a href="https://google.com" target="_blank">
-                                            <label>
-                                                Second checkbox
-                                            </label>
-                                        </a>
-                                        <a href="https://google.com" target="_blank">
-                                            <label>
-                                                Third checkbox
-                                            </label>
-                                        </a>
+                                        <ul th:each="pub : ${pubs}">
+                                            <li>
+                                                <a href="https://google.com" target="_blank">
+                                                    <label th:text="${pub.name}">
+                                                        TEST
+                                                    </label>
+                                                </a>
+                                            </li>
+                                        </ul>
                                     </div>
                                 </div>
                             </form>
@@ -129,11 +123,15 @@
                                         <div class="overSelect-authors"></div>
                                     </div>
                                     <div id="boxes-authors">
-                                        <a href="https://google.com" target="_blank">
-                                            <label>
-                                                    TEST
-                                            </label>
-                                        </a>
+                                        <ul th:each="author : ${authors}">
+                                            <li>
+                                                <a href="https://google.com" target="_blank">
+                                                    <label th:text="${author.name}">
+                                                        TEST
+                                                    </label>
+                                                </a>
+                                            </li>
+                                        </ul>
                                     </div>
                                 </div>
                             </form>
