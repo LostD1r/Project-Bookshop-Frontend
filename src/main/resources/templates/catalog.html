@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<html lang="en" xmlns:th="http://thymeleaf.org" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -50,7 +50,7 @@
                     </a>
                 </div>
                 <div class="account">
-                    <a href="/registration" >
+                    <a href="#account-button" >
                         <button id="open-form-button">
                             <img src="../static/Photos/account-icon.png" th:src="@{/Photos/account-icon.png}" alt="Іконка аккаунту">
                         </button>
@@ -71,25 +71,14 @@
                                         </select>
                                         <div class="overSelect-genres"></div>
                                     </div>
-                                    <div id="checkboxes-genres">
-                                        <label for="one-genres">
-                                            <input type="checkbox" id="one-genres"/>First checkbox</label>
-                                        <label for="two-genres">
-                                            <input type="checkbox" id="two-genres"/>Second checkbox</label>
-                                        <label for="three-genres">
-                                            <input type="checkbox" id="three-genres"/>Third checkbox</label>
-                                        <label for="fourth-genres">
-                                            <input type="checkbox" id="fourth-genres"/>Third checkbox</label>
-                                        <label for="fifth-genres">
-                                            <input type="checkbox" id="fifth-genres"/>Third checkbox</label>
-                                        <label for="six-genres">
-                                            <input type="checkbox" id="six-genres"/>Third checkbox</label>
-                                        <label for="seven-genres">
-                                            <input type="checkbox" id="seven-genres"/>Third checkbox</label>
-                                        <label for="eight-genres">
-                                            <input type="checkbox" id="eight-genres"/>Third checkbox</label>
-                                        <label for="nine-genres">
-                                            <input type="checkbox" id="nine-genres"/>Third checkbox</label>
+                                    <div id="boxes-genres">
+                                        <ul>
+                                            <a href="https://google.com" target="_blank">
+                                                <label>
+                                                    First checkbox
+                                                </label>
+                                            </a>
+                                        </ul>
                                     </div>
                                 </div>
                             </form>
@@ -103,13 +92,11 @@
                                     </div>
                                     <div id="boxes-publishing">
                                         <ul th:each="pub : ${pubs}">
-                                            <li>
-                                                <a href="https://google.com" target="_blank">
-                                                    <label th:text="${pub.name}">
-                                                        TEST
-                                                    </label>
-                                                </a>
-                                            </li>
+                                            <a href="https://google.com" target="_blank">
+                                                <label th:text="${pub.name}">
+                                                    First checkbox
+                                                </label>
+                                            </a>
                                         </ul>
                                     </div>
                                 </div>
@@ -124,13 +111,11 @@
                                     </div>
                                     <div id="boxes-authors">
                                         <ul th:each="author : ${authors}">
-                                            <li>
-                                                <a href="https://google.com" target="_blank">
-                                                    <label th:text="${author.name}">
-                                                        TEST
-                                                    </label>
-                                                </a>
-                                            </li>
+                                            <a href="https://google.com" target="_blank">
+                                                <label th:text="${author.name}">
+                                                    TEST
+                                                </label>
+                                            </a>
                                         </ul>
                                     </div>
                                 </div>

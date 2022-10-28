@@ -1,4 +1,5 @@
 INSERT INTO authors (id, description, name)
+
 VALUES (1, 'aesdfrewqefd', 'awesrваfrewaefg'),
        (2, 'aesdfrewqвіаfd', 'awваsrdfrewaefg'),
        (3, 'aesdfrваwqefd', 'awesrdfrіваwaefg'),
