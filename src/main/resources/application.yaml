@@ -4,8 +4,8 @@ spring:
       ddl-auto: validate
     show-sql: true
   datasource:
-    url: jdbc:postgresql://localhost:5432/Shop
+    url: jdbc:postgresql://localhost:5432/shop
     username: postgres
-    password: 13122002
+    password: Sumo-2015
   main:
     allow-circular-references: true
