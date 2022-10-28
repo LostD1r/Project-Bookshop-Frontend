@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -22,4 +23,6 @@ public class Publishing {
     private long id;
     private String name;
     private String description;
+    @OneToMany(mappedBy = "publishing")
+    private List<Book> books;
 }

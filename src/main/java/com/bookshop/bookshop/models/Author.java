@@ -1,17 +1,15 @@
 package com.bookshop.bookshop.models;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 import java.util.List;
 
-@Data
+@Setter
+@Getter
+@Entity
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity
 @Builder
 @Table(name = "authors")
 public class Author {
@@ -23,9 +21,6 @@ public class Author {
     private long id;
     private String name;
     private String description;
-    @OneToMany
-    @JoinTable(name = "authors_books",
-    joinColumns = @JoinColumn(name = "author_id"),
-    inverseJoinColumns = @JoinColumn(name = "book_id"))
+    @OneToMany(mappedBy = "author")
     private List<Book> book;
 }

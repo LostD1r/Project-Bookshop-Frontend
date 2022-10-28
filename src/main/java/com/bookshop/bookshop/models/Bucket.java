@@ -22,7 +22,7 @@ public class Bucket {
     @SequenceGenerator(name = SEQ_NAME, sequenceName = SEQ_NAME)
     private long id;
     @OneToOne
-    @JoinColumn(name = "user_id")
+    @JoinColumn(name = "user_id", referencedColumnName = "id")
     private User user;
     @ManyToMany
     @JoinTable(name = "bucket_books",

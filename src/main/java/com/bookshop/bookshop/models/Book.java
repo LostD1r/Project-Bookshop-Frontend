@@ -1,19 +1,18 @@
 package com.bookshop.bookshop.models;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.springframework.web.bind.annotation.Mapping;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.util.List;
 
-@Data
+@Setter
+@Getter
+@ToString
+@Entity
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity
 @Builder
 @Table(name = "books")
 public class Book {
@@ -28,7 +27,7 @@ public class Book {
     private String characteristic;
     private BigDecimal price;
     @ManyToOne
-    @JoinColumn(name = "author_id")
+    @JoinColumn(name = "author_id", referencedColumnName = "id")
     private Author author;
     @ManyToMany
     @JoinTable(name = "books_genres",
@@ -36,7 +35,10 @@ public class Book {
             inverseJoinColumns = @JoinColumn(name = "book_id"))
     private List<Genre> genres;
     @ManyToOne
-    @JoinColumn(name = "publishing_id")
+    @JoinColumn(name = "publishing_id", referencedColumnName = "id")
     private Publishing publishing;
     private String image;
+
+    @OneToMany(mappedBy = "book")
+    private List<OrderDetails> orderDetails;
 }
