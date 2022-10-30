@@ -270,13 +270,15 @@
 }
 
 .book-description{
-    height: 45%;
+    min-height: 45%;
+    max-height: 45%;
     width: 80%;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: 20px;
     border: 2px solid #615e5e;
+    overflow: auto;
 }
 
 .text-box-description,
@@ -293,11 +295,61 @@
     align-items: center;
     /*justify-content: center;*/
     flex-direction: column;
+
 }
 
-.text-box-reviews input{
-    height: 100px;
+.review-field{
+    height: 350px;
     width: 80%;
+}
+
+.review-field button{
+    font-size: 20px;
+    border: 2px solid #615e5e;
+    background: none;
+    color: white;
+    transition: 0.5s;
+    padding: 7px;
+}
+
+.review-field button:hover{
+    background: white;
+    border-radius: 10px;
+    color: black;
+}
+
+.review-field textarea{
+    height: 100px;
+    width: 100%;
     margin-top: 20px;
-    border-radius: 20px;
+    font-size: 15px;
+}
+
+.number-of-reviews{
+    position: relative;
+    right: 280px;
+    margin-top: 20px;
+}
+
+.users-reviews{
+    width: 80%;
+}
+
+.account-field{
+    height: 30px;
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.account-field a{
+    text-decoration: none;
+    color: white;
+}
+
+.text-field{
+    height: 200px;
+    width: 100%;
+    border-bottom: 2px solid #615e5e;
 }
