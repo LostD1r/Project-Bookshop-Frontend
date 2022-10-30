@@ -41,4 +41,7 @@ public class Book {
 
     @OneToMany(mappedBy = "book")
     private List<OrderDetails> orderDetails;
+
+    @OneToMany(mappedBy = "book")
+    private List<Comment> comments;
 }

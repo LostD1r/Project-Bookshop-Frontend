@@ -1,5 +1,5 @@
 package com.bookshop.bookshop.models;
 
 public enum Role {
-    CUSTOMER, ADMIN, MANAGER
+    ROLE_GUEST, ROLE_USER, ROLE_ADMIN
 }

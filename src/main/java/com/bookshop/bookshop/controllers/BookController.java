@@ -19,6 +19,6 @@ public class BookController {
     public String getBookById(@PathVariable("id") Long id, Model model){
         BookDTO book = bookService.getById(id);
         model.addAttribute("book", book);
-        return "book";
+        return "product-page";
     }
 }
