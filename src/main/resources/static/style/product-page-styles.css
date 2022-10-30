@@ -1,0 +1,355 @@
+.container{
+    height: 100%;
+    width: 100%;
+    background: #201F1F;
+}
+.header{
+    height: 100px;
+    width: 100%;
+    position: fixed;
+    display: flex;
+    background: #333131;
+    box-shadow: 0 2px 15px;
+}
+
+.logo{
+    height: 100px;
+    width: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo img{
+    margin-left: 15px;
+    height: 80%;
+    width: 80%;
+}
+
+.nav-buttons{
+    height: 100px;
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+}
+
+.nav-button{
+    padding: 10px 10px 10px 10px;
+    font-size: 34px;
+    color: white;
+    border: none;
+    border-radius: 35px;
+    background-color: inherit;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.nav-button:hover{
+    /* background: #615e5e;
+    box-shadow: 0px 0px 2px 2px #615e5e; */
+    background: white;
+    color: black;
+
+}
+
+.search-bar{
+    height: 100px;
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-bar-background{
+    height: 50px;
+    width: 400px;
+    display: flex;
+    background: #9E9494;
+    border-radius: 5px;
+    justify-content: left;
+    align-items: center;
+}
+
+.search-bar input[type = text]{
+    height: 80%;
+    width: 85%;
+    border: none;
+    border-radius: 5px;
+    margin-left: 4px;
+    font-size: 25px;
+}
+
+.search-bar-background img{
+    height: 40px;
+    width: 40px;
+    padding-left: 6px;
+}
+
+.cart{
+    height: 100px;
+    width: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.cart img{
+    height: 65%;
+    width: 65%;
+}
+
+.account{
+    height: 100px;
+    width: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.account a img{
+    height: 60px;
+    width: 60px;
+    border-radius: 10px;
+    background: white;
+}
+/*STYLES for content*/
+.content{
+    height: 100vh;
+    width: 100%;
+    display: flex;
+}
+
+.photo-block{
+    width: 35%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.photo{
+    position: relative;
+    top: 50px;
+    width: 75%;
+    height: 75%;
+
+}
+.photo img{
+    width: 100%;
+    height: 100%;
+    border-radius: 25px;
+}
+
+.about-block{
+    height: 100vh;
+    width: 65%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.text-box{
+    height: 12%;
+    width: 80%;
+    display: flex;
+    align-items: center;
+}
+
+.books-name-wrapper{
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.book-name{
+    height: 60%;
+    width: 60%;
+    color: white;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    font-size: 35px;
+}
+
+.english-book-name{
+    height: 40%;
+    width: 60%;
+    color: white;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    font-size: 22px;
+}
+
+.books-price-presence-wrapper{
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: center;
+}
+
+.book-price{
+    height: 40%;
+    width: 45%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+}
+
+.book-presence{
+    height: 30%;
+    width: 45%;
+    color: #08EB1F;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+}
+
+.add-to-cart{
+    height: 55%;
+    width: 20%;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    border-radius: 15px;
+    background: #409C5A;
+}
+
+.add-to-cart:hover{
+    background: #29733d;
+}
+
+.buttons{
+    height: 8%;
+    width: 80%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    gap: 20px;
+    background: #333131;
+    border-radius: 20px;
+}
+
+.brief-description,
+.characteristic,
+.reviews{
+    width: 30%;
+    height: 60%;
+    font-size: 22px;
+    border: none;
+    background: none;
+    color: white;
+    border-radius: 25px;
+    transition: 0.2s;
+}
+
+.brief-description:hover,
+.characteristic:hover,
+.reviews:hover{
+    box-shadow: 0 3px 6px inset black;
+}
+
+.brief-description:active,
+.characteristic:active,
+.reviews:active{
+    box-shadow: 0 6px 15px inset black;
+}
+
+.book-description{
+    min-height: 45%;
+    max-height: 45%;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    border: 2px solid #615e5e;
+    overflow: auto;
+}
+
+.text-box-description,
+.text-box-characteristic,
+.text-box-reviews{
+    height: 90%;
+    width: 95%;
+    color: white;
+    font-size: 20px;
+    display: none;
+}
+
+.text-box-reviews{
+    align-items: center;
+    /*justify-content: center;*/
+    flex-direction: column;
+
+}
+
+.review-field{
+    height: 350px;
+    width: 80%;
+}
+
+.review-field button{
+    font-size: 20px;
+    border: 2px solid #615e5e;
+    background: none;
+    color: white;
+    transition: 0.5s;
+    padding: 7px;
+}
+
+.review-field button:hover{
+    background: white;
+    border-radius: 10px;
+    color: black;
+}
+
+.review-field textarea{
+    height: 100px;
+    width: 100%;
+    margin-top: 20px;
+    font-size: 15px;
+}
+
+.number-of-reviews{
+    position: relative;
+    right: 280px;
+    margin-top: 20px;
+}
+
+.users-reviews{
+    width: 80%;
+}
+
+.account-field{
+    height: 30px;
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.account-field a{
+    text-decoration: none;
+    color: white;
+}
+
+.text-field{
+    height: 200px;
+    width: 100%;
+    border-bottom: 2px solid #615e5e;
+}
