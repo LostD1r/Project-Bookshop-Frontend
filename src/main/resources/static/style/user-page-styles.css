@@ -1,0 +1,278 @@
+body{
+    overflow: hidden;
+}
+
+.container{
+    height: 100vh;
+    width: 100%;
+    background: #201F1F;
+    display: flex;
+    flex-direction: column;
+}
+
+.header{
+    height: 10%;
+    width: 100%;
+    /*position: fixed;*/
+    display: flex;
+    background: #333131;
+    box-shadow: 0 2px 15px;
+}
+
+.logo{
+    height: 100px;
+    width: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo img{
+    margin-left: 15px;
+    height: 80%;
+    width: 80%;
+}
+
+.nav-buttons{
+    height: 100px;
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+}
+
+.nav-button{
+    padding: 10px 10px 10px 10px;
+    font-size: 34px;
+    color: white;
+    border: none;
+    border-radius: 35px;
+    background-color: inherit;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.nav-button:hover{
+    background: white;
+    color: black;
+
+}
+
+.search-bar{
+    height: 100px;
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-bar-background{
+    height: 50px;
+    width: 400px;
+    display: flex;
+    background: #9E9494;
+    border-radius: 5px;
+    justify-content: left;
+    align-items: center;
+}
+
+.search-bar input[type = text]{
+    height: 80%;
+    width: 85%;
+    border: none;
+    border-radius: 5px;
+    margin-left: 4px;
+    font-size: 25px;
+}
+
+.search-bar-background img{
+    height: 40px;
+    width: 40px;
+    padding-left: 6px;
+}
+
+.cart{
+    height: 100px;
+    width: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.cart img{
+    height: 65%;
+    width: 65%;
+}
+
+.account{
+    height: 100px;
+    width: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.account a img{
+    height: 60px;
+    width: 60px;
+    border-radius: 10px;
+    background: white;
+}
+
+.content{
+    height: 90%;
+    width: 100%;
+    color: white;
+}
+
+.about-profile{
+    height: 30%;
+    width: 100%;
+    display: flex;
+}
+
+.about-profile-left{
+    height: 100%;
+    width: 50%;
+}
+
+.nickname{
+    font-size: 40px;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.email{
+    font-size: 25px;
+    margin-left: 20px;
+}
+
+.about{
+    height: 60%;
+    margin-left: 20px;
+    font-size: 20px;
+}
+
+.about-profile-right{
+    height: 100%;
+    width: 50%;
+}
+
+.created-at{
+    font-size: 25px;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+.number-of-bought-books,
+.status{
+    font-size: 25px;
+    margin-left: 20px;
+}
+
+.admin-panel{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    margin-right: 30px;
+    font-size: 25px;
+}
+
+.admin-panel a{
+    text-decoration: none;
+    color: #9b4747;
+}
+
+.edit-profile{
+    position: relative;
+    top: 70px;
+    left: 670px;
+    font-size: 25px;
+    background: none;
+    color: white;
+    border: none;
+    transition: 0.3s;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 3px 15px black;
+}
+
+.edit-profile a{
+    text-decoration: none;
+    color: white;
+}
+
+.edit-profile a:hover{
+    color: black;
+}
+
+.edit-profile:hover{
+    background: white;
+    color: black;
+}
+
+.bought-books{
+    height: 10%;
+    width: 100%;
+    background: #333131;
+    box-shadow: 0 2px 15px black;
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+}
+
+.bought-books-list{
+    min-height: 60%;
+    max-height: 60%;
+    width: 100%;
+    overflow: auto;
+}
+
+.bought-books-list ul li{
+    height: 200px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid #615e5e;
+    box-shadow: 0 3px 15px black;
+}
+
+.bought-books-list-photo{
+    height: 100%;
+    width: 10%;
+}
+
+.bought-books-list-photo a img{
+    height: 100%;
+    width: 100%;
+}
+
+.bought-books-list-text-wrapper{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bought-books-list-text{
+    height: 90%;
+    width: 98%;
+    display: flex;
+    flex-direction: column;
+}
+
+.bought-books-list-text-name{
+    height: 15%;
+    width: 100%;
+    font-size: 25px;
+}
+
+.bought-books-list-text-brief-description{
+    height: 85%;
+    width: 100%;
+    font-size: 20px;
+}
