@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" media="all" href="/static/style/user-page-styles.css" data-th-href="@{/style/user-page-styles.css}" />
+    <link rel="stylesheet" type="text/css" href="/static/style/reset.css" media="all" data-th-href="@{/style/reset.css}" />
+    <title>User page</title>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">
+                <a href="/">
+                    <img src="../static/Photos/Logo3.png" th:src="@{/Photos/Logo3.png}" alt="Іконка логотипу">
+                </a>
+            </div>
+            <div class="nav-buttons">
+                <a href="/about-us">
+                    <button class="nav-button">
+                        Про нас
+                    </button>
+                </a>
+                <a href="/news">
+                    <button class="nav-button">
+                        Новини
+                    </button>
+                </a>
+                <a href="/catalog">
+                    <button class="nav-button">
+                        Каталог
+                    </button>
+                </a>
+            </div>
+            <div class="search-bar">
+                <div class="search-bar-background">
+                    <input type="text" placeholder="Пошук...">
+                    <a href="make-search">
+                        <img src="../static/Photos/search-icon.png" th:src="@{/Photos/search-icon.png}" alt="Іконка пошуку">
+                    </a>
+                </div>
+            </div>
+            <div class="cart">
+                <a href="#cart">
+                    <img src="../static/Photos/cart-icon.png" th:src="@{/Photos/cart-icon.png}" alt="Інонка корзини">
+                </a>
+            </div>
+            <div class="account">
+                <a href="#account-button">
+                    <img src="../static/Photos/account-icon.png" th:src="@{/Photos/account-icon.png}" alt="Іконка аккаунту">
+                </a>
+            </div>
+        </div>
+        <div class="content">
+            <div class="about-profile">
+                <div class="about-profile-left">
+                    <div class="nickname">
+                        Назва аккаунту
+                    </div>
+                    <div class="email">
+                        Пошта аккаунту
+                    </div>
+                    <hr style="width: 95% ">
+                    <div class="about">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                            Dignissimos dolores earum eligendi et explicabo id impedit
+                            in minima quae reiciendis saepe sapiente sint unde velit,
+                            voluptatibus. Animi aperiam asperiores consectetur culpa
+                            eaque eveniet maxime minima nam numquam omnis quasi ratione s
+                            ed sequi, totam vero. Aliquid blanditiis cupiditate earum ex
+                            exercitationem facere id illo, in ipsum iste laudantium minima
+                            omnis perferendis quod reprehenderit ullam, voluptas? Ab alias
+                            architecto aut cum delectus dicta distinctio dolor, doloremque dolorum
+                            enim eveniet excepturi fuga impedit in incidunt ipsa itaque maxime, minus
+                            molestiae neque nobis odit perferendis porro praesentium reprehenderit
+                            repudiandae sed sunt totam vitae voluptas?</p>
+                    </div>
+                </div>
+                <div class="about-profile-right">
+                    <div class="created-at">
+                        Дата створення профілю: 1 листопада 2022
+                    </div>
+                    <div class="number-of-bought-books">
+                        Кількість придбаних книг 13
+                    </div>
+                    <div class="status">
+                        Статус: учасник
+                    </div>
+                    <div class="admin-panel">
+                        <a href="">
+                            Панель адміністратора
+                        </a>
+                    </div>
+                    <button class="edit-profile">
+                        <a href="">Редагувати профіль</a>
+                    </button>
+                </div>
+            </div>
+            <div class="bought-books">
+                Придбані книги
+            </div>
+            <div class="bought-books-list">
+                <ul>
+                    <li>
+                        <div class="bought-books-list-photo">
+                            <a href="">
+                                <img src="../static/Photos/Latin_dictionary.jpg" alt="">
+                            </a>
+                        </div>
+                        <div class="bought-books-list-text-wrapper">
+                            <div class="bought-books-list-text">
+                                <div class="bought-books-list-text-name">
+                                    Назва
+                                </div>
+                                <hr style="width: 97%">
+                                <div class="bought-books-list-text-brief-description">
+                                    Короткий опис
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="">
+
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+<!--                            <img src="../static/Photos/Latin_dictionary.jpg" alt="">-->
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+<!--                            <img src="../static/Photos/Latin_dictionary.jpg" alt="">-->
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
