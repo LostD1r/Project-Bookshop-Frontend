@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" media="all" href="/static/style/product-page-styles.css" data-th-href="@{/style/product-page-styles.css}" />
+    <link rel="stylesheet" type="text/css" href="/static/style/reset.css" media="all" data-th-href="@{/style/reset.css}" />
+    <script src="../static/scripts/product-page-scripts.js" th:src="@{/scripts/product-page-scripts.js}"></script>
+    <title>Product page</title>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">
+                <a href="/">
+                    <img src="../static/Photos/Logo3.png" th:src="@{/Photos/Logo3.png}" alt="Іконка логотипу">
+                </a>
+            </div>
+            <div class="nav-buttons">
+                <a href="/about-us">
+                    <button class="nav-button">
+                        Про нас
+                    </button>
+                </a>
+                <a href="/news">
+                    <button class="nav-button">
+                        Новини
+                    </button>
+                </a>
+                <a href="/catalog">
+                    <button class="nav-button">
+                        Каталог
+                    </button>
+                </a>
+            </div>
+            <div class="search-bar">
+                <div class="search-bar-background">
+                    <input type="text" placeholder="Пошук...">
+                    <a href="make-search">
+                        <img src="../static/Photos/search-icon.png" th:src="@{/Photos/search-icon.png}" alt="Іконка пошуку">
+                    </a>
+                </div>
+            </div>
+            <div class="cart">
+                <a href="#cart">
+                    <img src="../static/Photos/cart-icon.png" th:src="@{/Photos/cart-icon.png}" alt="Інонка корзини">
+                </a>
+            </div>
+            <div class="account">
+                <a href="#account-button">
+                    <img src="../static/Photos/account-icon.png" th:src="@{/Photos/account-icon.png}" alt="Іконка аккаунту">
+                </a>
+            </div>
+        </div>
+        <div class="content">
+            <div class="photo-block">
+                <div class="photo">
+                    <img src="../static/Photos/Latin_dictionary.jpg" alt="Фото книжки">
+                </div>
+            </div>
+            <div class="about-block">
+                <div class="text-box">
+                    <div class="books-name-wrapper">
+                        <div class="book-name">
+                            Назва
+                        </div>
+                        <div class="english-book-name">
+                            Name
+                        </div>
+                    </div>
+                    <div class="books-price-presence-wrapper">
+                        <div class="book-price">
+                            69 UAH
+                        </div>
+                        <div class="book-presence">
+                            В наявності
+                        </div>
+                    </div>
+                    <button class="add-to-cart" type="button">
+                        Додати до кошику
+                    </button>
+                </div>
+                <div class="buttons">
+                    <button class="brief-description" onclick="popupDescription()">
+                        Короткий опис
+                    </button>
+                    <button class="characteristic" onclick="popupCharacteristic()">
+                        Характеристика
+                    </button>
+                    <button class="reviews" onclick="popupReviews()">
+                        Відгуки
+                    </button>
+                </div>
+                <div class="book-description">
+                    <div id="text-box-description" class="text-box-description">
+                        Опис книги.
+                    </div>
+                    <div id="text-box-characteristic" class="text-box-characteristic">
+                        Характеристика книги.
+                    </div>
+                    <div id="text-box-reviews" class="text-box-reviews">
+                        <span>
+                            Напишіть свій відгук
+                        </span>
+                        <input>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
