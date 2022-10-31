@@ -7,6 +7,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -30,4 +31,7 @@ public class User {
     private Role role;
     @OneToOne(cascade = CascadeType.REMOVE, mappedBy = "user")
     private Bucket bucket;
+
+    @OneToMany(mappedBy = "user")
+    private List<Comment> comment;
 }
