@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" media="all" href="/static/style/user-page-settings-styles.css" th:href="@{/style/user-page-settings-styles.css}" />
+    <link rel="stylesheet" href="/static/style/reset.css" media="all" th:href="@{/style/reset.css}"/>
+    <title>Title</title>
+</head>
+<body>
+    <div class="container">
+        <form class="config-form" action="">
+            <div class="text-box">
+                Зміна даних профілю
+            </div>
+            <label for="nickname">Введіть новий нік</label>
+            <input id="nickname" type="text">
+            <label for="email">Введіть нову пошту</label>
+            <input id="email" type="email">
+            <label for="about">Введіть новий опис</label>
+            <textarea id="about" cols="48" rows="5" maxlength="500"></textarea>
+            <button class="config-form-button" type="submit">
+                Змінити дані
+            </button>
+        </form>
+        <form class="config-form-pass" action="">
+            <div class="text-box-pass">
+                Зміна паролю
+            </div>
+            <label for="old-password">Введіть старий пароль</label>
+            <input type="password" id="old-password" required="required">
+            <label for="new-password">Введіть новий пароль</label>
+            <input type="password" id="new-password" required="required">
+            <label for="confirm-new-password">Підтвердьте новий пароль</label>
+            <input type="password" id="confirm-new-password" required="required">
+            <button class="config-form-pass-button" type="submit">
+                Змінити пароль
+            </button>
+        </form>
+    </div>
+</body>
+</html>
