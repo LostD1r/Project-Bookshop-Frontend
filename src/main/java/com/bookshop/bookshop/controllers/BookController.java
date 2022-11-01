@@ -1,6 +1,6 @@
 package com.bookshop.bookshop.controllers;
 
-import com.bookshop.bookshop.dto.BookDTO;
+import com.bookshop.bookshop.models.Book;
 import com.bookshop.bookshop.service.BookService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,7 +17,7 @@ public class BookController {
 
     @GetMapping("/catalog/{id}")
     public String getBookById(@PathVariable("id") Long id, Model model){
-        BookDTO book = bookService.getById(id);
+        Book book = bookService.getById(id);
         model.addAttribute("book", book);
         return "product-page";
     }

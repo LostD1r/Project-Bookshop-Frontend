@@ -1,4 +1,4 @@
-package com.bookshop.bookshop.dto;
+package com.bookshop.bookshop.security;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -15,3 +15,4 @@ public class UserDTO {
     private String matchingPassword;
     private String email;
 }
+

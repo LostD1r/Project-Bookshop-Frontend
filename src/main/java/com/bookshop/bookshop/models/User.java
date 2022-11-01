@@ -25,6 +25,8 @@ public class User {
     @Column(unique = true)
     private String name;
     private String password;
+    @Transient
+    private String matchingPassword;
     @Column(unique = true)
     private String email;
     @Enumerated(EnumType.STRING)
