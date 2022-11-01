@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -47,19 +47,19 @@
                 </a>
             </div>
             <div class="account">
-                <a href="#account-button">
+                <a href="/profile">
                     <img src="../static/Photos/account-icon.png" th:src="@{/Photos/account-icon.png}" alt="Іконка аккаунту">
                 </a>
             </div>
         </div>
         <div class="content">
             <div class="about-profile">
-                <div class="about-profile-left">
+                <div class="about-profile-left" >
                     <div class="nickname">
-                        Назва аккаунту
+                        <p th:text="${user.getName()}">Назва аккаунту</p>
                     </div>
                     <div class="email">
-                        Пошта аккаунту
+                        <p th:text="${user.getEmail()}">Пошта аккаунту</p>
                     </div>
                     <hr style="width: 95% ">
                     <div class="about">
@@ -82,10 +82,10 @@
                         Дата створення профілю: 1 листопада 2022
                     </div>
                     <div class="number-of-bought-books">
-                        Кількість придбаних книг 13
+                        Кількість придбаних книг 0
                     </div>
                     <div class="status">
-                        Статус: учасник
+                        <p th:text="${user.getRole()}">Статус: учасник</p>
                     </div>
                     <div class="admin-panel">
                         <a href="">
