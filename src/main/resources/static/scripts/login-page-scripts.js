@@ -15,6 +15,7 @@ function changeColorLogin(){
     document.getElementById('submit-form-registry').style.visibility = 'visible';
     document.getElementById('submit-form-login').style.transition = 'none';
     document.getElementById('submit-form-registry').style.transition = '0.4s';
+    window.history.pushState('login-page', 'Title', '/registration');
 }
 
 function changeColorRegistry(){
@@ -34,4 +35,5 @@ function changeColorRegistry(){
     document.getElementById('submit-form-registry').style.visibility = 'hidden';
     document.getElementById('submit-form-login').style.transition = '0.4s';
     document.getElementById('submit-form-registry').style.transition = 'none';
+    window.history.pushState('login-page', 'Title', '/login-page');
 }
