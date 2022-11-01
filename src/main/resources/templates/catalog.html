@@ -13,49 +13,47 @@
 <body>
     <div class="container">
         <div class="header">
-            <div class="header">
-                <div class="logo">
-                    <a href="/">
-                        <img src="../static/Photos/Logo3.png" th:src="@{/Photos/Logo3.png}" alt="Іконка логотипу">
+            <div class="logo">
+                <a href="/">
+                    <img src="../static/Photos/Logo3.png" th:src="@{/Photos/Logo3.png}" alt="Іконка логотипу">
+                </a>
+            </div>
+            <div class="nav-buttons">
+                <a href="/about-us">
+                    <button class="nav-button">
+                        Про нас
+                    </button>
+                </a>
+                <a href="/news">
+                    <button class="nav-button">
+                        Новини
+                    </button>
+                </a>
+                <a href="/catalog">
+                    <button class="nav-button">
+                        Каталог
+                    </button>
+                </a>
+            </div>
+            <div class="search-bar">
+                <div class="search-bar-background">
+                    <input id="search" type="text" placeholder="Пошук...">
+                    <a class="make-search" onclick="makeSearch()">
+                        <img src="../static/Photos/search-icon.png" th:src="@{/Photos/search-icon.png}" alt="Іконка пошуку">
                     </a>
                 </div>
-                <div class="nav-buttons">
-                    <a href="/about-us">
-                        <button class="nav-button">
-                            Про нас
-                        </button>
-                    </a>
-                    <a href="/news">
-                        <button class="nav-button">
-                            Новини
-                        </button>
-                    </a>
-                    <a href="/catalog">
-                        <button class="nav-button">
-                            Каталог
-                        </button>
-                    </a>
-                </div>
-                <div class="search-bar">
-                    <div class="search-bar-background">
-                        <input id="search" type="text" placeholder="Пошук...">
-                        <a class="make-search" onclick="makeSearch()">
-                            <img src="../static/Photos/search-icon.png" th:src="@{/Photos/search-icon.png}" alt="Іконка пошуку">
-                        </a>
-                    </div>
-                </div>
-                <div class="cart">
-                    <a href="#cart">
-                        <img src="../static/Photos/cart-icon.png" th:src="@{/Photos/cart-icon.png}" alt="Інонка корзини">
-                    </a>
-                </div>
-                <div class="account">
-                    <a href="#account-button" >
-                        <button id="open-form-button">
-                            <img src="../static/Photos/account-icon.png" th:src="@{/Photos/account-icon.png}" alt="Іконка аккаунту">
-                        </button>
-                    </a>
-                </div>
+            </div>
+            <div class="cart">
+                <a href="#cart">
+                    <img src="../static/Photos/cart-icon.png" th:src="@{/Photos/cart-icon.png}" alt="Інонка корзини">
+                </a>
+            </div>
+            <div class="account">
+                <a href="#account-button" >
+                    <button id="open-form-button">
+                        <img src="../static/Photos/account-icon.png" th:src="@{/Photos/account-icon.png}" alt="Іконка аккаунту">
+                    </button>
+                </a>
             </div>
         </div>
         <div class="content">
