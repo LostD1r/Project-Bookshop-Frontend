@@ -21,7 +21,7 @@ import static com.bookshop.bookshop.models.Role.ROLE_USER;
 public class PersonDetailsService implements UserDetailsService {
 
     private final UserRepository userRepository;
-    PasswordEncoder passwordEncoder;
+
 
     @Autowired
     public PersonDetailsService(UserRepository userRepository) {
@@ -36,22 +36,6 @@ public class PersonDetailsService implements UserDetailsService {
             throw new UsernameNotFoundException("User not found");
 
         return new PersonDetails(person.get());
-    }
-
-    public boolean save(UserDTO user){
-        User userFromDB = userRepository.findFirstByName(user.getUsername());
-
-        if (userFromDB != null) {
-            return false;
-        }
-        User newUser = User.builder()
-                .name(user.getUsername())
-                .password(passwordEncoder.encode(user.getPassword()))
-                .email(user.getEmail())
-                .role(ROLE_USER)
-                .build();
-        userRepository.save(newUser);
-        return true;
     }
 }
 
