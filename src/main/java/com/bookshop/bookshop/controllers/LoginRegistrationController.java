@@ -1,7 +1,7 @@
 package com.bookshop.bookshop.controllers;
 
-import com.bookshop.bookshop.dto.UserDTO;
 import com.bookshop.bookshop.models.User;
+import com.bookshop.bookshop.security.UserDTO;
 import com.bookshop.bookshop.service.PersonDetailsService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -27,11 +27,13 @@ public class LoginRegistrationController {
     @PostMapping("/registration")
     public String addUser(UserDTO userForm, Model model) {
         if (!userForm.getPassword().equals(userForm.getMatchingPassword())){
-            model.addAttribute("passwordError", "Пароли не совпадают");
+            model.addAttribute("passwordError", "Паролі не співпадають");
+            return "login-page";
+        }
+        if (!userService.save(userForm)){
             return "login-page";
         }
 
-
-        return "redirect:/";
+        return "Success";
     }
 }
