@@ -1,8 +1,8 @@
 package com.bookshop.bookshop.controllers;
 
-import com.bookshop.bookshop.dto.AuthorDTO;
-import com.bookshop.bookshop.dto.BookDTO;
-import com.bookshop.bookshop.dto.PublishingDTO;
+import com.bookshop.bookshop.models.Author;
+import com.bookshop.bookshop.models.Book;
+import com.bookshop.bookshop.models.Publishing;
 import com.bookshop.bookshop.service.AuthorService;
 import com.bookshop.bookshop.service.BookService;
 import com.bookshop.bookshop.service.PublishingService;
@@ -28,9 +28,9 @@ public class CatalogController {
 
     @GetMapping("/catalog")
     private String catalog(Model model){
-        List<BookDTO> list = bookService.getAll();
-        List<AuthorDTO> authorList = authorService.getAll();
-        List<PublishingDTO> pubsList = publishingService.getAll();
+        List<Book> list = bookService.getAll();
+        List<Author> authorList = authorService.getAll();
+        List<Publishing> pubsList = publishingService.getAll();
         model.addAttribute("books", list);
         model.addAttribute("authors", authorList);
         model.addAttribute("pubs", pubsList);

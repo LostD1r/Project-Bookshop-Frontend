@@ -21,11 +21,11 @@
                     </button>
                 </div>
                     <!--Registry form-->
-                <form id="registry-form" action="">
-                    <input id="login-input-registry" class="login-input-registry" type="hidden" placeholder="Type your login for registration">
-                    <input id="email-input-registry" class="email-input-registry" type="hidden" placeholder="Type your email for registration">
-                    <input id="password-input-registry" class="password-input-registry" type="hidden" placeholder="Type your password for registration">
-                    <input id="password-reinput-registry" class="password-reinput-registry" type="hidden" placeholder="Type your password again for registration">
+                <form id="registry-form" th:method="POST" th:action="@{/registration}" th:object="${userForm}">
+                    <input id="login-input-registry" class="login-input-registry" th:field="*{username}" type="hidden" placeholder="Type your login for registration">
+                    <input id="email-input-registry" class="email-input-registry" type="hidden" th:field="*{email}" placeholder="Type your email for registration">
+                    <input id="password-input-registry" class="password-input-registry" type="hidden" th:field="*{password}" placeholder="Type your password for registration">
+                    <input id="password-reinput-registry" class="password-reinput-registry" type="hidden" th:field="*{matchingPassword}" placeholder="Type your password again for registration">
                     <button id="submit-form-registry" class="submit-form-registry" type="submit">
                         Зареєструватися
                     </button>

@@ -7,9 +7,9 @@ spring:
     url: jdbc:postgresql://localhost:5432/Shop
     username: postgres
     password: 13122002
-  main:
-    allow-circular-references: true
   mvc:
     hiddenmethod:
       filter:
         enabled: true
+  main:
+    allow-circular-references: true

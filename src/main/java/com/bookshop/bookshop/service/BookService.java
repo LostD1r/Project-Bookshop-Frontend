@@ -1,8 +1,6 @@
 package com.bookshop.bookshop.service;
 
-import com.bookshop.bookshop.Mappers.BookMapper;
 import com.bookshop.bookshop.dao.BookRepository;
-import com.bookshop.bookshop.dto.BookDTO;
 import com.bookshop.bookshop.models.Book;
 import org.springframework.stereotype.Service;
 
@@ -10,7 +8,6 @@ import java.util.List;
 
 @Service
 public class BookService{
-    private final BookMapper mapper = BookMapper.MAPPER;
 
     private final BookRepository bookRepository;
 
@@ -19,8 +16,8 @@ public class BookService{
     }
 
 
-    public List<BookDTO> getAll() {
-        return mapper.fromBookList(bookRepository.findAll());
+    public List<Book> getAll() {
+        return bookRepository.findAll();
     }
 
 
@@ -29,13 +26,13 @@ public class BookService{
     }
 
 
-    public void addBook(BookDTO dto) {
+    public void addBook(Book book) {
 
     }
 
 
-    public BookDTO getById(Long id) {
+    public Book getById(Long id) {
         Book book = bookRepository.findById(id).orElse(new Book());
-        return BookMapper.MAPPER.fromBook(book);
+        return book;
     }
 }
