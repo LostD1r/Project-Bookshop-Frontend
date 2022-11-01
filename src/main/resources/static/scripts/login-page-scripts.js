@@ -6,7 +6,7 @@ function changeColorLogin(){
     document.getElementById('auth-method-button-registry').style.color = 'black';
     document.getElementById('auth-method-button-registry').style.border = 'none';
     document.getElementById('login-input-registry').type = 'text';
-    document.getElementById('email-input-registry').type = 'text';
+    document.getElementById('email-input-registry').type = 'email';
     document.getElementById('password-input-registry').type = 'password';
     document.getElementById('password-reinput-registry').type = 'password';
     document.getElementById('login-input-login').type = 'hidden';
