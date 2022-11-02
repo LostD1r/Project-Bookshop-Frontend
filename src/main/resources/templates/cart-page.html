@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" media="all" href="/static/style/cart-page-styles.css" th:href="@{/style/cart-page-styles.css}" />
+    <link rel="stylesheet" href="/static/style/reset.css" media="all" th:href="@{/style/reset.css}"/>
+    <script src="../static/scripts/catalog-scripts.js" th:src="@{/scripts/catalog-scripts.js}"></script>
+    <title>Cart page</title>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">
+                <a href="/">
+                    <img src="../static/Photos/Logo3.png" th:src="@{/Photos/Logo3.png}" alt="Іконка логотипу">
+                </a>
+            </div>
+            <div class="nav-buttons">
+                <a href="/about-us">
+                    <button class="nav-button">
+                        Про нас
+                    </button>
+                </a>
+                <a href="/news">
+                    <button class="nav-button">
+                        Новини
+                    </button>
+                </a>
+                <a href="/catalog">
+                    <button class="nav-button">
+                        Каталог
+                    </button>
+                </a>
+            </div>
+            <div class="search-bar">
+                <div class="search-bar-background">
+                    <input type="text" placeholder="Пошук...">
+                    <a href="make-search">
+                        <img src="../static/Photos/search-icon.png" th:src="@{/Photos/search-icon.png}" alt="Іконка пошуку">
+                    </a>
+                </div>
+            </div>
+            <div class="cart">
+                <a href="#cart">
+                    <img src="../static/Photos/cart-icon.png" th:src="@{/Photos/cart-icon.png}" alt="Інонка корзини">
+                </a>
+            </div>
+            <div class="account">
+                <a href="#account-button">
+                    <img src="../static/Photos/account-icon.png" th:src="@{/Photos/account-icon.png}" alt="Іконка аккаунту">
+                </a>
+            </div>
+        </div>
+        <div class="content">
+            <div class="books-to-buy">
+                Список вибраних до закупівлі товарів
+            </div>
+            <div class="to-buy-box-wrapper">
+                <div class="to-buy-box">
+                    <ul>
+                        <li>
+                            <div class="photo">
+                                <img src="../static/Photos/Latin_dictionary.jpg" alt="Фото книжки">
+                            </div>
+                            <div class="name-description-box">
+                                <div class="book-name">
+                                    <p>
+                                        Назва книги
+                                    </p>
+                                </div>
+                                <div class="brief-description">
+                                    <p>
+                                        Короткий опис
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="buttons-counter">
+                                <input class="buttons-counter-btn" type="number" value="1" min="1">
+                            </div>
+                            <div class="delete-price-box">
+                                <button class="delete-book">
+                                    Вилучити
+                                </button>
+                                <div class="price">
+                                    Ціна:<p>999$</p>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="ready-to-buy-box-wrapper">
+                <div class="ready-to-buy-box">
+                    <div class="total-to-buy">
+                        Кількість товарів для закупівлі: <p>1</p>
+                    </div>
+                    <div class="total-price">
+                        Загальна сума: <p>999$</p>
+                    </div>
+                </div>
+                <button class="ready-to-buy-button">
+                    Оформити замовлення
+                </button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
