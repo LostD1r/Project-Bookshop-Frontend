@@ -20,6 +20,9 @@ public class BookService{
         return bookRepository.findAll();
     }
 
+    public List<Book> search(String str){
+        return bookRepository.findByNameContaining(str);
+    }
 
     public void addToUserBucket(Long bookId, String username) {
 

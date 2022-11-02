@@ -32,7 +32,5 @@ public class Comment {
     private Book book;
     @CreationTimestamp
     private LocalDateTime created;
-    private BigInteger likes;
-    private BigInteger dislikes;
     private String message;
 }

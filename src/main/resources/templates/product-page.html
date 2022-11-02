@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -48,7 +48,7 @@
                 </a>
             </div>
             <div class="account">
-                <a href="#account-button">
+                <a href="/profile">
                     <img src="../static/Photos/account-icon.png" th:src="@{/Photos/account-icon.png}" alt="Іконка аккаунту">
                 </a>
             </div>
@@ -56,22 +56,22 @@
         <div class="content">
             <div class="photo-block">
                 <div class="photo">
-                    <img src="../static/Photos/Latin_dictionary.jpg" alt="Фото книжки">
+                    <img th:src="${book.getImage()}" alt="Фото книжки">
                 </div>
             </div>
             <div class="about-block">
                 <div class="text-box">
                     <div class="books-name-wrapper">
                         <div class="book-name">
-                            Назва
+                            <p th:text="${book.getName()}">Назва</p>
                         </div>
                         <div class="english-book-name">
-                            Name
+                            <p>Name</p>
                         </div>
                     </div>
                     <div class="books-price-presence-wrapper">
                         <div class="book-price">
-                            69 UAH
+                            <p th:text="${book.getPrice()}">444</p> UAH
                         </div>
                         <div class="book-presence">
                             В наявності
@@ -94,10 +94,10 @@
                 </div>
                 <div class="book-description">
                     <div id="text-box-description" class="text-box-description">
-                        Опис книги.
+                        <p th:text="${book.getDescription()}">Опис книги.</p>
                     </div>
                     <div id="text-box-characteristic" class="text-box-characteristic">
-                        Характеристика книги.
+                        <p th:text="${book.getCharacteristic()}">Характеристика книги.</p>
                     </div>
                     <div id="text-box-reviews" class="text-box-reviews">
                         <span>
@@ -112,16 +112,16 @@
                             </form>
                         </div>
                         <div class="number-of-reviews">
-                            Загальна кількість коментарів 2
+                            Загальна кількість коментарів <p th:text="${book.getComments().size()}">2</p>
                         </div>
                         <div class="users-reviews">
-                            <ul>
+                            <ul th:each="comment : ${book.getComments()}">
                                 <li>
                                     <div class="account-field">
-                                        <a href="">Користувач 1</a>
+                                        <a href="" th:text="${comment.getUser().getName()}">Користувач 1</a>
                                     </div>
                                     <div class="text-field">
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                        <p th:text="${comment.getMessage()}">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
                                         Cupiditate dicta fugit ipsam provident quis reiciendis rem, repellat saepe sint tota
                                         m! Accusamus aliquam aspernatur atque cum distinctio dolorum ea error eveniet explicabo fa
                                         cilis fugiat id impedit in inventore ipsam, ipsum itaque libero nisi officiis pariatur place
@@ -129,7 +129,7 @@
                                         uri illo inventore nobis obcaecati quas repellat sit. Accusantium aliquid at deserunt dolor eni
                                         m eveniet incidunt iste labore, libero magnam necessitatibus neque, quibusdam soluta. Cum dolore
                                         earum esse fugiat impedit, in ipsam minus, molestias non nulla obcaecati quasi quidem quis reicie
-                                        ndis sit unde velit!
+                                            ndis sit unde velit!</p>
                                     </div>
                                 </li>
                             </ul>

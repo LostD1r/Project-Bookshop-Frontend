@@ -13,7 +13,7 @@ create table books (id int8 not null, characteristic varchar(255), description v
 create table books_genres (genre_id int8 not null, book_id int8 not null);
 create table bucket_books (bucket_id int8 not null, book_id int8 not null);
 create table buckets (id int8 not null, user_id int8, primary key (id));
-create table comments (id int8 not null, created timestamp, dislikes numeric(19, 2), likes numeric(19, 2), message varchar(255), book_id int8, user_id int8, primary key (id));
+create table comments (id int8 not null, created timestamp, message varchar(255), book_id int8, user_id int8, primary key (id));
 create table genres (id int8 not null, name varchar(255), primary key (id));
 create table news (id int8 not null, created timestamp, image varchar(255), message varchar(255), title varchar(255), primary key (id));
 create table orders (id int8 not null, address varchar(255), created timestamp, order_status varchar(255), sum numeric(19, 2), updated timestamp, user_id int8, primary key (id));

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -72,9 +72,9 @@
                                         <div class="overSelect-genres"></div>
                                     </div>
                                     <div id="boxes-genres">
-                                        <ul>
-                                            <a href="https://google.com" target="_blank">
-                                                <label>
+                                        <ul th:each="genre : ${genres}">
+                                            <a th:href="@{/catalog/{id}(id=${genre.id})}" target="_blank">
+                                                <label th:text="${genre.getName()}">
                                                     First checkbox
                                                 </label>
                                             </a>
@@ -92,7 +92,7 @@
                                     </div>
                                     <div id="boxes-publishing">
                                         <ul th:each="pub : ${pubs}">
-                                            <a href="https://google.com" target="_blank">
+                                            <a th:href="@{/catalog/{id}(id=${pub.id})}" target="_blank">
                                                 <label th:text="${pub.name}">
                                                     First checkbox
                                                 </label>
@@ -111,7 +111,7 @@
                                     </div>
                                     <div id="boxes-authors">
                                         <ul th:each="author : ${authors}">
-                                            <a href="https://google.com" target="_blank">
+                                            <a th:href="@{/catalog/{id}(id=${author.id})}" target="_blank">
                                                 <label th:text="${author.name}">
                                                     TEST
                                                 </label>
@@ -128,7 +128,7 @@
                 <div class="shelf">
                     <ul >
                         <li th:each="book : ${books}">
-                            <a href="#book-one">
+                            <a th:href="@{/catalog/{id}(id=${book.id})}">
                                 <img th:src="${book.image}" th:alt="${book.price}">
                             </a>
                             <div class="text-box-wrapper">
