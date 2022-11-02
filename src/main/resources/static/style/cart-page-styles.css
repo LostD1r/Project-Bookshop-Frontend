@@ -1,0 +1,306 @@
+.container{
+    height: 100vh;
+    width: 100%;
+    background: #201F1F;
+    display: flex;
+    flex-direction: column;
+}
+
+.header{
+    height: 10%;
+    width: 100%;
+    display: flex;
+    background: #333131;
+    box-shadow: 0 2px 15px;
+}
+
+.logo{
+    height: 100px;
+    width: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo img{
+    margin-left: 15px;
+    height: 80%;
+    width: 80%;
+}
+
+.nav-buttons{
+    height: 100px;
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 100px;
+}
+
+.nav-button{
+    padding: 10px 10px 10px 10px;
+    font-size: 34px;
+    color: white;
+    border: none;
+    border-radius: 35px;
+    background-color: inherit;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.nav-button:hover{
+    background: white;
+    color: black;
+
+}
+
+.search-bar{
+    height: 100px;
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-bar-background{
+    height: 50px;
+    width: 400px;
+    display: flex;
+    background: #9E9494;
+    border-radius: 5px;
+    justify-content: left;
+    align-items: center;
+}
+
+.search-bar input[type = text]{
+    height: 80%;
+    width: 85%;
+    border: none;
+    border-radius: 5px;
+    margin-left: 4px;
+    font-size: 25px;
+}
+
+.search-bar-background img{
+    height: 40px;
+    width: 40px;
+    padding-left: 6px;
+}
+
+.cart{
+    height: 100px;
+    width: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.cart img{
+    height: 65%;
+    width: 65%;
+}
+
+.account{
+    height: 100px;
+    width: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.account a img{
+    height: 60px;
+    width: 60px;
+    border-radius: 10px;
+    background: white;
+}
+
+.content{
+    height: 90%;
+    width: 100%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.books-to-buy{
+    font-size: 50px;
+}
+
+.to-buy-box-wrapper{
+    height: 570px;
+    width: 1200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #615e5e;
+}
+
+.to-buy-box{
+    min-height: 95%;
+    max-height: 95%;
+    width: 97%;
+    overflow: auto;
+}
+
+.to-buy-box ul li{
+    height: 150px;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    background: #333131;
+    border-bottom-left-radius: 25px;
+    border-top-left-radius: 25px;
+}
+
+.to-buy-box ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.photo img{
+    height: 150px;
+    width: 150px;
+    border-radius: 25px;
+    box-shadow: 2px 0 15px black;
+}
+
+.name-description-box{
+    height: 100%;
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+}
+
+.book-name{
+    height: 40%;
+    width: 100%;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    font-size: 35px;
+}
+
+.brief-description{
+    height: 60%;
+    width: 100%;
+    display: flex;
+    justify-content: left;
+    font-size: 20px;
+}
+
+.buttons-counter{
+    height: 100%;
+    width: 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.buttons-counter-btn{
+    height: 40px;
+    width: 60px;
+    font-size: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    background: none;
+    border: none;
+    border-radius: 6px;
+}
+
+.buttons-counter-btn:focus{
+    outline: none !important;
+}
+
+.buttons-counter-btn::-webkit-inner-spin-button{
+    opacity: 1;
+}
+
+.delete-price-box{
+    height: 100%;
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.delete-book{
+    height: 30%;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    background: none;
+    border: none;
+    color: white;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+.delete-book:hover{
+    color: black;
+    background: white;
+    box-shadow: 0 5px 15px black;
+}
+
+.price{
+    height: 50%;
+    width: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+}
+
+.ready-to-buy-box-wrapper{
+    height: 80px;
+    width: 65%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.ready-to-buy-box{
+    height: 100%;
+    width: 75%;
+}
+
+.total-to-buy,
+.total-price{
+    height: 40px;
+    width: 60%;
+    font-size: 30px;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+.ready-to-buy-button{
+    height: 80%;
+    width: 25%;
+    font-size: 25px;
+    color: white;
+    background: none;
+    border: none;
+    transition: 0.3s;
+    border-radius: 30px;
+}
+
+.ready-to-buy-button:hover{
+    color: black;
+    background: white;
+    box-shadow: 0 5px 15px black;
+}
