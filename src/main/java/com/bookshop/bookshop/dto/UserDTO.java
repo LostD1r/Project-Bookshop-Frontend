@@ -1,4 +1,4 @@
-package com.bookshop.bookshop.security;
+package com.bookshop.bookshop.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

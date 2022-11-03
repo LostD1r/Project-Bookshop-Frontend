@@ -25,7 +25,7 @@ public class Book {
     private String name;
     private String description;
     private String characteristic;
-    private BigDecimal price;
+    private Double price;
     @ManyToOne
     @JoinColumn(name = "author_id", referencedColumnName = "id")
     private Author author;

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -43,7 +43,7 @@
                 </div>
             </div>
             <div class="cart">
-                <a href="#cart">
+                <a href="/bucket">
                     <img src="../static/Photos/cart-icon.png" th:src="@{/Photos/cart-icon.png}" alt="Інонка корзини">
                 </a>
             </div>
@@ -59,19 +59,19 @@
             </div>
             <div class="to-buy-box-wrapper">
                 <div class="to-buy-box">
-                    <ul>
+                    <ul th:each="detail : ${bucket.bucketDetails}">
                         <li>
                             <div class="photo">
-                                <img src="../static/Photos/Latin_dictionary.jpg" alt="Фото книжки">
+                                <img th:src="${detail.getImg()}" alt="Фото книжки">
                             </div>
                             <div class="name-description-box">
                                 <div class="book-name">
-                                    <p>
+                                    <p th:text="${detail.getTitle()}">
                                         Назва книги
                                     </p>
                                 </div>
                                 <div class="brief-description">
-                                    <p>
+                                    <p th:text="${detail.getAuthor()}">
                                         Короткий опис
                                     </p>
                                 </div>
@@ -80,11 +80,13 @@
                                 <input class="buttons-counter-btn" type="number" value="1" min="1">
                             </div>
                             <div class="delete-price-box">
-                                <button class="delete-book">
-                                    Вилучити
-                                </button>
+                                <form th:method="DELETE" th:action="@{/bucket/{id}(id=${detail.getProductId()})}">
+                                    <button class="delete-book">
+                                        Вилучити
+                                    </button>
+                                </form>
                                 <div class="price">
-                                    Ціна:<p>999$</p>
+                                    Ціна:<p th:text="${detail.getPrice()}">999</p> UAH
                                 </div>
                             </div>
                         </li>
@@ -94,10 +96,10 @@
             <div class="ready-to-buy-box-wrapper">
                 <div class="ready-to-buy-box">
                     <div class="total-to-buy">
-                        Кількість товарів для закупівлі: <p>1</p>
+                        Кількість товарів для закупівлі: <p th:text="${bucket.getAmountProducts()}">1</p>
                     </div>
                     <div class="total-price">
-                        Загальна сума: <p>999$</p>
+                        Загальна сума: <p th:text="${bucket.getSum()}">999</p> UAH
                     </div>
                 </div>
                 <button class="ready-to-buy-button">
