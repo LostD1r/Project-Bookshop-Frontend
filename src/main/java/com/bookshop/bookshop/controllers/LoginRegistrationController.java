@@ -1,6 +1,6 @@
 package com.bookshop.bookshop.controllers;
 
-import com.bookshop.bookshop.security.UserDTO;
+import com.bookshop.bookshop.dto.UserDTO;
 import com.bookshop.bookshop.service.RegistrationService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

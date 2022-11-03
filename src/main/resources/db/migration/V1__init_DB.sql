@@ -9,7 +9,7 @@ create sequence post_seq start 1 increment 50;
 create sequence publishing_seq start 1 increment 50;
 create sequence user_seq start 1 increment 50;
 create table authors (id int8 not null, description varchar(255), name varchar(255), primary key (id));
-create table books (id int8 not null, characteristic varchar(255), description varchar(255), image varchar(255), name varchar(255), price numeric(19, 2), author_id int8, publishing_id int8, primary key (id));
+create table books (id int8 not null, characteristic varchar(255), description varchar(255), image varchar(255), name varchar(255), price float8, author_id int8, publishing_id int8, primary key (id));
 create table books_genres (genre_id int8 not null, book_id int8 not null);
 create table bucket_books (bucket_id int8 not null, book_id int8 not null);
 create table buckets (id int8 not null, user_id int8, primary key (id));
