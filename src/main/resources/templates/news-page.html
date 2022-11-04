@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" media="all" href="/static/style/news-page-styles.css" th:href="@{/style/news-page-styles.css}" />
+  <link rel="stylesheet" href="/static/style/reset.css" media="all" th:href="@{/style/reset.css}"/>
+    <title>News page</title>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">
+                <a href="/">
+                    <img src="../static/Photos/Logo3.png" th:src="@{/Photos/Logo3.png}" alt="Іконка логотипу">
+                </a>
+            </div>
+            <div class="nav-buttons">
+                <a href="/about-us">
+                    <button class="nav-button">
+                      Про нас
+                    </button>
+                </a>
+                <a href="/news">
+                    <button class="nav-button">
+                      Новини
+                    </button>
+                </a>
+                <a href="/catalog">
+                    <button class="nav-button">
+                      Каталог
+                    </button>
+                </a>
+            </div>
+            <div class="search-bar">
+                <div class="search-bar-background">
+                    <input type="text" placeholder="Пошук...">
+                    <a href="make-search">
+                        <img src="../static/Photos/search-icon.png" th:src="@{/Photos/search-icon.png}" alt="Іконка пошуку">
+                    </a>
+                </div>
+            </div>
+              <div class="cart">
+                  <a href="/bucket">
+                      <img src="../static/Photos/cart-icon.png" th:src="@{/Photos/cart-icon.png}" alt="Інонка корзини">
+                  </a>
+              </div>
+              <div class="account">
+                  <a href="#account-button">
+                      <img src="../static/Photos/account-icon.png" th:src="@{/Photos/account-icon.png}" alt="Іконка аккаунту">
+                  </a>
+              </div>
+        </div>
+      <div class="content">
+          <div class="news-box-wrapper">
+              <div class="news-box">
+                  <ul>
+                      <li>
+                          <div class="photo-box">
+                              <img src="../static/Photos/Latin_dictionary.jpg">
+                          </div>
+                          <div class="text-box-news-wrapper">
+                              <div class="header-news">
+                                  <p>
+                                      Новина
+                                  </p>
+                              </div>
+                              <div class="text-box-news">
+                                  <p>
+                                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab animi, aperiam at beatae
+                                      cum dignissimos dolore earum, fuga illo ipsa itaque
+                                      laudantium mollitia nemo numquam, pariatur perferendis quas repellat
+                                      rerum temporibus totam? Autem id illo incidunt minus omnis quod reprehenderit.
+                                  </p>
+                              </div>
+                              <div class="upload-date">
+                                  Опубліковано<p>1 вересня 2022</p>
+                              </div>
+                          </div>
+                      </li>
+                  </ul>
+              </div>
+          </div>
+        <div class="announced-box-wrapper">
+            <div class="announced-box">
+                <div class="header-announced">
+                    Анонси подій
+                </div>
+                <div class="text-box-announced-wrapper">
+                    <ul>
+                        <li>
+                            <div class="date">
+                                <p>
+                                    1 вересня
+                                </p>
+                            </div>
+                            <div class="text-box-announced">
+                                <p>
+                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                    Adipisci atque eius facilis itaque nesciunt provident quae
+                                    sunt! At debitis dolorem esse eveniet fugit nesciunt perspiciatis
+                                    vel!
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+</body>
+</html>
