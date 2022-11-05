@@ -17,7 +17,7 @@
                 </a>
             </div>
             <div class="nav-buttons">
-                <a href="/about-us">
+                <a href="/about">
                     <button class="nav-button">
                         Про нас
                     </button>
@@ -63,23 +63,12 @@
                     </div>
                     <hr style="width: 95% ">
                     <div class="about">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                            Dignissimos dolores earum eligendi et explicabo id impedit
-                            in minima quae reiciendis saepe sapiente sint unde velit,
-                            voluptatibus. Animi aperiam asperiores consectetur culpa
-                            eaque eveniet maxime minima nam numquam omnis quasi ratione s
-                            ed sequi, totam vero. Aliquid blanditiis cupiditate earum ex
-                            exercitationem facere id illo, in ipsum iste laudantium minima
-                            omnis perferendis quod reprehenderit ullam, voluptas? Ab alias
-                            architecto aut cum delectus dicta distinctio dolor, doloremque dolorum
-                            enim eveniet excepturi fuga impedit in incidunt ipsa itaque maxime, minus
-                            molestiae neque nobis odit perferendis porro praesentium reprehenderit
-                            repudiandae sed sunt totam vitae voluptas?</p>
+                        <p th:text="${user.getAbout()}">Lorem ipsum</p>
                     </div>
                 </div>
                 <div class="about-profile-right">
                     <div class="created-at">
-                        Дата створення профілю: 1 листопада 2022
+                        Дата створення профілю: <p th:text="${user.getCreatedDate()}">1 листопада 2022</p>
                     </div>
                     <div class="number-of-bought-books">
                         Кількість придбаних книг 0
@@ -93,7 +82,7 @@
                         </a>
                     </div>
                     <button class="edit-profile">
-                        <a href="">Редагувати профіль</a>
+                        <a href="/profile/settings">Редагувати профіль</a>
                     </button>
                 </div>
             </div>

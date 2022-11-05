@@ -9,6 +9,7 @@ import org.hibernate.annotations.UpdateTimestamp;
 
 import javax.persistence.*;
 import java.math.BigDecimal;
+import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -26,9 +27,9 @@ public class Order {
     @SequenceGenerator(name = SEQ_NAME, sequenceName = SEQ_NAME)
     private long id;
     @CreationTimestamp
-    private LocalDateTime created;
+    private Timestamp created;
     @UpdateTimestamp
-    private LocalDateTime updated;
+    private Timestamp updated;
     @ManyToOne
     @JoinColumn(name = "user_id", referencedColumnName = "id")
     private User user;

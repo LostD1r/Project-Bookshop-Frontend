@@ -79,7 +79,10 @@ public class BucketService {
     @javax.transaction.Transactional
     public void removeBook(Long id, String name){
         User user = personDetailsService.findByName(name);
-        Optional<Book> book = bookRepository.findById(id);
-        user.getBucket().getBooks().remove(book);
+        Bucket bucket = user.getBucket();
+
+        bucket.getBooks().remove(bookRepository.findById(id));
+
+        bucketRepository.save(bucket);
     }
 }

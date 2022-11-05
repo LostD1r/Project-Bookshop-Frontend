@@ -9,6 +9,7 @@ import org.hibernate.annotations.CreationTimestamp;
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.math.BigInteger;
+import java.sql.Timestamp;
 import java.time.LocalDateTime;
 
 @Data
@@ -31,6 +32,7 @@ public class Comment {
     @JoinColumn(name = "book_id", referencedColumnName = "id")
     private Book book;
     @CreationTimestamp
-    private LocalDateTime created;
+    private Timestamp created;
+    @Column(length = 500)
     private String message;
 }

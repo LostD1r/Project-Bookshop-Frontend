@@ -18,7 +18,7 @@
                 </a>
             </div>
             <div class="nav-buttons">
-                <a href="/about-us">
+                <a href="/about">
                     <button class="nav-button">
                         Про нас
                     </button>
@@ -66,7 +66,7 @@
                             <p th:text="${book.getName()}">Назва</p>
                         </div>
                         <div class="english-book-name">
-                            <p>Name</p>
+                            <p th:text="${book.getEnglishName()}">Name</p>
                         </div>
                     </div>
                     <div class="books-price-presence-wrapper">
@@ -74,7 +74,8 @@
                             <p th:text="${book.getPrice()}">444</p> UAH
                         </div>
                         <div class="book-presence">
-                            В наявності
+                            <p th:if="${book.getShopAmount()} > 0">В наявності</p>
+                            <p th:unless="${book.getShopAmount()}" id="not-avalible">Немає в наявності</p>
                         </div>
                     </div>
                     <button class="add-to-cart" type="button">
@@ -97,6 +98,10 @@
                         <p th:text="${book.getDescription()}">Опис книги.</p>
                     </div>
                     <div id="text-box-characteristic" class="text-box-characteristic">
+                        <p th:text="${book.getAuthor().getName()}">Автор</p>
+                        <tr th:each="genre : ${book.getGenres()}">
+                            <p th:text="${genre.getName()}">Жанр.</p>
+                        </tr>
                         <p th:text="${book.getCharacteristic()}">Характеристика книги.</p>
                     </div>
                     <div id="text-box-reviews" class="text-box-reviews">
@@ -104,8 +109,8 @@
                             Напишіть свій відгук
                         </span>
                         <div class="review-field">
-                            <form action="product-page.html">
-                                <textarea maxlength="500">TEST</textarea>
+                            <form th:method="POST" th:action="@{/catalog/{id}/comment(id=${book.id})}" th:object="${comment}">
+                                <textarea maxlength="500" th:field="*{massage}"></textarea>
                                 <button>
                                     Опублікувати
                                 </button>
@@ -118,7 +123,7 @@
                             <ul th:each="comment : ${book.getComments()}">
                                 <li>
                                     <div class="account-field">
-                                        <a href="" th:text="${comment.getUser().getName()}">Користувач 1</a>
+                                        <a th:href="@{/profile/{id}(id = ${comment.getUser().getId()})}" th:text="${comment.getUser().getName()}">Користувач 1</a>
                                     </div>
                                     <div class="text-field">
                                         <p th:text="${comment.getMessage()}">Привіт світ!</p>

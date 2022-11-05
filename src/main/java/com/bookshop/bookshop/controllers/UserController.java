@@ -18,4 +18,9 @@ public class UserController {
         model.addAttribute("user", user);
         return "user-page";
     }
+
+    @GetMapping("/profile/settings")
+    public String settingProfile(Model model){
+        return "user-page-settings";
+    }
 }
