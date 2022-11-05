@@ -359,3 +359,7 @@
     width: 100%;
     border-bottom: 2px solid #615e5e;
 }
+
+#not-avalible{
+    color: red;
+}

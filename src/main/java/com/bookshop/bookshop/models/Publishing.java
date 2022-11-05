@@ -22,6 +22,7 @@ public class Publishing {
     @SequenceGenerator(name = SEQ_NAME, sequenceName = SEQ_NAME)
     private long id;
     private String name;
+    @Column(length = 600)
     private String description;
     @OneToMany(mappedBy = "publishing")
     private List<Book> books;

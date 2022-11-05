@@ -31,6 +31,7 @@ public class RegistrationService {
                 .password(passwordEncoder.encode(user.getPassword()))
                 .email(user.getEmail())
                 .role(ROLE_USER)
+                .about("Про себе...")
                 .build();
         userRepository.save(newUser);
         return true;

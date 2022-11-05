@@ -19,7 +19,9 @@ public class Author {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = SEQ_NAME)
     @SequenceGenerator(name = SEQ_NAME, sequenceName = SEQ_NAME)
     private long id;
+    @Column(length = 50)
     private String name;
+    @Column(length = 600)
     private String description;
     @OneToMany(mappedBy = "author")
     private List<Book> book;

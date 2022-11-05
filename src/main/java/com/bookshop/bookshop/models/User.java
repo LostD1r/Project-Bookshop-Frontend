@@ -5,8 +5,12 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
+import java.sql.Timestamp;
+import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.List;
 
 @Data
@@ -33,7 +37,10 @@ public class User {
     private Role role;
     @OneToOne(cascade = CascadeType.REMOVE, mappedBy = "user")
     private Bucket bucket;
-
     @OneToMany(mappedBy = "user")
     private List<Comment> comment;
+    @CreationTimestamp
+    private Timestamp createdDate;
+    @Column(length = 500)
+    private String about;
 }

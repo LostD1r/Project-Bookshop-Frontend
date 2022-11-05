@@ -8,6 +8,7 @@ import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
 import java.math.BigInteger;
+import java.sql.Timestamp;
 import java.time.LocalDateTime;
 
 @Data
@@ -24,8 +25,9 @@ public class New {
     @SequenceGenerator(name = SEQ_NAME, sequenceName = SEQ_NAME)
     private long id;
     private String title;
+    @Column(length = 600)
     private String message;
     @CreationTimestamp
-    private LocalDateTime created;
+    private Timestamp created;
     private String image;
 }

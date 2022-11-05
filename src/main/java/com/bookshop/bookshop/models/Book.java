@@ -22,8 +22,13 @@ public class Book {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = SEQ_NAME)
     @SequenceGenerator(name = SEQ_NAME, sequenceName = SEQ_NAME)
     private long id;
+    @Column(length = 60)
     private String name;
+    @Column(length = 60)
+    private String englishName;
+    @Column(length = 600)
     private String description;
+    @Column(length = 500)
     private String characteristic;
     private Double price;
     @ManyToOne
@@ -44,4 +49,6 @@ public class Book {
 
     @OneToMany(mappedBy = "book")
     private List<Comment> comments;
+    private Long shopAmount;
+    private Long salesAmount;
 }

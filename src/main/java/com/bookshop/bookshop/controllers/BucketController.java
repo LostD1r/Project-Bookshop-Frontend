@@ -1,7 +1,8 @@
 package com.bookshop.bookshop.controllers;
 
+import com.bookshop.bookshop.dao.BookRepository;
 import com.bookshop.bookshop.dto.BucketDTO;
-import com.bookshop.bookshop.models.Bucket;
+import com.bookshop.bookshop.models.Book;
 import com.bookshop.bookshop.service.BucketService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -14,9 +15,11 @@ import java.security.Principal;
 @Controller
 public class BucketController {
     private final BucketService bucketService;
+    private final BookRepository bookRepository;
 
-    public BucketController(BucketService bucketService) {
+    public BucketController(BucketService bucketService, BookRepository bookRepository) {
         this.bucketService = bucketService;
+        this.bookRepository = bookRepository;
     }
 
     @GetMapping("/bucket")
@@ -33,7 +36,10 @@ public class BucketController {
     }
 
     @DeleteMapping("/bucket/{id}")
-    public void removeFromBucket(@PathVariable("id") Long id, Principal principal){
+    public String removeFromBucket(@PathVariable("id") Long id, Principal principal){
         bucketService.removeBook(id, principal.getName());
+        Book book = bookRepository.getById(id);
+        System.out.println(book.getId() + book.getName());
+        return "redirect:/bucket";
     }
 }
