@@ -1,140 +1,180 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<html lang="en" xmlns:th="http://thymeleaf.org" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" media="all" href="/static/style/product-page-styles.css" th:href="@{/style/product-page-styles.css}" />
-    <link rel="stylesheet" type="text/css" href="/static/style/reset.css" media="all" th:href="@{/style/reset.css}" />
+    <link rel="stylesheet" type="text/css" media="all" href="/static/style/product-page-styles.css"
+          th:href="@{/style/product-page-styles.css}"/>
+    <link rel="stylesheet" type="text/css" href="/static/style/reset.css" media="all" th:href="@{/style/reset.css}"/>
     <script src="../static/scripts/product-page-scripts.js" th:src="@{/scripts/product-page-scripts.js}"></script>
     <title>Product page</title>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <div class="logo">
-                <a href="/">
-                    <img src="../static/Photos/Logo3.png" th:src="@{/Photos/Logo3.png}" alt="Іконка логотипу">
-                </a>
-            </div>
-            <div class="nav-buttons">
-                <a href="/about">
-                    <button class="nav-button">
-                        Про нас
-                    </button>
-                </a>
-                <a href="/news">
-                    <button class="nav-button">
-                        Новини
-                    </button>
-                </a>
-                <a href="/catalog">
-                    <button class="nav-button">
-                        Каталог
-                    </button>
-                </a>
-            </div>
-            <div class="search-bar">
-                <div class="search-bar-background">
-                    <input type="text" placeholder="Пошук...">
-                    <a href="make-search">
-                        <img src="../static/Photos/search-icon.png" th:src="@{/Photos/search-icon.png}" alt="Іконка пошуку">
-                    </a>
-                </div>
-            </div>
-            <div class="cart">
-                <a href="/bucket">
-                    <img src="../static/Photos/cart-icon.png" th:src="@{/Photos/cart-icon.png}" alt="Інонка корзини">
-                </a>
-            </div>
-            <div class="account">
-                <a href="/profile">
-                    <img src="../static/Photos/account-icon.png" th:src="@{/Photos/account-icon.png}" alt="Іконка аккаунту">
+<div class="container">
+    <div class="header">
+        <div class="logo">
+            <a href="/">
+                <img src="../static/Photos/Logo3.png" th:src="@{/Photos/Logo3.png}" alt="Іконка логотипу">
+            </a>
+        </div>
+        <div class="nav-buttons">
+            <a href="/about">
+                <button class="nav-button">
+                    Про нас
+                </button>
+            </a>
+            <a href="/news">
+                <button class="nav-button">
+                    Новини
+                </button>
+            </a>
+            <a href="/catalog">
+                <button class="nav-button">
+                    Каталог
+                </button>
+            </a>
+        </div>
+        <div class="search-bar">
+            <div class="search-bar-background">
+                <input type="text" placeholder="Пошук...">
+                <a href="make-search">
+                    <img src="../static/Photos/search-icon.png" th:src="@{/Photos/search-icon.png}" alt="Іконка пошуку">
                 </a>
             </div>
         </div>
-        <div class="content">
-            <div class="photo-block">
-                <div class="photo">
-                    <img th:src="${book.getImage()}" alt="Фото книжки">
-                </div>
+        <div class="cart">
+            <a href="/bucket">
+                <img src="../static/Photos/cart-icon.png" th:src="@{/Photos/cart-icon.png}" alt="Інонка корзини">
+            </a>
+        </div>
+        <div class="account">
+            <a href="/profile">
+                <img src="../static/Photos/account-icon.png" th:src="@{/Photos/account-icon.png}" alt="Іконка аккаунту">
+            </a>
+        </div>
+    </div>
+    <div class="content">
+        <div class="photo-block">
+            <div class="photo">
+                <img th:src="${book.getImage()}" alt="Фото книжки">
             </div>
-            <div class="about-block">
-                <div class="text-box">
-                    <div class="books-name-wrapper">
-                        <div class="book-name">
-                            <p th:text="${book.getName()}">Назва</p>
-                        </div>
-                        <div class="english-book-name">
-                            <p th:text="${book.getEnglishName()}">Name</p>
-                        </div>
+        </div>
+        <div class="about-block">
+            <div class="text-box">
+                <div class="books-name-wrapper">
+                    <div class="book-name">
+                        <p th:text="${book.getName()}">Назва</p>
                     </div>
-                    <div class="books-price-presence-wrapper">
-                        <div class="book-price">
-                            <p th:text="${book.getPrice()}">444</p> UAH
-                        </div>
-                        <div class="book-presence">
-                            <p th:if="${book.getShopAmount()} > 0">В наявності</p>
-                            <p th:unless="${book.getShopAmount()}" id="not-avalible">Немає в наявності</p>
-                        </div>
+                    <div class="english-book-name">
+                        <p th:text="${book.getEnglishName()}">Name</p>
                     </div>
-                    <button class="add-to-cart" type="button">
-                        <a th:href="@{/catalog/{id}/bucket(id=${book.id})}">Додати до кошику</a>
-                    </button>
                 </div>
-                <div class="buttons">
-                    <button class="brief-description" onclick="popupDescription()">
-                        Короткий опис
-                    </button>
-                    <button class="characteristic" onclick="popupCharacteristic()">
-                        Характеристика
-                    </button>
-                    <button class="reviews" onclick="popupReviews()">
-                        Відгуки
-                    </button>
+                <div class="books-price-presence-wrapper">
+                    <div class="book-price">
+                        <p th:text="${book.getPrice()}">444</p> UAH
+                    </div>
+                    <div class="book-presence">
+                        <p th:if="${book.getShopAmount()} > 0">В наявності</p>
+                        <p th:unless="${book.getShopAmount()}" id="not-avalible">Немає в наявності</p>
+                    </div>
                 </div>
-                <div class="book-description">
-                    <div id="text-box-description" class="text-box-description">
-                        <p th:text="${book.getDescription()}">Опис книги.</p>
-                    </div>
-                    <div id="text-box-characteristic" class="text-box-characteristic">
-                        <p th:text="${book.getAuthor().getName()}">Автор</p>
-                        <tr th:each="genre : ${book.getGenres()}">
-                            <p th:text="${genre.getName()}">Жанр.</p>
-                        </tr>
-                        <p th:text="${book.getCharacteristic()}">Характеристика книги.</p>
-                    </div>
-                    <div id="text-box-reviews" class="text-box-reviews">
+                <button class="add-to-cart" type="button">
+                    <a th:href="@{/catalog/{id}/bucket(id=${book.id})}">Додати до кошику</a>
+                </button>
+            </div>
+            <div class="buttons">
+                <button class="brief-description" onclick="popupDescription()">
+                    Короткий опис
+                </button>
+                <button class="characteristic" onclick="popupCharacteristic()">
+                    Характеристика
+                </button>
+                <button class="reviews" onclick="popupReviews()">
+                    Відгуки
+                </button>
+            </div>
+            <div class="book-description">
+                <div id="text-box-description" class="text-box-description">
+                    <p th:text="${book.getDescription()}">Опис книги.</p>
+                </div>
+                <div id="text-box-characteristic" class="text-box-characteristic">
+                    <p th:text="${book.getAuthor().getName()}">Автор</p>
+                    <tr th:each="genre : ${book.getGenres()}">
+                        <p th:text="${genre.getName()}">Жанр.</p>
+                    </tr>
+                    <p th:text="${book.getCharacteristic()}">Характеристика книги.</p>
+                </div>
+                <div id="text-box-reviews" class="text-box-reviews">
                         <span>
                             Напишіть свій відгук
                         </span>
-                        <div class="review-field">
-                            <form th:method="POST" th:action="@{/catalog/{id}/comment(id=${book.id})}" th:object="${comment}">
-                                <textarea maxlength="500" th:field="*{massage}"></textarea>
-                                <button>
-                                    Опублікувати
-                                </button>
-                            </form>
-                        </div>
-                        <div class="number-of-reviews">
-                            Загальна кількість коментарів <p th:text="${book.getComments().size()}">2</p>
-                        </div>
-                        <div class="users-reviews">
-                            <ul th:each="comment : ${book.getComments()}">
-                                <li>
-                                    <div class="account-field">
-                                        <a th:href="@{/profile/{id}(id = ${comment.getUser().getId()})}" th:text="${comment.getUser().getName()}">Користувач 1</a>
-                                    </div>
-                                    <div class="text-field">
-                                        <p th:text="${comment.getMessage()}">Привіт світ!</p>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
+                    <div class="review-field">
+                        <form th:method="POST" th:action="@{/catalog/{id}/comment(id=${book.id})}"
+                              th:object="${comment}">
+                            <textarea maxlength="500" th:field="*{massage}"></textarea>
+                            <button>
+                                Опублікувати
+                            </button>
+                        </form>
+                    </div>
+                    <div class="number-of-reviews">
+                        Загальна кількість коментарів <p th:text="${book.getComments().size()}">2</p>
+                    </div>
+                    <div class="users-reviews">
+                        <ul th:each="comment : ${book.getComments()}">
+                            <li>
+                                <div class="account-field">
+                                    <a th:href="@{/profile/{id}(id = ${comment.getUser().getId()})}"
+                                       th:text="${comment.getUser().getName()}">Користувач 1</a>
+                                </div>
+                                <div class="text-field">
+                                    <p th:text="${comment.getMessage()}">Привіт світ!</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="account-field">
+                                    <a th:href="@{/profile/{id}(id = ${comment.getUser().getId()})}"
+                                       th:text="${comment.getUser().getName()}">Користувач 1</a>
+                                </div>
+                                <div class="text-field">
+                                    <p th:text="${comment.getMessage()}">Привіт світ!</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="account-field">
+                                    <a th:href="@{/profile/{id}(id = ${comment.getUser().getId()})}"
+                                       th:text="${comment.getUser().getName()}">Користувач 1</a>
+                                </div>
+                                <div class="text-field">
+                                    <p th:text="${comment.getMessage()}">Привіт світ!</p>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="account-field">
+                                    <a th:href="@{/profile/{id}(id = ${comment.getUser().getId()})}"
+                                       th:text="${comment.getUser().getName()}">Користувач 1</a>
+                                </div>
+                                <div class="text-field">
+                                    <p th:text="${comment.getMessage()}">Lorem ipsum dolor sit amet, consectetur
+                                        adipisicing elit. A aliquam, architecto assumenda corporis delectus deleniti
+                                        doloremque eligendi enim et illum ipsam ipsum, iusto modi mollitia omnis quam
+                                        quasi recusandae reiciendis sint ullam vel veniam, veritatis. Consequatur error
+                                        expedita explicabo incidunt sapiente soluta totam voluptate. Amet at consectetur
+                                        debitis neque pariatur.Lorem ipsum dolor sit amet, consectetur
+                                        adipisicing elit. A aliquam, architecto assumenda corporis delectus deleniti
+                                        doloremque eligendi enim et illum ipsam ipsum, iusto modi mollitia omnis quam
+                                        quasi recusandae reiciendis sint ullam vel veniam, veritatis. Consequatur error
+                                        expedita explicabo incidunt sapiente soluta totam voluptate. Amet at consectetur
+                                        debitis neque pariatur.</p>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 </body>
 </html>
