@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -72,11 +72,19 @@
                         Дата створення профілю: <p th:text="${user.getCreatedDate()}">1 листопада 2022</p>
                     </div>
                     <div class="number-of-bought-books">
-                        Кількість придбаних книг:&nbsp;<p th:text="${user.getBooks().size()}"></p>
+                        <p> Кількість придбаних книг:</p> <p th:text="${user.getBooks().size()}">0</p>
                     </div>
                     <div class="status">
-                        Статус:&nbsp;<p th:text="${user.getRole()}">учасник</p>
+                        <p th:text="${user.getRole()}">Статус: учасник</p>
                     </div>
+                    <div class="admin-panel">
+                        <a href="">
+                            Панель адміністратора
+                        </a>
+                    </div>
+                    <button class="edit-profile">
+                        <a href="/profile/settings">Редагувати профіль</a>
+                    </button>
                 </div>
             </div>
             <div class="bought-books">

@@ -158,18 +158,25 @@ body{
 .about-profile-right{
     height: 100%;
     width: 50%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
 }
 
 .created-at{
     font-size: 25px;
     margin-left: 20px;
     margin-top: 20px;
+    display: flex;
+    flex-flow: row wrap;
 }
 
 .number-of-bought-books,
 .status{
     font-size: 25px;
     margin-left: 20px;
+    display: flex;
+    flex-flow: row wrap;
 }
 
 .admin-panel{
@@ -186,22 +193,30 @@ body{
 }
 
 .edit-profile{
+    height: 50px;
+    width: 280px;
     position: relative;
-    top: 70px;
+    top: 20px;
     left: 670px;
     font-size: 25px;
     background: none;
     color: white;
     border: none;
     transition: 0.3s;
-    padding: 10px;
     border-radius: 10px;
     box-shadow: 0 3px 15px black;
+    padding: 0 0 0 0;
 }
 
 .edit-profile a{
+    height: 100%;
+    width: 100%;
     text-decoration: none;
     color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
 }
 
 .edit-profile a:hover{

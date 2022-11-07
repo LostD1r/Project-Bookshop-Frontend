@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<html lang="en" xmlns:th="http://thymeleaf.org" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,6 +8,7 @@
           th:href="@{/style/product-page-styles.css}"/>
     <link rel="stylesheet" type="text/css" href="/static/style/reset.css" media="all" th:href="@{/style/reset.css}"/>
     <script src="../static/scripts/product-page-scripts.js" th:src="@{/scripts/product-page-scripts.js}"></script>
+    <script src="../static/scripts/search-script.js" th:src="@{/scripts/search-script.js}"></script>
     <title>Product page</title>
 </head>
 <body>
@@ -37,8 +38,8 @@
         </div>
         <div class="search-bar">
             <div class="search-bar-background">
-                <input type="text" placeholder="Пошук...">
-                <a href="make-search">
+                <input id="search" type="text" placeholder="Пошук...">
+                <a class="make-search" onclick="makeSearch()">
                     <img src="../static/Photos/search-icon.png" th:src="@{/Photos/search-icon.png}" alt="Іконка пошуку">
                 </a>
             </div>
@@ -80,7 +81,7 @@
                     </div>
                 </div>
                 <button class="add-to-cart" type="button">
-                    <a th:href="@{/catalog/{id}/bucket(id=${book.id})}">Додати до кошику</a>
+                    <a th:href="@{/catalog/{id}/bucket(id=${book.id})}" aria-disabled="true">Додати до кошику</a>
                 </button>
             </div>
             <div class="buttons">
@@ -112,14 +113,14 @@
                     <div class="review-field">
                         <form th:method="POST" th:action="@{/catalog/{id}/comment(id=${book.id})}"
                               th:object="${comment}">
-                            <textarea maxlength="500" th:field="*{massage}"></textarea>
+                            <textarea maxlength="500" th:field="*{massage}" required="required"></textarea>
                             <button>
                                 Опублікувати
                             </button>
                         </form>
                     </div>
                     <div class="number-of-reviews">
-                        Загальна кількість коментарів <p th:text="${book.getComments().size()}">2</p>
+                        Загальна кількість коментарів:&nbsp;<p th:text="${book.getComments().size()}">2</p>
                     </div>
                     <div class="users-reviews">
                         <ul th:each="comment : ${book.getComments()}">

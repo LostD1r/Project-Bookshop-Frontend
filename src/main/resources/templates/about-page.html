@@ -7,6 +7,7 @@
     <link rel="stylesheet" type="text/css" media="all" href="/static/style/about-page-styles.css"
           th:href="@{/style/about-page-styles.css}"/>
     <link rel="stylesheet" href="/static/style/reset.css" media="all" th:href="@{/style/reset.css}"/>
+    <script src="../static/scripts/search-script.js" th:src="@{/scripts/search-script.js}"></script>
     <title>About page</title>
 </head>
 <body>
@@ -36,8 +37,8 @@
         </div>
         <div class="search-bar">
             <div class="search-bar-background">
-                <input type="text" placeholder="Пошук...">
-                <a href="make-search">
+                <input id="search" type="text" placeholder="Пошук...">
+                <a class="make-search" onclick="makeSearch()">
                     <img src="../static/Photos/search-icon.png" th:src="@{/Photos/search-icon.png}" alt="Іконка пошуку">
                 </a>
             </div>

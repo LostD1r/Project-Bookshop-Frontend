@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="/static/style/reset.css" media="all" th:href="@{/style/reset.css}" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
     <script src="../static/scripts/scripts.js" th:src="@{/scripts/scripts.js}"></script>
+    <script src="../static/scripts/search-script.js" th:src="@{/scripts/search-script.js}"></script>
     <title>LockRum</title>
 </head>
 <body>
@@ -37,8 +38,8 @@
             </div>
             <div class="search-bar">
                 <div class="search-bar-background">
-                    <input type="text" placeholder="Пошук...">
-                    <a href="make-search">
+                    <input id="search" type="text" placeholder="Пошук...">
+                    <a class="make-search" onclick="makeSearch()">
                         <img src="../static/Photos/search-icon.png" th:src="@{/Photos/search-icon.png}" alt="Іконка пошуку">
                     </a>
                 </div>

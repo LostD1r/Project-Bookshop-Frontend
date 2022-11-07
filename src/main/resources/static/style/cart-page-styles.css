@@ -146,6 +146,17 @@
     overflow: auto;
 }
 
+.to-buy-box ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.to-buy-box ul:nth-child(n):not(:last-child){
+    margin-bottom: 20px;
+}
+
 .to-buy-box ul li{
     height: 150px;
     width: 100%;
@@ -154,14 +165,6 @@
     background: #333131;
     border-bottom-left-radius: 25px;
     border-top-left-radius: 25px;
-}
-
-.to-buy-box ul{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    margin: 20px;
 }
 
 .photo img{

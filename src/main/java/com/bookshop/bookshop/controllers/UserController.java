@@ -20,7 +20,7 @@ public class UserController {
         User user = personDetails.getUser();
         user.setBooks(new ArrayList<Book>());
         model.addAttribute("user", user);
-        return "user-page";
+        return "user-page-authorized";
     }
 
     @GetMapping("/profile/settings")
