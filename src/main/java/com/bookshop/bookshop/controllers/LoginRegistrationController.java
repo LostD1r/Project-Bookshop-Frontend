@@ -10,10 +10,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 
 @Controller
 public class LoginRegistrationController {
-    private final RegistrationService userService;
+    private final RegistrationService registrationService;
 
-    public LoginRegistrationController(RegistrationService userService) {
-        this.userService = userService;
+    public LoginRegistrationController(RegistrationService registrationService) {
+        this.registrationService = registrationService;
     }
 
     @GetMapping("/login-page")
@@ -25,14 +25,16 @@ public class LoginRegistrationController {
 
     @PostMapping("/registration")
     public String addUser(@ModelAttribute("userForm") UserDTO userForm, Model model) {
+        System.out.println(755);
         if (!userForm.getPassword().equals(userForm.getMatchingPassword())){
             model.addAttribute("passwordError", "Паролі не співпадають");
-            return "login-page";
+            return "redirect:/login-page";
         }
-        if (!userService.save(userForm)){
-            return "login-page";
+        System.out.println(655);
+        if (!registrationService.save(userForm)){
+            return "redirect:/login-page";
         }
-
-        return "redirect:/login-page";
+        System.out.println(555);
+        return "login-page";
     }
 }

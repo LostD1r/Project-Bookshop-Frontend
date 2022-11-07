@@ -36,10 +36,8 @@ public class BucketController {
     }
 
     @DeleteMapping("/bucket/{id}")
-    public String removeFromBucket(@PathVariable("id") Long id, Principal principal){
+    public String removeFromBucket(@PathVariable("id") long id, Principal principal){
         bucketService.removeBook(id, principal.getName());
-        Book book = bookRepository.getById(id);
-        System.out.println(book.getId() + book.getName());
         return "redirect:/bucket";
     }
 }

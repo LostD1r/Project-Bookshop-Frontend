@@ -8,5 +8,10 @@ import java.util.List;
 
 @Repository
 public interface BookRepository extends JpaRepository<Book, Long> {
-    List<Book> findByNameContaining(String substr);
+    List<Book> findByNameContainingIgnoreCase(String substr);
+    Book findById(long id);
+
+    List<Book> findTop20ByOrderBySalesAmountDesc();
+
+    List<Book> findTop10ByOrderByCreatedDateDesc();
 }

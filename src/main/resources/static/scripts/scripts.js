@@ -1,10 +1,10 @@
 window.onload = function () {
-    var scr_shelf_one = $(".shelf-one");
-    var scr_shelf_two = $(".shelf-two");
-    var scr_shelf_three = $(".shelf-three");
+    let scr_shelf_one = $(".shelf-one");
+    let scr_shelf_two = $(".shelf-two");
+    let scr_shelf_three = $(".shelf");
     scr_shelf_one.mousedown(function () {
-        var startX = this.scrollLeft + event.pageX;
-        var startY = this.scrollTop + event.pageY;
+        let startX = this.scrollLeft + event.pageX;
+        let startY = this.scrollTop + event.pageY;
         scr_shelf_one.mousemove(function () {
             this.scrollLeft = startX - event.pageX;
             this.scrollTop = startY - event.pageY;
@@ -12,8 +12,8 @@ window.onload = function () {
         });
     });
     scr_shelf_two.mousedown(function () {
-        var startX = this.scrollLeft + event.pageX;
-        var startY = this.scrollTop + event.pageY;
+        let startX = this.scrollLeft + event.pageX;
+        let startY = this.scrollTop + event.pageY;
         scr_shelf_two.mousemove(function () {
             this.scrollLeft = startX - event.pageX;
             this.scrollTop = startY - event.pageY;
@@ -21,8 +21,8 @@ window.onload = function () {
         });
     });
     scr_shelf_three.mousedown(function () {
-        var startX = this.scrollLeft + event.pageX;
-        var startY = this.scrollTop + event.pageY;
+        let startX = this.scrollLeft + event.pageX;
+        let startY = this.scrollTop + event.pageY;
         scr_shelf_three.mousemove(function () {
             this.scrollLeft = startX - event.pageX;
             this.scrollTop = startY - event.pageY;

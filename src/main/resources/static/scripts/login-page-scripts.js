@@ -6,7 +6,7 @@ function changeColorLogin(){
     document.getElementById('auth-method-button-registry').style.color = 'black';
     document.getElementById('auth-method-button-registry').style.border = 'none';
     document.getElementById('login-input-registry').type = 'text';
-    document.getElementById('email-input-registry').type = 'email';
+    document.getElementById('email-input-registry').type = 'text';
     document.getElementById('password-input-registry').type = 'password';
     document.getElementById('password-reinput-registry').type = 'password';
     document.getElementById('login-input-login').type = 'hidden';
@@ -15,7 +15,6 @@ function changeColorLogin(){
     document.getElementById('submit-form-registry').style.visibility = 'visible';
     document.getElementById('submit-form-login').style.transition = 'none';
     document.getElementById('submit-form-registry').style.transition = '0.4s';
-    window.history.pushState('login-page', 'Title', '/registration');
 }
 
 function changeColorRegistry(){
