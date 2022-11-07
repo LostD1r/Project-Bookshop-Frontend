@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -55,27 +55,24 @@
       <div class="content">
           <div class="news-box-wrapper">
               <div class="news-box">
-                  <ul>
+                  <ul th:each="new : ${news}">
                       <li>
                           <div class="photo-box">
-                              <img src="../static/Photos/Latin_dictionary.jpg">
+                              <img th:src="${new.getImage()}">
                           </div>
                           <div class="text-box-news-wrapper">
                               <div class="header-news">
-                                  <p>
+                                  <p th:text="${new.getTitle()}">
                                       Новина
                                   </p>
                               </div>
                               <div class="text-box-news">
-                                  <p>
-                                      Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab animi, aperiam at beatae
-                                      cum dignissimos dolore earum, fuga illo ipsa itaque
-                                      laudantium mollitia nemo numquam, pariatur perferendis quas repellat
-                                      rerum temporibus totam? Autem id illo incidunt minus omnis quod reprehenderit.
+                                  <p th:text="${new.getMessage()}">
+
                                   </p>
                               </div>
                               <div class="upload-date">
-                                  Опубліковано<p>1 вересня 2022</p>
+                                  Опубліковано<p th:text="${new.getCreated()}">1 вересня 2022</p>
                               </div>
                           </div>
                       </li>
@@ -88,19 +85,16 @@
                     Анонси подій
                 </div>
                 <div class="text-box-announced-wrapper">
-                    <ul>
+                    <ul th:each="event : ${events}">
                         <li>
                             <div class="date">
-                                <p>
+                                <p th:text="${event.getCreated()}">
                                     1 вересня
                                 </p>
                             </div>
                             <div class="text-box-announced">
-                                <p>
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                    Adipisci atque eius facilis itaque nesciunt provident quae
-                                    sunt! At debitis dolorem esse eveniet fugit nesciunt perspiciatis
-                                    vel!
+                                <p th:text="${event.getMessage()}">
+
                                 </p>
                             </div>
                         </li>

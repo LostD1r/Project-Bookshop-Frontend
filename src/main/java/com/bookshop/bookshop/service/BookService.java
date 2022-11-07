@@ -28,7 +28,7 @@ public class BookService{
     }
 
     public List<Book> search(String str){
-        return bookRepository.findByNameContaining(str);
+        return bookRepository.findByNameContainingIgnoreCase(str);
     }
 
     @javax.transaction.Transactional
@@ -54,6 +54,13 @@ public class BookService{
 
     }
 
+    public List<Book> getLastAdded(){
+        return bookRepository.findTop10ByOrderByCreatedDateDesc();
+    }
+
+    public List<Book> getTopBySales(){
+        return bookRepository.findTop20ByOrderBySalesAmountDesc();
+    }
 
     public Book getById(Long id) {
         Book book = bookRepository.findById(id).orElse(new Book());

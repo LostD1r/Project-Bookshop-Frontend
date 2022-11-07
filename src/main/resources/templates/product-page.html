@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -130,43 +130,6 @@
                                 </div>
                                 <div class="text-field">
                                     <p th:text="${comment.getMessage()}">Привіт світ!</p>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="account-field">
-                                    <a th:href="@{/profile/{id}(id = ${comment.getUser().getId()})}"
-                                       th:text="${comment.getUser().getName()}">Користувач 1</a>
-                                </div>
-                                <div class="text-field">
-                                    <p th:text="${comment.getMessage()}">Привіт світ!</p>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="account-field">
-                                    <a th:href="@{/profile/{id}(id = ${comment.getUser().getId()})}"
-                                       th:text="${comment.getUser().getName()}">Користувач 1</a>
-                                </div>
-                                <div class="text-field">
-                                    <p th:text="${comment.getMessage()}">Привіт світ!</p>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="account-field">
-                                    <a th:href="@{/profile/{id}(id = ${comment.getUser().getId()})}"
-                                       th:text="${comment.getUser().getName()}">Користувач 1</a>
-                                </div>
-                                <div class="text-field">
-                                    <p th:text="${comment.getMessage()}">Lorem ipsum dolor sit amet, consectetur
-                                        adipisicing elit. A aliquam, architecto assumenda corporis delectus deleniti
-                                        doloremque eligendi enim et illum ipsam ipsum, iusto modi mollitia omnis quam
-                                        quasi recusandae reiciendis sint ullam vel veniam, veritatis. Consequatur error
-                                        expedita explicabo incidunt sapiente soluta totam voluptate. Amet at consectetur
-                                        debitis neque pariatur.Lorem ipsum dolor sit amet, consectetur
-                                        adipisicing elit. A aliquam, architecto assumenda corporis delectus deleniti
-                                        doloremque eligendi enim et illum ipsam ipsum, iusto modi mollitia omnis quam
-                                        quasi recusandae reiciendis sint ullam vel veniam, veritatis. Consequatur error
-                                        expedita explicabo incidunt sapiente soluta totam voluptate. Amet at consectetur
-                                        debitis neque pariatur.</p>
                                 </div>
                             </li>
                         </ul>

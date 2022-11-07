@@ -56,16 +56,16 @@
         </div>
         <div class="content">
             <div class="shelf-header">
-                Топ книг
+                Новинки
             </div>
             <div class="shelf">
-                <ul>
+                <ul th:each="book : ${lastAddedList}">
                     <li>
-                        <a href="#book-one">
-                            <img src="../static/Photos/Latin_dictionary.jpg" th:src="@{/Photos/Latin_dictionary.jpg}" alt="Фото книжки">
+                        <a th:href="@{/catalog/book/{id}(id=${book.getId()})}">
+                            <img th:src="${book.getImage()}" alt="Фото книжки">
                         </a>
                         <div class="text-box-wrapper">
-                            TEST
+                            <p th:text="${book.getName()}"></p>
                         </div>
                     </li>
                 </ul>
@@ -74,13 +74,13 @@
                 Цікаві книги
             </div>
             <div class="shelf">
-                <ul>
+                <ul th:each="book : ${topSales}">
                     <li>
-                        <a href="#book-one">
-                            <img src="../static/Photos/Latin_dictionary.jpg" alt="Фото книжки">
+                        <a th:href="@{/catalog/book/{id}(id=${book.getId()})}">
+                            <img th:src="${book.getImage()}" alt="Фото Книжки">
                         </a>
                         <div class="text-box-wrapper">
-                            TEST
+                            <p th:text="${book.getName()}"></p>
                         </div>
                     </li>
                 </ul>
@@ -89,13 +89,13 @@
                 Бестселлери
             </div>
             <div class="shelf">
-                <ul>
+                <ul th:each="book : ${topSales}">
                     <li>
-                        <a href="#book-one">
-                            <img src="../static/Photos/Latin_dictionary.jpg" alt="Фото Книжки">
+                        <a th:href="@{/catalog/book/{id}(id=${book.getId()})}">
+                            <img th:src="${book.getImage()}" alt="Фото Книжки">
                         </a>
                         <div class="text-box-wrapper">
-                            TEST
+                            <p th:text="${book.getName()}"></p>
                         </div>
                     </li>
                 </ul>

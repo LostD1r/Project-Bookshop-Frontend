@@ -71,7 +71,7 @@
                         Дата створення профілю: <p th:text="${user.getCreatedDate()}">1 листопада 2022</p>
                     </div>
                     <div class="number-of-bought-books">
-                        Кількість придбаних книг 0
+                        <p> Кількість придбаних книг:</p> <p th:text="${user.getBooks().size()}">0</p>
                     </div>
                     <div class="status">
                         <p th:text="${user.getRole()}">Статус: учасник</p>
@@ -90,21 +90,21 @@
                 Придбані книги
             </div>
             <div class="bought-books-list">
-                <ul>
+                <ul th:each="book : ${user.getBooks()}">
                     <li>
                         <div class="bought-books-list-photo">
-                            <a href="">
+                            <a th:href="@{/catalog/book/{id}(id = ${book.getId()})}">
                                 <img src="../static/Photos/Latin_dictionary.jpg" alt="">
                             </a>
                         </div>
                         <div class="bought-books-list-text-wrapper">
                             <div class="bought-books-list-text">
                                 <div class="bought-books-list-text-name">
-                                    Назва
+                                    <p th:text="${book.getName()}">Назва</p>
                                 </div>
                                 <hr style="width: 97%">
                                 <div class="bought-books-list-text-brief-description">
-                                    Короткий опис
+                                    <p th:text="${book.getAuthor().getName()}">Короткий опис</p>
                                 </div>
                             </div>
                         </div>

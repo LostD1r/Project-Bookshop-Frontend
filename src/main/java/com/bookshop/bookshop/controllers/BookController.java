@@ -23,7 +23,7 @@ public class BookController {
         this.commentService = commentService;
     }
 
-    @GetMapping("/catalog/{id}")
+    @GetMapping("/catalog/book/{id}")
     public String getBookById(@PathVariable("id") Long id, Model model){
         Book book = bookService.getById(id);
         model.addAttribute("book", book);

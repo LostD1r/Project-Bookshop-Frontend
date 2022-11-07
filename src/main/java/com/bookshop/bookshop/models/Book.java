@@ -1,10 +1,10 @@
 package com.bookshop.bookshop.models;
 
 import lombok.*;
-import org.springframework.web.bind.annotation.Mapping;
+import org.hibernate.annotations.CreationTimestamp;
 
 import javax.persistence.*;
-import java.math.BigDecimal;
+import java.sql.Timestamp;
 import java.util.List;
 
 @Setter
@@ -44,11 +44,16 @@ public class Book {
     private Publishing publishing;
     private String image;
 
-    @OneToMany(mappedBy = "book")
+    @OneToMany(mappedBy = "book", cascade = CascadeType.ALL)
     private List<OrderDetails> orderDetails;
 
     @OneToMany(mappedBy = "book")
     private List<Comment> comments;
     private Long shopAmount;
     private Long salesAmount;
+    @CreationTimestamp
+    private Timestamp createdDate;
+
+    @ManyToMany(mappedBy = "books")
+    private List<User> users;
 }
