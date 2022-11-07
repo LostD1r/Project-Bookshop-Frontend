@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" media="all" href="/static/style/cart-page-styles.css" th:href="@{/style/cart-page-styles.css}" />
     <link rel="stylesheet" href="/static/style/reset.css" media="all" th:href="@{/style/reset.css}"/>
+    <script src="../static/scripts/search-script.js" th:src="@{/scripts/search-script.js}"></script>
     <title>Cart page</title>
 </head>
 <body>
@@ -35,8 +36,8 @@
             </div>
             <div class="search-bar">
                 <div class="search-bar-background">
-                    <input type="text" placeholder="Пошук...">
-                    <a href="make-search">
+                    <input id="search" type="text" placeholder="Пошук...">
+                    <a class="make-search" onclick="makeSearch()">
                         <img src="../static/Photos/search-icon.png" th:src="@{/Photos/search-icon.png}" alt="Іконка пошуку">
                     </a>
                 </div>
@@ -61,7 +62,9 @@
                     <ul th:each="detail : ${bucket.bucketDetails}">
                         <li>
                             <div class="photo">
-                                <img th:src="${detail.getImg()}" alt="Фото книжки">
+                                <a th:href="@{/catalog/book/{id}(id=${detail.productId})}" target="_blank">
+                                    <img th:src="${detail.getImg()}" alt="Фото книжки">
+                                </a>
                             </div>
                             <div class="name-description-box">
                                 <div class="book-name">
@@ -82,7 +85,7 @@
                                     </button>
                                 </form>
                                 <div class="price">
-                                    Ціна:<p th:text="${detail.getPrice()}">999</p> UAH
+                                    Ціна:&nbsp;<p th:text="${detail.getPrice()}">999</p>&nbsp;UAH
                                 </div>
                             </div>
                         </li>
@@ -92,10 +95,10 @@
             <div class="ready-to-buy-box-wrapper">
                 <div class="ready-to-buy-box">
                     <div class="total-to-buy">
-                        Кількість товарів для закупівлі: <p th:text="${bucket.getAmountProducts()}">1</p>
+                        Кількість товарів для закупівлі:&nbsp;<p th:text="${bucket.getAmountProducts()}">1</p>
                     </div>
                     <div class="total-price">
-                        Загальна сума: <p th:text="${bucket.getSum()}">999</p> UAH
+                        Загальна сума:&nbsp;<p th:text="${bucket.getSum()}">999</p>&nbsp;UAH
                     </div>
                 </div>
                 <form class="ready-to-buy-button">

@@ -335,6 +335,8 @@
     position: relative;
     right: 280px;
     margin-top: 20px;
+    display: flex;
+    flex-flow: row wrap;
 }
 
 .users-reviews{
@@ -359,7 +361,9 @@
 .text-field{
     min-height: 80px;
     max-height: 200px;
-    width: 100%;
+    max-width: 100%;
+    word-wrap: break-word;
+    padding-bottom: 10px;
     border-bottom: 2px solid #615e5e;
 }
 

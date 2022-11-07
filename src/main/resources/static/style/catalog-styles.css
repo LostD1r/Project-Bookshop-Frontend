@@ -122,10 +122,6 @@ body{
     background: white;
 }
 
-.account a button{
-    border-radius: 10px;
-}
-
 .content{
     height: 1200px;
     width: 100vw;
