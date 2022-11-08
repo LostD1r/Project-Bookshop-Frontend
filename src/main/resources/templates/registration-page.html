@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" media="all" href="/static/style/login-registration-page-styles.css" th:href="@{/style/login-registration-page-styles.css}" />
+    <link rel="stylesheet" href="/static/style/reset.css" media="all" th:href="@{/style/reset.css}" />
+    <title>Registration page</title>
+</head>
+<body>
+<div class="container">
+    <div class="content">
+        <div class="login-form">
+            <div class="auth-header">
+                <div class="header">
+                    Реєстрація
+                </div>
+            </div>
+            <!--Registry form-->
+            <form id="registry-form" th:method="POST" th:action="@{/registration}" th:object="${userForm}">
+                <input id="login-input-registry" class="login-input-registry" th:field="*{username}" placeholder="Придумайте логін" required="required">
+                <input id="email-input-registry" class="email-input-registry" th:field="*{email}" placeholder="Введіть електронну пошту" required="required">
+                <input id="password-input-registry" class="password-input-registry" th:field="*{password}" placeholder="Придумайте пароль" required="required">
+                <input id="password-reinput-registry" class="password-reinput-registry" th:field="*{matchingPassword}" placeholder="Повторіть пароль" required="required">
+                <button id="submit-form-registry" class="submit-form-registry" type="submit">
+                    Зареєструватися
+                </button>
+            </form>
+            <div class="redirect-to-login">
+                Вже маєте аккаунт? <a href="login-page.html">Увійти</a>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
