@@ -39,5 +39,9 @@ public class PersonDetailsService implements UserDetailsService {
     public void save(User user) {
         userRepository.save(user);
     }
+
+    public User findById(long id) {
+        return userRepository.findById(id);
+    }
 }
 

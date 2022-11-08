@@ -17,4 +17,8 @@ public class PublishingService{
     public List<Publishing> getAll() {
         return publishingRepository.findAll();
     }
+
+    public Publishing getByName(String publishingName) {
+        return publishingRepository.getFirstByName(publishingName);
+    }
 }

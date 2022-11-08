@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -81,7 +81,7 @@
                     </div>
                 </div>
                 <button class="add-to-cart" type="button">
-                    <a th:href="@{/catalog/{id}/bucket(id=${book.id})}" aria-disabled="true">Додати до кошику</a>
+                    <a th:href="@{/catalog/book/{id}/bucket(id=${book.id})}" aria-disabled="true">Додати до кошику</a>
                 </button>
             </div>
             <div class="buttons">
@@ -111,7 +111,7 @@
                             Напишіть свій відгук
                         </span>
                     <div class="review-field">
-                        <form th:method="POST" th:action="@{/catalog/{id}/comment(id=${book.id})}"
+                        <form th:method="POST" th:action="@{/catalog/book/{id}/comment(id=${book.id})}"
                               th:object="${comment}">
                             <textarea maxlength="500" th:field="*{massage}" required="required"></textarea>
                             <button>

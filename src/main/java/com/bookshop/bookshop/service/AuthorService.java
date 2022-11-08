@@ -17,4 +17,8 @@ public class AuthorService{
         List<Author> list = authorRepository.findAll();
         return list;
     }
+
+    public Author getByName(String authorName) {
+        return authorRepository.findFirstByName(authorName);
+    }
 }

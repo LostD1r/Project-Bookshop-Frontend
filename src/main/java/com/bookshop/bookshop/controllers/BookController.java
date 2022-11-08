@@ -31,7 +31,7 @@ public class BookController {
         return "product-page";
     }
 
-    @GetMapping("/catalog/{id}/bucket")
+    @GetMapping("/catalog/book/{id}/bucket")
     public String addBucket(@PathVariable Long id, Principal principal){
         if(principal == null){
             return "redirect:/products";
@@ -40,13 +40,13 @@ public class BookController {
         return "redirect:/catalog";
     }
 
-    @PostMapping("/catalog/{id}/comment")
+    @PostMapping("/catalog/book/{id}/comment")
     public String newController(Principal principal, @PathVariable("id") Long id,
                                 @ModelAttribute("comment") CommentDto commentDto){
         String name = principal.getName();
         if (!commentService.newComment(id, name, commentDto)){
-            return "redirect:/catalog/{id}";
+            return "redirect:/catalog/book/{id}";
         }
-        return "redirect:/catalog/{id}";
+        return "redirect:/catalog/book/{id}";
     }
 }

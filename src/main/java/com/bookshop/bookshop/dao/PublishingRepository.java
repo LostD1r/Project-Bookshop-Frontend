@@ -6,4 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface PublishingRepository extends JpaRepository<Publishing, Long> {
+    Publishing getFirstByName(String publishingName);
 }
