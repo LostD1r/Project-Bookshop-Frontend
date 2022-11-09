@@ -21,12 +21,15 @@
                     <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
                     <input id="login-input-login" class="login-input-login" name="username" type="text" placeholder="Введіть логін" required="required">
                     <input id="password-input-login" class="password-input-login" type="password" name="password" placeholder="Введіть пароль" required="required">
+                    <div th:if="${param.error}" style="color: red">
+                        Неправильний логін або пароль.
+                    </div>
                     <button id="submit-form-login" class="submit-form-login" type="submit">
                         Увійти
                     </button>
                 </form>
                 <div class="redirect-to-registry">
-                    Ще не маєте аккаунту? <a href="registration-page.html">Зареєструватися</a>
+                    Ще не маєте аккаунту? <a href="/registration">Зареєструватися</a>
                 </div>
             </div>
         </div>

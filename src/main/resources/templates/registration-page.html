@@ -19,16 +19,19 @@
             </div>
             <!--Registry form-->
             <form id="registry-form" th:method="POST" th:action="@{/registration}" th:object="${userForm}">
-                <input id="login-input-registry" class="login-input-registry" th:field="*{username}" placeholder="Придумайте логін" required="required">
-                <input id="email-input-registry" class="email-input-registry" th:field="*{email}" placeholder="Введіть електронну пошту" required="required">
-                <input id="password-input-registry" class="password-input-registry" th:field="*{password}" placeholder="Придумайте пароль" required="required">
-                <input id="password-reinput-registry" class="password-reinput-registry" th:field="*{matchingPassword}" placeholder="Повторіть пароль" required="required">
+                <input id="login-input-registry" class="login-input-registry" th:field="*{username}" placeholder="Придумайте логін">
+                <p style="color:red" th:if="${#fields.hasErrors('username')}" th:errors="*{username}">Name Error</p>
+                <input id="email-input-registry" class="email-input-registry" th:field="*{email}" placeholder="Введіть електронну пошту">
+                <p style="color:red" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Age Error</p>
+                <input id="password-input-registry" class="password-input-registry" th:field="*{password}" placeholder="Придумайте пароль" type="password">
+                <p style="color:red" th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Age Error</p>
+                <input id="password-reinput-registry" class="password-reinput-registry" th:field="*{matchingPassword}" placeholder="Повторіть пароль" type="password">
                 <button id="submit-form-registry" class="submit-form-registry" type="submit">
                     Зареєструватися
                 </button>
             </form>
             <div class="redirect-to-login">
-                Вже маєте аккаунт? <a href="login-page.html">Увійти</a>
+                Вже маєте аккаунт? <a href="/login-page">Увійти</a>
             </div>
         </div>
     </div>
