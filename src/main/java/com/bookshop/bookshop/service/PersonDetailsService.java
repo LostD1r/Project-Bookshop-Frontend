@@ -35,13 +35,19 @@ public class PersonDetailsService implements UserDetailsService {
     public User findByName(String username) {
         return userRepository.findFirstByName(username);
     }
-
+    public Optional<User> optionalFindByName(String username) {
+        return userRepository.findByName(username);
+    }
     public void save(User user) {
         userRepository.save(user);
     }
 
     public User findById(long id) {
         return userRepository.findById(id);
+    }
+
+    public Optional<User> findByEmail(String email) {
+        return userRepository.findByEmail(email);
     }
 }
 
