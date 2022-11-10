@@ -66,6 +66,14 @@
                             <img th:src="${book.getImage()}" alt="Фото книжки">
                         </a>
                         <div class="text-box-wrapper">
+                            <p>
+                                <span class="book-name-span" th:text="${book.name}">Назва книги</span><br>
+                                <span th:text="${book.name}">Видавництво</span><br>
+                                <br>
+                                <span th:text="${book.author.name}">Автор</span>
+                            </p>
+                        </div>
+                        <div class="price-box-wrapper">
                             <p th:text="${book.getName()}"></p>
                         </div>
                     </li>
@@ -81,6 +89,14 @@
                             <img th:src="${book.getImage()}" alt="Фото Книжки">
                         </a>
                         <div class="text-box-wrapper">
+                            <p>
+                                <span class="book-name-span" th:text="${book.name}">Назва книги</span><br>
+                                <span th:text="${book.name}">Видавництво</span><br>
+                                <br>
+                                <span th:text="${book.author.name}">Автор</span>
+                            </p>
+                        </div>
+                        <div class="price-box-wrapper">
                             <p th:text="${book.getName()}"></p>
                         </div>
                     </li>
@@ -96,6 +112,14 @@
                             <img th:src="${book.getImage()}" alt="Фото Книжки">
                         </a>
                         <div class="text-box-wrapper">
+                            <p>
+                                <span class="book-name-span" th:text="${book.name}">Назва книги</span><br>
+                                <span th:text="${book.name}">Видавництво</span><br>
+                                <br>
+                                <span th:text="${book.author.name}">Автор</span>
+                            </p>
+                        </div>
+                        <div class="price-box-wrapper">
                             <p th:text="${book.getName()}"></p>
                         </div>
                     </li>
@@ -114,7 +138,7 @@
             </div>
             <div class="messengers">
                 <div class="icon-box">
-                    <a href="login-page.html">
+                    <a href="https://www.instagram.com/knmem_e/" target="_blank">
                         <img src="../static/Photos/instagram-icon.png" th:src="@{/Photos/instagram-icon.png}" alt="Іконка інстаграму">
                     </a>
                 </div>
@@ -131,7 +155,5 @@
             </div>
         </div>
     </div>
-    <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
-    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
 </body>
 </html>

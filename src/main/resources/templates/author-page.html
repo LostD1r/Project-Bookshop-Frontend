@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" media="all" href="/static/style/author-page-styles.css"
+          th:href="@{/style/author-page-styles.css}"/>
+    <link rel="stylesheet" href="/static/style/reset.css" media="all" th:href="@{/style/reset.css}"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="../static/scripts/scripts.js" th:src="@{/scripts/scripts.js}"></script>
+    <script src="../static/scripts/search-script.js" th:src="@{/scripts/search-script.js}"></script>
+    <title>Author page</title>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <div class="logo">
+            <a href="/">
+                <img src="../static/Photos/Logo3.png" th:src="@{/Photos/Logo3.png}" alt="Іконка логотипу">
+            </a>
+        </div>
+        <div class="nav-buttons">
+            <a href="/about">
+                <button class="nav-button">
+                    Про нас
+                </button>
+            </a>
+            <a href="/news">
+                <button class="nav-button">
+                    Новини
+                </button>
+            </a>
+            <a href="/catalog">
+                <button class="nav-button">
+                    Каталог
+                </button>
+            </a>
+        </div>
+        <div class="search-bar">
+            <div class="search-bar-background">
+                <input id="search" type="text" placeholder="Пошук...">
+                <a class="make-search" onclick="makeSearch()">
+                    <img src="../static/Photos/search-icon.png" th:src="@{/Photos/search-icon.png}" alt="Іконка пошуку">
+                </a>
+            </div>
+        </div>
+        <div class="cart">
+            <a href="/bucket">
+                <img src="../static/Photos/cart-icon.png" th:src="@{/Photos/cart-icon.png}" alt="Інонка корзини">
+            </a>
+        </div>
+        <div class="account">
+            <a href="/profile">
+                <img src="../static/Photos/account-icon.png" th:src="@{/Photos/account-icon.png}" alt="Іконка аккаунту">
+            </a>
+        </div>
+    </div>
+    <div class="content">
+        <div class="author-info">
+            <div class="author-photo">
+                <img src="../static/Photos/Latin_dictionary.jpg">
+            </div>
+            <div class="author-text-box">
+                <div class="author-name">
+                    Псевдонім автора
+                </div>
+                <div class="brief-description-header">
+                    Короткий опис
+                </div>
+                <div class="brief-description">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci consequuntur culpa cupiditate
+                    delectus dignissimos ducimus eum facilis in ipsum molestiae, officia veritatis voluptatibus!
+                    Accusantium adipisci cupiditate dolor nisi perferendis praesentium quisquam sed vero voluptas
+                    voluptatibus? Adipisci aliquid, asperiores aspernatur assumenda blanditiis corporis cumque dolorem
+                    ducimus fugit laboriosam laudantium officiis quas sint tenetur veritatis. Ad, asperiores dicta
+                    explicabo iste labore nulla officia officiis pariatur, quae quibusdam quisquam ratione sunt unde!
+                    Accusantium consequuntur culpa dicta dolor esse expedita ipsam optio quasi rerum. Dolorem eaque
+                    possimus quas saepe veniam. Accusamus expedita facilis officia perferendis quam. A fugit hic
+                    inventore maiores odio quae qui?
+                </div>
+            </div>
+        </div>
+        <div class="author-books-box">
+            <div class="author-books-header">
+                Книги автора
+            </div>
+            <div class="author-books-shelf">
+                <ul id="author-shelf">
+                    <li>
+                        <a href="#">
+                            <img src="../static/Photos/Latin_dictionary.jpg" alt="Фото Книжки">
+                        </a>
+                        <div class="text-box-wrapper">
+                            <p>TEST</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
