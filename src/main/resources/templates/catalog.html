@@ -89,7 +89,7 @@
                                     </div>
                                     <div id="boxes-publishing">
                                         <ul th:each="pub : ${pubs}">
-                                            <a th:href="@{/catalog/{id}(id=${pub.id})}" target="_blank">
+                                            <a th:href="@{/catalog/pub/{id}(id=${pub.id})}" target="_blank">
                                                 <label th:text="${pub.name}">
                                                     First checkbox
                                                 </label>
@@ -108,7 +108,7 @@
                                     </div>
                                     <div id="boxes-authors">
                                         <ul th:each="author : ${authors}">
-                                            <a th:href="@{/catalog/{id}(id=${author.id})}" target="_blank">
+                                            <a th:href="@{/catalog/author/{id}(id=${author.id})}" target="_blank">
                                                 <label th:text="${author.name}">
                                                     TEST
                                                 </label>

@@ -25,4 +25,5 @@ public class Author {
     private String description;
     @OneToMany(mappedBy = "author")
     private List<Book> book;
+    private String image;
 }
