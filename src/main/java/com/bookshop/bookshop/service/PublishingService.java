@@ -21,4 +21,8 @@ public class PublishingService{
     public Publishing getByName(String publishingName) {
         return publishingRepository.getFirstByName(publishingName);
     }
+
+    public Publishing getById(long id) {
+        return publishingRepository.findById(id);
+    }
 }
