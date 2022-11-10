@@ -86,22 +86,19 @@ public class BookService{
     @javax.transaction.Transactional
     public void updateBook(BookDto bookDto, long id) {
         List<Genre> genres = genreService.addFromString(bookDto.getGenres());
-
-
-        Book newBook = Book.builder()
-                .name(bookDto.getName())
-                .author(authorService.getByName(bookDto.getAuthorName()))
-                .characteristic(bookDto.getCharacteristic())
-                .description(bookDto.getDescription())
-                .image(bookDto.getImage())
-                .englishName(bookDto.getEnglishName())
-                .price(bookDto.getPrice())
-                .publishing(publishingService.getByName(bookDto.getPublishingName()))
-                .salesAmount(bookDto.getSalesAmount())
-                .shopAmount(bookDto.getShopAmount())
-                .genres(genres)
-                .build();
-        bookRepository.save(newBook);
+        Book book = bookRepository.findById(id);
+        book.setName(bookDto.getName());
+        book.setAuthor(authorService.getByName(bookDto.getAuthorName()));
+        book.setCharacteristic(bookDto.getCharacteristic());
+        book.setDescription(bookDto.getDescription());
+        book.setImage(bookDto.getImage());
+        book.setEnglishName(bookDto.getEnglishName());
+        book.setPrice(bookDto.getPrice());
+        book.setPublishing(publishingService.getByName(bookDto.getPublishingName()));
+        book.setSalesAmount(bookDto.getSalesAmount());
+        book.setShopAmount(bookDto.getShopAmount());
+        book.setGenres(genres);
+        bookRepository.save(book);
     }
 
     public void save(Book book){
@@ -116,8 +113,7 @@ public class BookService{
         return bookRepository.findTop20ByOrderBySalesAmountDesc();
     }
 
-    public Book getById(Long id) {
-        Book book = bookRepository.findById(id).orElse(new Book());
-        return book;
+    public Book getById(long id) {
+        return bookRepository.findById(id);
     }
 }
