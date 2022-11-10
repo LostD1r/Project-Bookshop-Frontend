@@ -8,4 +8,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface AuthorRepository extends JpaRepository<Author, Long> {
     Author findFirstByName(String authorName);
+    Author findById(long id);
 }

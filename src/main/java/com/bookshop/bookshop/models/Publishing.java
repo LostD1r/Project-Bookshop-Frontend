@@ -26,4 +26,5 @@ public class Publishing {
     private String description;
     @OneToMany(mappedBy = "publishing")
     private List<Book> books;
+    private String image;
 }

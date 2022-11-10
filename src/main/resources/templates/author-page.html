@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -59,17 +59,17 @@
     <div class="content">
         <div class="author-info">
             <div class="author-photo">
-                <img src="../static/Photos/Latin_dictionary.jpg">
+                <img th:src="${item.getImage()}">
             </div>
             <div class="author-text-box">
                 <div class="author-name">
-                    Псевдонім автора
+                    <p th:text="${item.getName()}" >Псевдонім автора</p>
                 </div>
                 <div class="brief-description-header">
                     Короткий опис
                 </div>
                 <div class="brief-description">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci consequuntur culpa cupiditate
+                    <p th:text="${item.getDescription()}">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci consequuntur culpa cupiditate
                     delectus dignissimos ducimus eum facilis in ipsum molestiae, officia veritatis voluptatibus!
                     Accusantium adipisci cupiditate dolor nisi perferendis praesentium quisquam sed vero voluptas
                     voluptatibus? Adipisci aliquid, asperiores aspernatur assumenda blanditiis corporis cumque dolorem
@@ -77,7 +77,7 @@
                     explicabo iste labore nulla officia officiis pariatur, quae quibusdam quisquam ratione sunt unde!
                     Accusantium consequuntur culpa dicta dolor esse expedita ipsam optio quasi rerum. Dolorem eaque
                     possimus quas saepe veniam. Accusamus expedita facilis officia perferendis quam. A fugit hic
-                    inventore maiores odio quae qui?
+                        inventore maiores odio quae qui?</p>
                 </div>
             </div>
         </div>
@@ -86,13 +86,13 @@
                 Книги автора
             </div>
             <div class="author-books-shelf">
-                <ul id="author-shelf">
+                <ul id="author-shelf" th:each="book : ${item.getBook()}">
                     <li>
-                        <a href="#">
-                            <img src="../static/Photos/Latin_dictionary.jpg" alt="Фото Книжки">
+                        <a th:href="@{/catalog/book/{id}(id=${book.id})}">
+                            <img th:src="${book.getImage()}" alt="Фото Книжки">
                         </a>
                         <div class="text-box-wrapper">
-                            <p>TEST</p>
+                            <p th:text="${book.getName()}">TEST</p>
                         </div>
                     </li>
                 </ul>

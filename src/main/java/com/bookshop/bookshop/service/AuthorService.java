@@ -21,4 +21,8 @@ public class AuthorService{
     public Author getByName(String authorName) {
         return authorRepository.findFirstByName(authorName);
     }
+
+    public Author getById(long id) {
+        return authorRepository.findById(id);
+    }
 }
