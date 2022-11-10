@@ -40,7 +40,7 @@ public class BookController {
     }
 
     @PostMapping("/catalog/book/{id}/comment")
-    public String newController(Principal principal, @PathVariable("id") Long id,
+    public String newComment(Principal principal, @PathVariable("id") Long id,
                                 @Valid @ModelAttribute("comment") CommentDto commentDto,
                                 BindingResult bindingResult, Model model){
         if(bindingResult.hasErrors()){

@@ -86,6 +86,7 @@ public class BookService{
     @javax.transaction.Transactional
     public void updateBook(BookDto bookDto, long id) {
         List<Genre> genres = genreService.addFromString(bookDto.getGenres());
+
         Book book = bookRepository.findById(id);
         book.setName(bookDto.getName());
         book.setAuthor(authorService.getByName(bookDto.getAuthorName()));
