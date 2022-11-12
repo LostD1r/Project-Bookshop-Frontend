@@ -1,6 +1,7 @@
 package com.bookshop.bookshop.service;
 
 import com.bookshop.bookshop.dao.GenreRepository;
+import com.bookshop.bookshop.dto.GenreDto;
 import com.bookshop.bookshop.models.Genre;
 import org.springframework.stereotype.Service;
 
@@ -26,5 +27,22 @@ public class GenreService {
             genreList.add(genreRepository.findByName(name));
         }
         return genreList;
+    }
+
+    public void addGenre(GenreDto genreDto) {
+        Genre genre = Genre.builder()
+                .name(genreDto.getName())
+                .build();
+        genreRepository.save(genre);
+    }
+
+    public void updateGenre(GenreDto genreDto, long id) {
+        Genre genre = genreRepository.findById(id);
+        genre.setName(genreDto.getName());
+        genreRepository.save(genre);
+    }
+
+    public void delete(long id) {
+        genreRepository.delete(genreRepository.findById(id));
     }
 }
