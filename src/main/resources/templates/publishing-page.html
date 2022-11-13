@@ -83,10 +83,10 @@
         </div>
         <div class="author-books-box">
             <div class="author-books-header">
-                Книги автора
+                Книги видавництва
             </div>
             <div class="author-books-shelf">
-                <ul id="author-shelf" th:each="book : ${item.getBook()}">
+                <ul id="author-shelf" th:each="book : ${item.getBooks()}">
                     <li>
                         <a th:href="@{/catalog/book/{id}(id=${book.id})}">
                             <img th:src="${book.getImage()}" alt="Фото Книжки">

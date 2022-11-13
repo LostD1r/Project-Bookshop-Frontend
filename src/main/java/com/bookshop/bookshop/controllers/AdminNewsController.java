@@ -1,9 +1,9 @@
 package com.bookshop.bookshop.controllers;
 
 import com.bookshop.bookshop.dto.BookDto;
-import com.bookshop.bookshop.models.Book;
-import com.bookshop.bookshop.service.BookService;
-import org.springframework.boot.Banner;
+import com.bookshop.bookshop.dto.NewDto;
+import com.bookshop.bookshop.models.New;
+import com.bookshop.bookshop.service.NewsService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -11,30 +11,30 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @Controller
-@RequestMapping("/admin/book")
-public class AdminBookController {
-    private final BookService bookService;
+@RequestMapping("/admin/news")
+public class AdminNewsController {
+    private final NewsService newsService;
 
-    public AdminBookController(BookService bookService) {
-        this.bookService = bookService;
+    public AdminNewsController(NewsService newsService) {
+        this.newsService = newsService;
     }
 
     @GetMapping("")
     public String getAll(Model model){
-        List<Book> books = bookService.getAll();
-        model.addAttribute("books", books);
+        List<New> news = newsService.getNews();
+        model.addAttribute("news", news);
         return "admin";
     }
 
     @GetMapping("/new")
-    public String getBookForm(Model model){
-        model.addAttribute("book", new BookDto());
+    public String getNewsForm(Model model){
+        model.addAttribute("new", new NewDto());
         return "admin";
     }
 
     @PostMapping("/new")
-    public String addNewBook(@PathVariable("book") BookDto bookDto){
-        bookService.addBook(bookDto);
+    public String addNew(@PathVariable("new") NewDto newDto){
+        newsService.addNew(newDto);
         return "redirect:/admin";
     }
 
@@ -46,14 +46,14 @@ public class AdminBookController {
 
     @PatchMapping("/{id}")
     public String update(@PathVariable("id") long id, Model model){
-        BookDto bookDto = (BookDto) model.getAttribute("book");
-        bookService.updateBook(bookDto, id);
+        NewDto newDto = (NewDto) model.getAttribute("new");
+        newsService.updateNew(newDto, id);
         return "redirect:/admin/book";
     }
 
     @DeleteMapping("/{id}/delete")
     public String deleteBook(@PathVariable("id") long id){
-        bookService.delete(id);
+        newsService.delete(id);
         return "redirect:/admin/book";
     }
 }

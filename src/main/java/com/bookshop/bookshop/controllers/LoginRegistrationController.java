@@ -35,7 +35,7 @@ public class LoginRegistrationController {
     }
 
     @PostMapping("/registration")
-    public String addUser(@Valid @ModelAttribute("userForm") UserDTO userForm, BindingResult bindingResult, Model model) {
+    public String addUser(@Valid @ModelAttribute("userForm") UserDTO userForm, BindingResult bindingResult) {
         personValidation.validate(userForm, bindingResult);
         if (!userForm.getPassword().equals(userForm.getMatchingPassword())) {
             bindingResult.rejectValue("password", "", "Паролі не співпадають. Перевірте будь ласка правильність їх написання.");
