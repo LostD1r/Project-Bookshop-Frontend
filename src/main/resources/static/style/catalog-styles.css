@@ -238,7 +238,6 @@ body{
     height: 740px;
     width: 1600px;
     display: flex;
-    /*align-items: center;*/
     overflow-x: hidden;
     overflow-y: auto;
     white-space: revert;
