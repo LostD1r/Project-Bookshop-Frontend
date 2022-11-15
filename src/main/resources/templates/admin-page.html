@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" media="all" href="/static/style/admin-page-styles.css"
+          th:href="@{/style/admin-page-styles.css}"/>
+    <link rel="stylesheet" href="/static/style/reset.css" media="all" th:href="@{/style/reset.css}"/>
+    <script src="../static/scripts/admin-page-scripts.js" th:src="@{/scripts/admin-page-scripts.js}"></script>
+    <title>Сторінка адміністратора</title>
+</head>
+<body>
+<div class="container">
+    <div class="header">
+        <div class="logo">
+            <a href="/">
+                <img src="../static/Photos/Logo3.png" th:src="@{/Photos/Logo3.png}" alt="Іконка логотипу">
+            </a>
+        </div>
+        <div class="nav-buttons">
+            <a href="/about">
+                <button class="nav-button">
+                    Про нас
+                </button>
+            </a>
+            <a href="/news">
+                <button class="nav-button">
+                    Новини
+                </button>
+            </a>
+            <a href="/catalog">
+                <button class="nav-button">
+                    Каталог
+                </button>
+            </a>
+        </div>
+        <div class="search-bar">
+            <div class="search-bar-background">
+                <input id="search" type="text" placeholder="Пошук...">
+                <a class="make-search" onclick="makeSearch()">
+                    <img src="../static/Photos/search-icon.png" th:src="@{/Photos/search-icon.png}" alt="Іконка пошуку">
+                </a>
+            </div>
+        </div>
+        <div class="cart">
+            <a href="/bucket">
+                <img src="../static/Photos/cart-icon.png" th:src="@{/Photos/cart-icon.png}" alt="Інонка корзини">
+            </a>
+        </div>
+        <div class="account">
+            <a href="/profile">
+                <img src="../static/Photos/account-icon.png" th:src="@{/Photos/account-icon.png}" alt="Іконка аккаунту">
+            </a>
+        </div>
+    </div>
+    <div class="content">
+        <div class="main-panel">
+            <div class="main-panel-header">
+                Панель адміністратора
+            </div>
+            <div class="main-panel-buttons">
+                <ul>
+                    <li>
+                        <button onclick="showBookList()">
+                            Переглянути список книг
+                        </button>
+                    </li>
+                    <li>
+                        <button onclick="showAuthorList()">
+                            Переглянути список авторів
+                        </button>
+                    </li>
+                    <li>
+                        <button onclick="showPublishingList()">
+                            Переглянути список видавництв
+                        </button>
+                    </li>
+                    <li>
+                        <button onclick="showUsersList()">
+                            Переглянути список користувачів
+                        </button>
+                    </li>
+                    <li>
+                        <button onclick="showOrdersList()">
+                            Переглянути список замовлень
+                        </button>
+                    </li>
+                    <li>
+                        <button onclick="showGenresList()">
+                            Переглянути список жанрів
+                        </button>
+                    </li>
+                    <li>
+                        <button onclick="showNewsList()">
+                            Переглянути новини
+                        </button>
+                    </li>
+                    <li>
+                        <button onclick="showEventsList()">
+                            Переглянути події
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="change-box-wrapper">
+            <div class="change-book-box" id="change-book-box">
+                <div class="change-button">
+                    <a href="#" target="_blank">
+                        Додати книжку
+                    </a>
+                </div>
+                <ul>
+                    <li>
+                        <img src="../static/Photos/Latin_dictionary.jpg" alt="Фото книжки">
+                        <div class="book-text-box">
+                            <div class="name-description-box">
+                                <div class="book-name">
+                                    <p>
+                                        Назва книги
+                                    </p>
+                                </div>
+                                <div class="book-description">
+                                    <p>
+                                        Короткий опис
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="buttons-price-box">
+                                <div class="book-buttons">
+                                    <button>
+                                        Змінити
+                                    </button>
+                                    <button>
+                                        Видалити
+                                    </button>
+                                </div>
+                                <div class="book-price">
+                                    Ціна:&nbsp;<p>TEST</p>грн
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="change-author-box" id="change-author-box">
+                <div class="change-button">
+                    <a href="#" target="_blank">
+                        Додати книжку
+                    </a>
+                </div>
+                <ul>
+                    <li>
+                        <img src="../static/Photos/Latin_dictionary.jpg" alt="Фото автора">
+                        <div class="author-text-box">
+                            <div class="name-description-box">
+                                <div class="author-name">
+                                    <p>
+                                        Ім'я автора
+                                    </p>
+                                </div>
+                                <div class="author-description">
+                                    <p>
+                                        Коротка біографія
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="buttons-box">
+                                <div class="author-buttons">
+                                    <button>
+                                        Змінити
+                                    </button>
+                                    <button>
+                                        Видалити
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="change-publishing-box" id="change-publishing-box">
+                <div class="change-button">
+                    <a href="#" target="_blank">
+                        Додати книжку
+                    </a>
+                </div>
+                <ul>
+                    <li>
+                        <img src="../static/Photos/Latin_dictionary.jpg" alt="Фото видавництва">
+                        <div class="publishing-text-box">
+                            <div class="name-description-box">
+                                <div class="publishing-name">
+                                    <p>
+                                        Назва видавництва
+                                    </p>
+                                </div>
+                                <div class="publishing-description">
+                                    <p>
+                                        Короткий опис
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="buttons-box">
+                                <div class="publishing-buttons">
+                                    <button>
+                                        Змінити
+                                    </button>
+                                    <button>
+                                        Видалити
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="change-users-box" id="change-users-box">
+                <div class="change-button">
+                    <a href="#" target="_blank">
+                        Додати книжку
+                    </a>
+                </div>
+                <ul>
+                    <li>
+                        <div class="users-text-box">
+                            <div class="name-box">
+                                <div class="users-name">
+                                    <p>
+                                        Логін користувача
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="buttons-box">
+                                <div class="users-buttons">
+                                    <button>
+                                        Змінити
+                                    </button>
+                                    <button>
+                                        Видалити
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="change-orders-box" id="change-orders-box">
+                <div class="change-button">
+                    <a href="#" target="_blank">
+                        Додати книжку
+                    </a>
+                </div>
+                <ul>
+                    <li>
+                        <div class="orders-text-box">
+                            <div class="name-box">
+                                <div class="orders-id">
+                                    Номер замовлення:&nbsp;<p></p>
+                                    Логін користувача:&nbsp;<p></p>
+                                </div>
+                            </div>
+                            <div class="buttons-box">
+                                <div class="orders-buttons">
+                                    <button>
+                                        Змінити
+                                    </button>
+                                    <button>
+                                        Видалити
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="change-genres-box" id="change-genres-box">
+                <div class="change-button">
+                    <a href="#" target="_blank">
+                        Додати книжку
+                    </a>
+                </div>
+                <ul>
+                    <li>
+                        <div class="genres-text-box">
+                            <div class="name-box">
+                                <div class="genres-name">
+                                    <p>Назва жанру</p>
+                                </div>
+                            </div>
+                            <div class="buttons-box">
+                                <div class="genres-buttons">
+                                    <button>
+                                        Змінити
+                                    </button>
+                                    <button>
+                                        Видалити
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="change-news-box" id="change-news-box">
+                <div class="change-button">
+                    <a href="#" target="_blank">
+                        Додати книжку
+                    </a>
+                </div>
+                <ul>
+                    <li>
+                        <img src="../static/Photos/Latin_dictionary.jpg" alt="Фото новини">
+                        <div class="news-text-box">
+                            <div class="name-box">
+                                <div class="news-name">
+                                    <p>
+                                        Назва новини
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="buttons-box">
+                                <div class="news-buttons">
+                                    <button>
+                                        Змінити
+                                    </button>
+                                    <button>
+                                        Видалити
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="change-events-box" id="change-events-box">
+                <div class="change-button">
+                    <a href="#" target="_blank">
+                        Додати книжку
+                    </a>
+                </div>
+                <ul>
+                    <li>
+                        <div class="events-text-box">
+                            <div class="name-box">
+                                <div class="events-name">
+                                    <p>
+                                        Назва події
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="buttons-box">
+                                <div class="events-buttons">
+                                    <button>
+                                        Змінити
+                                    </button>
+                                    <button>
+                                        Видалити
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
