@@ -2,15 +2,17 @@ package com.bookshop.bookshop.service;
 
 import com.bookshop.bookshop.dao.UserRepository;
 import com.bookshop.bookshop.dto.ChangeUserRoleDto;
+import com.bookshop.bookshop.dto.PasswordDto;
 import com.bookshop.bookshop.models.Role;
 import com.bookshop.bookshop.models.User;
 import com.bookshop.bookshop.security.PersonDetails;
-import org.mapstruct.control.MappingControl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.validation.Errors;
 
 import java.util.List;
 import java.util.Optional;

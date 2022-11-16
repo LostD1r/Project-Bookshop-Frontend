@@ -18,7 +18,10 @@ public class BucketDTO {
     private List<BucketDetailDto> bucketDetails = new ArrayList<>();
 
     public void aggregate(){
-        this.amountProducts = bucketDetails.size();
+        this.amountProducts = bucketDetails.stream()
+                .map(BucketDetailDto::getAmount)
+                .mapToLong(Long::longValue)
+                .sum();
         this.sum = bucketDetails.stream()
                 .map(BucketDetailDto::getSum)
                 .mapToDouble(Double::doubleValue)

@@ -17,7 +17,7 @@ create table buckets (id int8 not null, user_id int8, primary key (id));
 create table comments (id int8 not null, created timestamp, message varchar(500), book_id int8, user_id int8, primary key (id));
 create table genres (id int8 not null, name varchar(255), primary key (id));
 create table news (id int8 not null, created timestamp, image varchar(255), message varchar(600), title varchar(255), primary key (id));
-create table orders (id int8 not null, address varchar(255), created timestamp, order_status varchar(255), sum numeric(19, 2), updated timestamp, user_id int8, primary key (id));
+create table orders (id int8 not null, address varchar(255), created timestamp, full_name varchar(255), order_status varchar(255), phone_number varchar(255), sum numeric(19, 2), updated timestamp, user_id int8, primary key (id));
 create table orders_details (id int8 not null, amount numeric(19, 2), price numeric(19, 2), book_id int8, order_id int8, primary key (id));
 create table publishing (id int8 not null, description varchar(600), image varchar(255), name varchar(255), primary key (id));
 create table events (id int8 not null, created timestamp, message varchar(600), title varchar(255), primary key (id));

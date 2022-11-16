@@ -65,7 +65,7 @@ public class BucketService {
                 mapByProductId.put(book.getId(), new BucketDetailDto(book));
             }
             else {
-                detail.setAmount(detail.getAmount() + 1.0);
+                detail.setAmount(detail.getAmount() + 1);
                 detail.setSum(detail.getSum() + book.getPrice());
             }
         }
