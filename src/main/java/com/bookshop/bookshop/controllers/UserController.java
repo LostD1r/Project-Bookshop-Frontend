@@ -6,6 +6,7 @@ import com.bookshop.bookshop.models.User;
 import com.bookshop.bookshop.security.PersonDetails;
 import com.bookshop.bookshop.service.PersonDetailsService;
 import com.bookshop.bookshop.service.RegistrationService;
+import com.bookshop.bookshop.util.PasswordChangeValid;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
@@ -23,10 +24,13 @@ import java.util.ArrayList;
 public class UserController {
     private final PersonDetailsService personDetailsService;
     private final RegistrationService registrationService;
+    private final PasswordChangeValid passwordChangeValid;
 
-    public UserController(PersonDetailsService personDetailsService, RegistrationService registrationService) {
+    public UserController(PersonDetailsService personDetailsService, RegistrationService registrationService,
+                          PasswordChangeValid passwordChangeValid) {
         this.personDetailsService = personDetailsService;
         this.registrationService = registrationService;
+        this.passwordChangeValid = passwordChangeValid;
     }
 
     @GetMapping("/profile")
@@ -53,17 +57,18 @@ public class UserController {
     }
 
     @PostMapping("/profile/settings/password")
-    public String changePassword(@Valid @ModelAttribute PasswordDto passwordDto, BindingResult bindingResult, Model model){
-
+    public String changePassword(@Valid @ModelAttribute("password") PasswordDto passwordDto, BindingResult bindingResult){
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         PersonDetails personDetails = (PersonDetails) authentication.getPrincipal();
-
-        if(!registrationService.changePassword(personDetails.getUsername(), passwordDto, bindingResult)){
-            return "user-page-settings";
+        passwordDto.setUsername(personDetails.getUsername());
+        passwordChangeValid.validate(passwordDto, bindingResult);
+        if(!passwordDto.getNewPassword().equals(passwordDto.getMatchingNewPassword())){
+            bindingResult.rejectValue("newPassword", " ", "Паролі не співпадають. Спробуйте ще раз");
         }
         if(bindingResult.hasErrors()){
             return "user-page-settings";
         }
+        registrationService.changePassword(personDetails.getUsername(), passwordDto);
         return "redirect:/profile";
     }
 }
