@@ -40,4 +40,6 @@ public class BucketController {
         bucketService.removeBook(id, principal.getName());
         return "redirect:/bucket";
     }
+
+
 }

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -24,16 +24,18 @@
                 Змінити дані
             </button>
         </form>
-        <form class="config-form-pass" action="">
+        <form class="config-form-pass" th:method="POST" th:action="@{/profile/settings/password}" th:object="${password}">
             <div class="text-box-pass">
                 Зміна паролю
             </div>
             <label for="old-password">Введіть старий пароль</label>
-            <input type="password" id="old-password" required="required">
+            <input type="password" id="old-password" th:field="*{oldPassword}">
+            <p style="color:red" th:if="${#fields.hasErrors('oldPassword')}" th:errors="*{oldPassword}">Name Error</p>
             <label for="new-password">Введіть новий пароль</label>
-            <input type="password" id="new-password" required="required">
+            <input type="password" id="new-password" th:field="*{newPassword}">
+            <p style="color:red" th:if="${#fields.hasErrors('newPassword')}" th:errors="*{newPassword}">Name Error</p>
             <label for="confirm-new-password">Підтвердьте новий пароль</label>
-            <input type="password" id="confirm-new-password" required="required">
+            <input type="password" id="confirm-new-password" th:field="*{matchingNewPassword}">
             <button class="config-form-pass-button" type="submit">
                 Змінити пароль
             </button>

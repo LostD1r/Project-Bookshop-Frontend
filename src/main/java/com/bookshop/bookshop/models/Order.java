@@ -35,6 +35,8 @@ public class Order {
     private User user;
     private BigDecimal sum;
     private String address;
+    private String phoneNumber;
+    private String fullName;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "order")
     private List<OrderDetails> details;
     @Enumerated(EnumType.STRING)

@@ -69,16 +69,17 @@
                 </div>
                 <div class="about-profile-right">
                     <div class="created-at">
-                        Дата створення профілю: <p th:text="${user.getCreatedDate()}">1 листопада 2022</p>
+                        Дата створення профілю:&nbsp;<p th:text="${user.getCreatedDate()}">1 листопада 2022</p>
                     </div>
                     <div class="number-of-bought-books">
-                        <p> Кількість придбаних книг:</p> <p th:text="${user.getBooks().size()}">0</p>
+                        Кількість придбаних книг:&nbsp;<p th:text="${user.getBooks().size()}"></p>
                     </div>
                     <div class="status">
-                        <p th:text="${user.getRole()}">Статус: учасник</p>
+                        Статус:&nbsp;<p th:if="${user.getRole().name()} == 'ROLE_ADMIN'">Адміністратор</p>
+                        <p th:if="${user.getRole().name()} == 'ROLE_USER'">Покупець</p>
                     </div>
                     <div class="admin-panel">
-                        <a href="">
+                        <a href="" th:if="${user.getRole().name()} == 'ROLE_ADMIN'">
                             Панель адміністратора
                         </a>
                     </div>
