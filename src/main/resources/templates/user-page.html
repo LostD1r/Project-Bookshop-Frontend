@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -75,7 +75,8 @@
                         Кількість придбаних книг:&nbsp;<p th:text="${user.getBooks().size()}"></p>
                     </div>
                     <div class="status">
-                        Статус:&nbsp;<p th:text="${user.getRole()}">учасник</p>
+                        Статус:&nbsp;<p th:if="${user.getRole().name()} == 'ROLE_ADMIN'">Адміністратор</p>
+                        <p th:if="${user.getRole().name()} == 'ROLE_USER'">Покупець</p>
                     </div>
                 </div>
             </div>
