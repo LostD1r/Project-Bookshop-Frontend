@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en"  xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -111,33 +111,37 @@
                         Додати книжку
                     </a>
                 </div>
-                <ul>
+                <ul th:each="book : ${books}">
                     <li>
-                        <img src="../static/Photos/Latin_dictionary.jpg" alt="Фото книжки">
+                        <img th:src="${book.getImage()}" alt="Фото книжки">
                         <div class="book-text-box">
                             <div class="name-description-box">
                                 <div class="book-name">
-                                    <p>
+                                    <p th:text="${book.getName()}">
                                         Назва книги
                                     </p>
                                 </div>
                                 <div class="book-description">
-                                    <p>
+                                    <p th:text="${book.getAuthor().getName()}">
                                         Короткий опис
                                     </p>
                                 </div>
                             </div>
                             <div class="buttons-price-box">
                                 <div class="book-buttons">
-                                    <button>
-                                        Змінити
-                                    </button>
-                                    <button>
-                                        Видалити
-                                    </button>
+                                   <form>
+                                       <button type="submit">
+                                           Змінити
+                                       </button>
+                                   </form>
+                                    <form th:method="DELETE" th:action="@{/admin/book/{id}/delete(id = ${book.getId()})}">
+                                        <button type="submit">
+                                            Видалити
+                                        </button>
+                                    </form>
                                 </div>
                                 <div class="book-price">
-                                    Ціна:&nbsp;<p>TEST</p>грн
+                                    Ціна:&nbsp;<p th:text="${book.getPrice()}">TEST</p>грн
                                 </div>
                             </div>
                         </div>
@@ -147,33 +151,37 @@
             <div class="change-author-box" id="change-author-box">
                 <div class="change-button">
                     <a href="#" target="_blank">
-                        Додати книжку
+                        Додати автора
                     </a>
                 </div>
-                <ul>
+                <ul th:each="author : ${authors}">
                     <li>
-                        <img src="../static/Photos/Latin_dictionary.jpg" alt="Фото автора">
+                        <img th:src="${author.getImage()}" alt="Фото автора">
                         <div class="author-text-box">
                             <div class="name-description-box">
                                 <div class="author-name">
-                                    <p>
+                                    <p th:text="${author.getName()}">
                                         Ім'я автора
                                     </p>
                                 </div>
                                 <div class="author-description">
-                                    <p>
+                                    <p th:text="${author.getDescription()}">
                                         Коротка біографія
                                     </p>
                                 </div>
                             </div>
                             <div class="buttons-box">
                                 <div class="author-buttons">
-                                    <button>
-                                        Змінити
-                                    </button>
-                                    <button>
-                                        Видалити
-                                    </button>
+                                    <form>
+                                        <button type="submit">
+                                            Змінити
+                                        </button>
+                                    </form>
+                                    <form th:method="DELETE" th:action="@{/admin/author/{id}/delete(id = ${author.getId()})}">
+                                        <button type="submit">
+                                            Видалити
+                                        </button>
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -183,33 +191,37 @@
             <div class="change-publishing-box" id="change-publishing-box">
                 <div class="change-button">
                     <a href="#" target="_blank">
-                        Додати книжку
+                        Додати видавництво
                     </a>
                 </div>
-                <ul>
+                <ul th:each="pub : ${pubs}">
                     <li>
-                        <img src="../static/Photos/Latin_dictionary.jpg" alt="Фото видавництва">
+                        <img th:src="${pub.getImage()}" alt="Фото видавництва">
                         <div class="publishing-text-box">
                             <div class="name-description-box">
                                 <div class="publishing-name">
-                                    <p>
+                                    <p th:text="${pub.getName()}">
                                         Назва видавництва
                                     </p>
                                 </div>
                                 <div class="publishing-description">
-                                    <p>
+                                    <p th:text="${pub.getDescription()}">
                                         Короткий опис
                                     </p>
                                 </div>
                             </div>
                             <div class="buttons-box">
                                 <div class="publishing-buttons">
-                                    <button>
-                                        Змінити
-                                    </button>
-                                    <button>
-                                        Видалити
-                                    </button>
+                                    <form>
+                                        <button type="submit">
+                                            Змінити
+                                        </button>
+                                    </form>
+                                    <form th:method="DELETE" th:action="@{/admin/publishing/{id}/delete(id = ${pub.getId()})}">
+                                        <button type="submit">
+                                            Видалити
+                                        </button>
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -217,29 +229,28 @@
                 </ul>
             </div>
             <div class="change-users-box" id="change-users-box">
-                <div class="change-button">
-                    <a href="#" target="_blank">
-                        Додати книжку
-                    </a>
-                </div>
-                <ul>
+                <ul th:each="user : ${users}">
                     <li>
                         <div class="users-text-box">
                             <div class="name-box">
                                 <div class="users-name">
-                                    <p>
+                                    <p th:text="${user.getName()}">
                                         Логін користувача
                                     </p>
                                 </div>
                             </div>
                             <div class="buttons-box">
                                 <div class="users-buttons">
-                                    <button>
-                                        Змінити
-                                    </button>
-                                    <button>
-                                        Видалити
-                                    </button>
+                                    <form>
+                                        <button type="submit">
+                                            Змінити
+                                        </button>
+                                    </form>
+                                    <form th:method="DELETE" th:action="@{/admin/user/{id}/delete(id = ${user.getId()})}">
+                                        <button type="submit">
+                                            Видалити
+                                        </button>
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -247,11 +258,6 @@
                 </ul>
             </div>
             <div class="change-orders-box" id="change-orders-box">
-                <div class="change-button">
-                    <a href="#" target="_blank">
-                        Додати книжку
-                    </a>
-                </div>
                 <ul>
                     <li>
                         <div class="orders-text-box">
@@ -263,12 +269,16 @@
                             </div>
                             <div class="buttons-box">
                                 <div class="orders-buttons">
-                                    <button>
-                                        Змінити
-                                    </button>
-                                    <button>
-                                        Видалити
-                                    </button>
+                                    <form>
+                                        <button type="submit">
+                                            Змінити
+                                        </button>
+                                    </form>
+                                    <form>
+                                        <button type="submit">
+                                            Видалити
+                                        </button>
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -278,25 +288,29 @@
             <div class="change-genres-box" id="change-genres-box">
                 <div class="change-button">
                     <a href="#" target="_blank">
-                        Додати книжку
+                        Додати жанр
                     </a>
                 </div>
-                <ul>
+                <ul th:each="genre : ${genres}">
                     <li>
                         <div class="genres-text-box">
                             <div class="name-box">
                                 <div class="genres-name">
-                                    <p>Назва жанру</p>
+                                    <p th:text="${genre.getName()}">Назва жанру</p>
                                 </div>
                             </div>
                             <div class="buttons-box">
                                 <div class="genres-buttons">
-                                    <button>
-                                        Змінити
-                                    </button>
-                                    <button>
-                                        Видалити
-                                    </button>
+                                    <form>
+                                        <button type="submit">
+                                            Змінити
+                                        </button>
+                                    </form>
+                                    <form th:method="DELETE" th:action="@{/admin/genre/{id}/delete(id = ${genre.getId()})}">
+                                        <button type="submit">
+                                            Видалити
+                                        </button>
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -306,28 +320,32 @@
             <div class="change-news-box" id="change-news-box">
                 <div class="change-button">
                     <a href="#" target="_blank">
-                        Додати книжку
+                        Додати новину
                     </a>
                 </div>
-                <ul>
+                <ul th:each="new : ${news}">
                     <li>
-                        <img src="../static/Photos/Latin_dictionary.jpg" alt="Фото новини">
+                        <img th:src="${new.getImage()}" alt="Фото новини">
                         <div class="news-text-box">
                             <div class="name-box">
                                 <div class="news-name">
-                                    <p>
+                                    <p th:text="${new.getTitle()}">
                                         Назва новини
                                     </p>
                                 </div>
                             </div>
                             <div class="buttons-box">
                                 <div class="news-buttons">
-                                    <button>
-                                        Змінити
-                                    </button>
-                                    <button>
-                                        Видалити
-                                    </button>
+                                    <form>
+                                        <button type="submit">
+                                            Змінити
+                                        </button>
+                                    </form>
+                                    <form th:method="DELETE" th:action="@{/admin/new/{id}/delete(id = ${new.getId()})}">
+                                        <button type="submit">
+                                            Видалити
+                                        </button>
+                                    </form>
                                 </div>
                             </div>
                         </div>
@@ -337,27 +355,31 @@
             <div class="change-events-box" id="change-events-box">
                 <div class="change-button">
                     <a href="#" target="_blank">
-                        Додати книжку
+                        Додати подію
                     </a>
                 </div>
-                <ul>
+                <ul th:each="event : ${events}">
                     <li>
                         <div class="events-text-box">
                             <div class="name-box">
                                 <div class="events-name">
-                                    <p>
+                                    <p th:text="${event.getTitle()}">
                                         Назва події
                                     </p>
                                 </div>
                             </div>
                             <div class="buttons-box">
                                 <div class="events-buttons">
-                                    <button>
-                                        Змінити
-                                    </button>
-                                    <button>
-                                        Видалити
-                                    </button>
+                                    <form>
+                                        <button type="submit">
+                                            Змінити
+                                        </button>
+                                    </form>
+                                    <form th:method="DELETE" th:action="@{/admin/event/{id}/delete(id = ${event.getId()})}">
+                                        <button type="submit">
+                                            Видалити
+                                        </button>
+                                    </form>
                                 </div>
                             </div>
                         </div>

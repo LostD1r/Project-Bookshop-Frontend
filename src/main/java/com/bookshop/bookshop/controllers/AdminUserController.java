@@ -19,12 +19,6 @@ public class AdminUserController {
         this.personDetailsService = personDetailsService;
     }
 
-    @GetMapping("")
-    public String getAll(Model model){
-        List<User> users = personDetailsService.getAll();
-        model.addAttribute("users", users);
-        return "admin";
-    }
 
     @GetMapping("/{id}/edit")
     public String edite(@PathVariable("id") long id, Model model){
@@ -42,6 +36,6 @@ public class AdminUserController {
     @DeleteMapping("/{id}/delete")
     public String deleteBook(@PathVariable("id") long id){
         personDetailsService.delete(id);
-        return "redirect:/admin/book";
+        return "redirect:/admin";
     }
 }

@@ -24,7 +24,7 @@ public class Publishing {
     private String name;
     @Column(length = 600)
     private String description;
-    @OneToMany(mappedBy = "publishing")
+    @OneToMany(mappedBy = "publishing", cascade = CascadeType.REMOVE)
     private List<Book> books;
     private String image;
 }

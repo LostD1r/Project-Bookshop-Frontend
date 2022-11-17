@@ -1,6 +1,7 @@
 package com.bookshop.bookshop.models;
 
 import lombok.*;
+import org.hibernate.annotations.Cascade;
 
 import javax.persistence.*;
 import java.util.List;
@@ -23,7 +24,7 @@ public class Author {
     private String name;
     @Column(length = 600)
     private String description;
-    @OneToMany(mappedBy = "author")
+    @OneToMany(mappedBy = "author", cascade = CascadeType.REMOVE)
     private List<Book> book;
     private String image;
 }

@@ -79,7 +79,7 @@
                         <p th:if="${user.getRole().name()} == 'ROLE_USER'">Покупець</p>
                     </div>
                     <div class="admin-panel">
-                        <a href="" th:if="${user.getRole().name()} == 'ROLE_ADMIN'">
+                        <a href="/admin" th:if="${user.getRole().name()} == 'ROLE_ADMIN'">
                             Панель адміністратора
                         </a>
                     </div>

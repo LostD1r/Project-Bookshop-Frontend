@@ -46,7 +46,6 @@ public class RegistrationService {
     @javax.transaction.Transactional
     public boolean changePassword(String name, PasswordDto passwordDto){
         User user = userRepository.findFirstByName(name);
-        System.out.println(1);
         user.setPassword(passwordEncoder.encode(passwordDto.getNewPassword()));
         userRepository.save(user);
         return true;

@@ -19,12 +19,6 @@ public class AdminNewsController {
         this.newsService = newsService;
     }
 
-    @GetMapping("")
-    public String getAll(Model model){
-        List<New> news = newsService.getNews();
-        model.addAttribute("news", news);
-        return "admin";
-    }
 
     @GetMapping("/new")
     public String getNewsForm(Model model){
@@ -54,6 +48,6 @@ public class AdminNewsController {
     @DeleteMapping("/{id}/delete")
     public String deleteBook(@PathVariable("id") long id){
         newsService.delete(id);
-        return "redirect:/admin/book";
+        return "redirect:/admin";
     }
 }

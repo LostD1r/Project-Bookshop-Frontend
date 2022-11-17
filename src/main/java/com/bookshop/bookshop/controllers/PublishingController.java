@@ -22,12 +22,7 @@ public class PublishingController {
         this.publishingService = publishingService;
     }
 
-    @GetMapping("")
-    public String getAll(Model model){
-        List<Publishing> pubs = publishingService.getAll();
-        model.addAttribute("pubs", pubs);
-        return "admin";
-    }
+
 
     @GetMapping("/new")
     public String getPublishingForm(Model model){
@@ -57,6 +52,6 @@ public class PublishingController {
     @DeleteMapping("/{id}/delete")
     public String delete(@PathVariable("id") long id){
         publishingService.delete(id);
-        return "redirect:/admin/author";
+        return "redirect:/admin";
     }
 }

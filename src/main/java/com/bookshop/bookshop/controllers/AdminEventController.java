@@ -22,12 +22,6 @@ public class AdminEventController {
         this.eventService = eventService;
     }
 
-    @GetMapping("")
-    public String getAll(Model model){
-        List<Event> eventList = eventService.getAll();
-        model.addAttribute("events", eventList);
-        return "admin";
-    }
 
     @GetMapping("/new")
     public String getEventForm(Model model){
