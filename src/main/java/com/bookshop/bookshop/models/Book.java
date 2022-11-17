@@ -47,13 +47,16 @@ public class Book {
     @OneToMany(mappedBy = "book", cascade = CascadeType.ALL)
     private List<OrderDetails> orderDetails;
 
-    @OneToMany(mappedBy = "book")
+    @OneToMany(mappedBy = "book", cascade = CascadeType.ALL)
     private List<Comment> comments;
     private Long shopAmount;
     private Long salesAmount;
     @CreationTimestamp
     private Timestamp createdDate;
 
-    @ManyToMany(mappedBy = "books")
+    @ManyToMany(mappedBy = "books", cascade = CascadeType.REMOVE)
     private List<User> users;
+
+    @ManyToMany(mappedBy = "books", cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+    private List<Bucket> buckets;
 }

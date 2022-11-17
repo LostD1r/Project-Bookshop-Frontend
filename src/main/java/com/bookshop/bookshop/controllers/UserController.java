@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
 import java.util.ArrayList;
+import java.util.List;
 
 @Controller
 public class UserController {
@@ -40,8 +41,8 @@ public class UserController {
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
         PersonDetails personDetails = (PersonDetails) authentication.getPrincipal();
         User user = personDetails.getUser();
-
-        user.setBooks(new ArrayList<Book>());
+        List<Book> books = user.getBooks();
+        model.addAttribute("books", books);
         model.addAttribute("user", user);
         return "user-page-authorized";
     }

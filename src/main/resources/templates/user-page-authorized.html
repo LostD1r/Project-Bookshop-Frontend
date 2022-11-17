@@ -72,7 +72,7 @@
                         Дата створення профілю:&nbsp;<p th:text="${user.getCreatedDate()}">1 листопада 2022</p>
                     </div>
                     <div class="number-of-bought-books">
-                        Кількість придбаних книг:&nbsp;<p th:text="${user.getBooks().size()}"></p>
+                        Кількість придбаних книг:&nbsp;<p th:text="${books.size()}"></p>
                     </div>
                     <div class="status">
                         Статус:&nbsp;<p th:if="${user.getRole().name()} == 'ROLE_ADMIN'">Адміністратор</p>
@@ -92,11 +92,11 @@
                 Придбані книги
             </div>
             <div class="bought-books-list">
-                <ul th:each="book : ${user.getBooks()}">
-                    <li>
+                <ul>
+                    <li th:each="book : ${books}">
                         <div class="bought-books-list-photo">
                             <a th:href="@{/catalog/book/{id}(id = ${book.getId()})}">
-                                <img src="../static/Photos/Latin_dictionary.jpg" alt="">
+                                <img th:src="${book.getImage()}" alt="">
                             </a>
                         </div>
                         <div class="bought-books-list-text-wrapper">
@@ -110,21 +110,6 @@
                                 </div>
                             </div>
                         </div>
-                    </li>
-                    <li>
-                        <a href="">
-
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-<!--                            <img src="../static/Photos/Latin_dictionary.jpg" alt="">-->
-                        </a>
-                    </li>
-                    <li>
-                        <a href="">
-<!--                            <img src="../static/Photos/Latin_dictionary.jpg" alt="">-->
-                        </a>
                     </li>
                 </ul>
             </div>

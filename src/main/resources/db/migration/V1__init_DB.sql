@@ -29,8 +29,8 @@ alter table if exists books add constraint books_fk_author foreign key (author_i
 alter table if exists books add constraint books_gk_publishing foreign key (publishing_id) references publishing;
 alter table if exists books_genres add constraint book_genres_fk_genres foreign key (book_id) references genres;
 alter table if exists books_genres add constraint book_genres_fk_books foreign key (genre_id) references books;
-alter table if exists bucket_books add constraint bucket_books_fk_books foreign key (book_id) references books;
-alter table if exists bucket_books add constraint bucket_books_fk_buckets foreign key (bucket_id) references buckets;
+alter table if exists bucket_books add constraint bucket_books_fk_books foreign key (book_id) references books ON DELETE CASCADE;
+alter table if exists bucket_books add constraint bucket_books_fk_buckets foreign key (bucket_id) references buckets ON DELETE CASCADE;
 alter table if exists buckets add constraint buckets_fk_users foreign key (user_id) references users;
 alter table if exists comments add constraint comments_fk_books foreign key (book_id) references books;
 alter table if exists comments add constraint comments_fk_users foreign key (user_id) references users;

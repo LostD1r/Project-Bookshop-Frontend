@@ -111,8 +111,8 @@
                         Додати книжку
                     </a>
                 </div>
-                <ul th:each="book : ${books}">
-                    <li>
+                <ul>
+                    <li th:each="book : ${books}">
                         <img th:src="${book.getImage()}" alt="Фото книжки">
                         <div class="book-text-box">
                             <div class="name-description-box">
@@ -154,8 +154,8 @@
                         Додати автора
                     </a>
                 </div>
-                <ul th:each="author : ${authors}">
-                    <li>
+                <ul>
+                    <li th:each="author : ${authors}">
                         <img th:src="${author.getImage()}" alt="Фото автора">
                         <div class="author-text-box">
                             <div class="name-description-box">
@@ -194,8 +194,8 @@
                         Додати видавництво
                     </a>
                 </div>
-                <ul th:each="pub : ${pubs}">
-                    <li>
+                <ul>
+                    <li th:each="pub : ${pubs}">
                         <img th:src="${pub.getImage()}" alt="Фото видавництва">
                         <div class="publishing-text-box">
                             <div class="name-description-box">
@@ -229,8 +229,8 @@
                 </ul>
             </div>
             <div class="change-users-box" id="change-users-box">
-                <ul th:each="user : ${users}">
-                    <li>
+                <ul>
+                    <li th:each="user : ${users}">
                         <div class="users-text-box">
                             <div class="name-box">
                                 <div class="users-name">
@@ -291,8 +291,8 @@
                         Додати жанр
                     </a>
                 </div>
-                <ul th:each="genre : ${genres}">
-                    <li>
+                <ul>
+                    <li th:each="genre : ${genres}">
                         <div class="genres-text-box">
                             <div class="name-box">
                                 <div class="genres-name">
@@ -323,8 +323,8 @@
                         Додати новину
                     </a>
                 </div>
-                <ul th:each="new : ${news}">
-                    <li>
+                <ul>
+                    <li th:each="new : ${news}">
                         <img th:src="${new.getImage()}" alt="Фото новини">
                         <div class="news-text-box">
                             <div class="name-box">
@@ -358,8 +358,8 @@
                         Додати подію
                     </a>
                 </div>
-                <ul th:each="event : ${events}">
-                    <li>
+                <ul>
+                    <li th:each="event : ${events}">
                         <div class="events-text-box">
                             <div class="name-box">
                                 <div class="events-name">
