@@ -2,6 +2,11 @@
    v2.0 | 20110126
    License: none (public domain)
 */
+@import url('https://fonts.googleapis.com/css2?family=Exo+2&display=swap');
+
+*{
+	font-family: 'Syne Mono', monospace;
+}
 
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,

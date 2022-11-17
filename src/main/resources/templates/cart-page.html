@@ -106,7 +106,7 @@
                         Загальна сума:&nbsp;<p th:text="${bucket.getSum()}">999</p>&nbsp;UAH
                     </div>
                 </div>
-                <form class="ready-to-buy-button">
+                <form class="ready-to-buy-button" th:method="GET" th:action="@{/bucket/createorder}">
                     <button class="ready-to-buy-button-btn">
                         Оформити замовлення
                     </button>

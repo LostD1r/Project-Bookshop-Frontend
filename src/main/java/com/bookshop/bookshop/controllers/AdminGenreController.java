@@ -20,12 +20,6 @@ public class AdminGenreController {
         this.genreService = genreService;
     }
 
-    @GetMapping("")
-    public String getAll(Model model){
-        List<Genre> genreList = genreService.getAll();
-        model.addAttribute("genres", genreList);
-        return "admin";
-    }
 
     @GetMapping("/new")
     public String getGenreForm(Model model){
@@ -55,6 +49,6 @@ public class AdminGenreController {
     @DeleteMapping("/{id}/delete")
     public String delete(@PathVariable("id") long id){
         genreService.delete(id);
-        return "redirect:/admin/author";
+        return "redirect:/admin";
     }
 }

@@ -78,6 +78,7 @@ public class BookService{
         bookRepository.save(newBook);
     }
 
+    @javax.transaction.Transactional
     public void delete(long id){
         Book book = bookRepository.findById(id);
         bookRepository.delete(book);

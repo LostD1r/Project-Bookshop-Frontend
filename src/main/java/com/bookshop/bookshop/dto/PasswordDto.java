@@ -13,6 +13,7 @@ import javax.validation.constraints.Size;
 @AllArgsConstructor
 @Builder
 public class PasswordDto {
+    private String username;
     @NotBlank(message = "Будь ласка введіть старий пароль.")
     private String oldPassword;
     @NotBlank(message = "Будь ласка придумайте важкий пароль.")
