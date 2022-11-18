@@ -6,6 +6,7 @@ body{
     height: 100%;
     width: 100vw;
     background: #201F1F;
+    font-family: 'Syne Mono', monospace;
 }
 
 .header{
@@ -127,9 +128,6 @@ body{
     width: 100vw;
     padding-top: 100px;
     display: flex;
-    /*flex-direction: column;*/
-    /*align-items: center;*/
-    /*justify-content: center;*/
     color: white;
 }
 
@@ -262,7 +260,7 @@ body{
     justify-content: center;
     border-radius: 20px;
     border: 2px solid gray;
-    margin: 0 5px 13px;
+    margin: 0 2px 13px;
     background: #383636;
     transition: 0.2s linear;
 }

@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" media="all" href="/static/style/genres-page-styles.css"
+          th:href="@{/style/genres-page-styles.css}"/>
+    <link rel="stylesheet" href="/static/style/reset.css" media="all" th:href="@{/style/reset.css}"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="../static/scripts/scripts.js" th:src="@{/scripts/scripts.js}"></script>
+    <script src="../static/scripts/search-script.js" th:src="@{/scripts/search-script.js}"></script>
+    <title>Видавництво</title>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">
+                <a href="/">
+                    <img src="../static/Photos/Logo3.png" th:src="@{/Photos/Logo3.png}" alt="Іконка логотипу">
+                </a>
+            </div>
+            <div class="nav-buttons">
+                <a href="/about">
+                    <button class="nav-button">
+                        Про нас
+                    </button>
+                </a>
+                <a href="/news">
+                    <button class="nav-button">
+                        Новини
+                    </button>
+                </a>
+                <a href="/catalog">
+                    <button class="nav-button">
+                        Каталог
+                    </button>
+                </a>
+            </div>
+            <div class="search-bar">
+                <div class="search-bar-background">
+                    <input id="search" type="text" placeholder="Пошук...">
+                    <a class="make-search" onclick="makeSearch()">
+                        <img src="../static/Photos/search-icon.png" th:src="@{/Photos/search-icon.png}" alt="Іконка пошуку">
+                    </a>
+                </div>
+            </div>
+            <div class="cart">
+                <a href="/bucket">
+                    <img src="../static/Photos/cart-icon.png" th:src="@{/Photos/cart-icon.png}" alt="Інонка корзини">
+                </a>
+            </div>
+            <div class="account">
+                <a href="/profile">
+                    <img src="../static/Photos/account-icon.png" th:src="@{/Photos/account-icon.png}" alt="Іконка аккаунту">
+                </a>
+            </div>
+        </div>
+        <div class="content">
+            <div class="shelf-wrapper">
+                <div class="shelf-header">
+                    <p>
+                        Жанр
+                    </p>
+                </div>
+                <div class="shelf">
+                    <ul>
+                        <li th:each="book : ${books}">
+                            <a th:href="@{/catalog/book/{id}(id=${book.id})}">
+                                <img th:src="${book.image}" th:alt="${book.price}">
+                            </a>
+                            <div class="text-box-wrapper">
+                                <p>
+                                    <span class="book-name-span" th:text="${book.name}">Назва книги</span><br>
+                                    <span th:text="${book.name}">Видавництво</span><br>
+                                    <br>
+                                    <span th:text="${book.author.name}">Автор</span>
+                                </p>
+                            </div>
+                            <div class="price-box-wrapper">
+                                <p th:text="${book.price}">
+                                    0.005$
+                                </p>
+                            </div>
+                        </li>
+                        <li th:each="book : ${books}">
+                            <a th:href="@{/catalog/book/{id}(id=${book.id})}">
+                                <img th:src="${book.image}" th:alt="${book.price}">
+                            </a>
+                            <div class="text-box-wrapper">
+                                <p>
+                                    <span class="book-name-span" th:text="${book.name}">Назва книги</span><br>
+                                    <span th:text="${book.name}">Видавництво</span><br>
+                                    <br>
+                                    <span th:text="${book.author.name}">Автор</span>
+                                </p>
+                            </div>
+                            <div class="price-box-wrapper">
+                                <p th:text="${book.price}">
+                                    0.005$
+                                </p>
+                            </div>
+                        </li>
+                        <li th:each="book : ${books}">
+                            <a th:href="@{/catalog/book/{id}(id=${book.id})}">
+                                <img th:src="${book.image}" th:alt="${book.price}">
+                            </a>
+                            <div class="text-box-wrapper">
+                                <p>
+                                    <span class="book-name-span" th:text="${book.name}">Назва книги</span><br>
+                                    <span th:text="${book.name}">Видавництво</span><br>
+                                    <br>
+                                    <span th:text="${book.author.name}">Автор</span>
+                                </p>
+                            </div>
+                            <div class="price-box-wrapper">
+                                <p th:text="${book.price}">
+                                    0.005$
+                                </p>
+                            </div>
+                        </li>
+                        <li th:each="book : ${books}">
+                            <a th:href="@{/catalog/book/{id}(id=${book.id})}">
+                                <img th:src="${book.image}" th:alt="${book.price}">
+                            </a>
+                            <div class="text-box-wrapper">
+                                <p>
+                                    <span class="book-name-span" th:text="${book.name}">Назва книги</span><br>
+                                    <span th:text="${book.name}">Видавництво</span><br>
+                                    <br>
+                                    <span th:text="${book.author.name}">Автор</span>
+                                </p>
+                            </div>
+                            <div class="price-box-wrapper">
+                                <p th:text="${book.price}">
+                                    0.005$
+                                </p>
+                            </div>
+                        </li>
+                        <li th:each="book : ${books}">
+                            <a th:href="@{/catalog/book/{id}(id=${book.id})}">
+                                <img th:src="${book.image}" th:alt="${book.price}">
+                            </a>
+                            <div class="text-box-wrapper">
+                                <p>
+                                    <span class="book-name-span" th:text="${book.name}">Назва книги</span><br>
+                                    <span th:text="${book.name}">Видавництво</span><br>
+                                    <br>
+                                    <span th:text="${book.author.name}">Автор</span>
+                                </p>
+                            </div>
+                            <div class="price-box-wrapper">
+                                <p th:text="${book.price}">
+                                    0.005$
+                                </p>
+                            </div>
+                        </li>
+                        <li th:each="book : ${books}">
+                            <a th:href="@{/catalog/book/{id}(id=${book.id})}">
+                                <img th:src="${book.image}" th:alt="${book.price}">
+                            </a>
+                            <div class="text-box-wrapper">
+                                <p>
+                                    <span class="book-name-span" th:text="${book.name}">Назва книги</span><br>
+                                    <span th:text="${book.name}">Видавництво</span><br>
+                                    <br>
+                                    <span th:text="${book.author.name}">Автор</span>
+                                </p>
+                            </div>
+                            <div class="price-box-wrapper">
+                                <p th:text="${book.price}">
+                                    0.005$
+                                </p>
+                            </div>
+                        </li>
+                        <li th:each="book : ${books}">
+                            <a th:href="@{/catalog/book/{id}(id=${book.id})}">
+                                <img th:src="${book.image}" th:alt="${book.price}">
+                            </a>
+                            <div class="text-box-wrapper">
+                                <p>
+                                    <span class="book-name-span" th:text="${book.name}">Назва книги</span><br>
+                                    <span th:text="${book.name}">Видавництво</span><br>
+                                    <br>
+                                    <span th:text="${book.author.name}">Автор</span>
+                                </p>
+                            </div>
+                            <div class="price-box-wrapper">
+                                <p th:text="${book.price}">
+                                    0.005$
+                                </p>
+                            </div>
+                        </li>
+                        <li th:each="book : ${books}">
+                            <a th:href="@{/catalog/book/{id}(id=${book.id})}">
+                                <img th:src="${book.image}" th:alt="${book.price}">
+                            </a>
+                            <div class="text-box-wrapper">
+                                <p>
+                                    <span class="book-name-span" th:text="${book.name}">Назва книги</span><br>
+                                    <span th:text="${book.name}">Видавництво</span><br>
+                                    <br>
+                                    <span th:text="${book.author.name}">Автор</span>
+                                </p>
+                            </div>
+                            <div class="price-box-wrapper">
+                                <p th:text="${book.price}">
+                                    0.005$
+                                </p>
+                            </div>
+                        </li>
+                        <li th:each="book : ${books}">
+                            <a th:href="@{/catalog/book/{id}(id=${book.id})}">
+                                <img th:src="${book.image}" th:alt="${book.price}">
+                            </a>
+                            <div class="text-box-wrapper">
+                                <p>
+                                    <span class="book-name-span" th:text="${book.name}">Назва книги</span><br>
+                                    <span th:text="${book.name}">Видавництво</span><br>
+                                    <br>
+                                    <span th:text="${book.author.name}">Автор</span>
+                                </p>
+                            </div>
+                            <div class="price-box-wrapper">
+                                <p th:text="${book.price}">
+                                    0.005$
+                                </p>
+                            </div>
+                        </li>
+                        <li th:each="book : ${books}">
+                            <a th:href="@{/catalog/book/{id}(id=${book.id})}">
+                                <img th:src="${book.image}" th:alt="${book.price}">
+                            </a>
+                            <div class="text-box-wrapper">
+                                <p>
+                                    <span class="book-name-span" th:text="${book.name}">Назва книги</span><br>
+                                    <span th:text="${book.name}">Видавництво</span><br>
+                                    <br>
+                                    <span th:text="${book.author.name}">Автор</span>
+                                </p>
+                            </div>
+                            <div class="price-box-wrapper">
+                                <p th:text="${book.price}">
+                                    0.005$
+                                </p>
+                            </div>
+                        </li>
+                        <li th:each="book : ${books}">
+                            <a th:href="@{/catalog/book/{id}(id=${book.id})}">
+                                <img th:src="${book.image}" th:alt="${book.price}">
+                            </a>
+                            <div class="text-box-wrapper">
+                                <p>
+                                    <span class="book-name-span" th:text="${book.name}">Назва книги</span><br>
+                                    <span th:text="${book.name}">Видавництво</span><br>
+                                    <br>
+                                    <span th:text="${book.author.name}">Автор</span>
+                                </p>
+                            </div>
+                            <div class="price-box-wrapper">
+                                <p th:text="${book.price}">
+                                    0.005$
+                                </p>
+                            </div>
+                        </li>
+                        <li th:each="book : ${books}">
+                            <a th:href="@{/catalog/book/{id}(id=${book.id})}">
+                                <img th:src="${book.image}" th:alt="${book.price}">
+                            </a>
+                            <div class="text-box-wrapper">
+                                <p>
+                                    <span class="book-name-span" th:text="${book.name}">Назва книги</span><br>
+                                    <span th:text="${book.name}">Видавництво</span><br>
+                                    <br>
+                                    <span th:text="${book.author.name}">Автор</span>
+                                </p>
+                            </div>
+                            <div class="price-box-wrapper">
+                                <p th:text="${book.price}">
+                                    0.005$
+                                </p>
+                            </div>
+                        </li>
+                        <li th:each="book : ${books}">
+                            <a th:href="@{/catalog/book/{id}(id=${book.id})}">
+                                <img th:src="${book.image}" th:alt="${book.price}">
+                            </a>
+                            <div class="text-box-wrapper">
+                                <p>
+                                    <span class="book-name-span" th:text="${book.name}">Назва книги</span><br>
+                                    <span th:text="${book.name}">Видавництво</span><br>
+                                    <br>
+                                    <span th:text="${book.author.name}">Автор</span>
+                                </p>
+                            </div>
+                            <div class="price-box-wrapper">
+                                <p th:text="${book.price}">
+                                    0.005$
+                                </p>
+                            </div>
+                        </li>
+                        <li th:each="book : ${books}">
+                            <a th:href="@{/catalog/book/{id}(id=${book.id})}">
+                                <img th:src="${book.image}" th:alt="${book.price}">
+                            </a>
+                            <div class="text-box-wrapper">
+                                <p>
+                                    <span class="book-name-span" th:text="${book.name}">Назва книги</span><br>
+                                    <span th:text="${book.name}">Видавництво</span><br>
+                                    <br>
+                                    <span th:text="${book.author.name}">Автор</span>
+                                </p>
+                            </div>
+                            <div class="price-box-wrapper">
+                                <p th:text="${book.price}">
+                                    0.005$
+                                </p>
+                            </div>
+                        </li><li th:each="book : ${books}">
+                        <a th:href="@{/catalog/book/{id}(id=${book.id})}">
+                            <img th:src="${book.image}" th:alt="${book.price}">
+                        </a>
+                        <div class="text-box-wrapper">
+                            <p>
+                                <span class="book-name-span" th:text="${book.name}">Назва книги</span><br>
+                                <span th:text="${book.name}">Видавництво</span><br>
+                                <br>
+                                <span th:text="${book.author.name}">Автор</span>
+                            </p>
+                        </div>
+                        <div class="price-box-wrapper">
+                            <p th:text="${book.price}">
+                                0.005$
+                            </p>
+                        </div>
+                    </li>
+                        <li th:each="book : ${books}">
+                            <a th:href="@{/catalog/book/{id}(id=${book.id})}">
+                                <img th:src="${book.image}" th:alt="${book.price}">
+                            </a>
+                            <div class="text-box-wrapper">
+                                <p>
+                                    <span class="book-name-span" th:text="${book.name}">Назва книги</span><br>
+                                    <span th:text="${book.name}">Видавництво</span><br>
+                                    <br>
+                                    <span th:text="${book.author.name}">Автор</span>
+                                </p>
+                            </div>
+                            <div class="price-box-wrapper">
+                                <p th:text="${book.price}">
+                                    0.005$
+                                </p>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

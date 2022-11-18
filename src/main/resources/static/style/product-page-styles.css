@@ -2,6 +2,7 @@
     height: 100%;
     width: 100%;
     background: #201F1F;
+    font-family: 'Syne Mono', monospace;
 }
 
 .header{
@@ -220,17 +221,21 @@
     height: 55%;
     width: 20%;
     color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
     font-size: 20px;
     border-radius: 15px;
     background: #409C5A;
+    padding: 0 0 0 0;
 }
 
 .add-to-cart a{
+    height: 100%;
+    width: 100%;
+    border-radius: 15px;
     text-decoration: none;
     color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .add-to-cart:hover{

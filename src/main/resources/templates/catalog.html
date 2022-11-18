@@ -9,7 +9,7 @@
     <script src="../static/scripts/catalog-scripts.js" th:src="@{/scripts/catalog-scripts.js}"></script>
     <script src="../static/scripts/search-script.js" th:src="@{/scripts/search-script.js}"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-    <title>Title</title>
+    <title>Каталог</title>
 </head>
 <body>
     <div class="container">
@@ -123,7 +123,7 @@
             </div>
             <div class="books">
                 <div class="shelf">
-                    <ul >
+                    <ul>
                         <li th:each="book : ${books}">
                             <a th:href="@{/catalog/book/{id}(id=${book.id})}">
                                 <img th:src="${book.image}" th:alt="${book.price}">

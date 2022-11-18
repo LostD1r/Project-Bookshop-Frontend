@@ -1,3 +1,7 @@
+body{
+    overflow: hidden;
+}
+
 .container{
     min-height: 100vh;
     width: 100%;
@@ -50,7 +54,6 @@
 .nav-button:hover{
     background: white;
     color: black;
-
 }
 
 .search-bar{
@@ -116,127 +119,105 @@
 }
 
 .content{
-    min-height: 90%;
+    height: 90vh;
     width: 100%;
     color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.shelf-wrapper{
+    height: 70vh;
+    width: 75%;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 20px;
-}
-
-.header-content{
-    height: 5%;
-    width: 70%;
-    font-size: 35px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 20px 0 0 0;
-}
-
-.text-box-content{
-    height: 20%;
-    width: 70%;
-    font-size: 20px;
-}
-
-.logo-content{
-    height: 30%;
-    width: 30%;
-    display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.logo-content img{
-    height: 100%;
+.shelf-header{
+    height: 10%;
     width: 100%;
-}
-
-.team-text-box{
-    height: 30px;
-    width: 70%;
-    font-size: 25px;
-    color: white;
-    background: #333131;
-    border-radius: 20px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.members{
-    height: 30vh;
-    width: 70%;
-}
-
-.members ul{
-    height: 100%;
-    width: 100%;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    flex-flow: row wrap;
-}
-
-.members ul li{
-    height: 45%;
-    width: 33%;
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-}
-
-.member-photo{
-    height: 100%;
-    width: 30%;
-    border-radius: 100px;
-    box-shadow: 0 0 15px black;
-}
-
-.member-photo img{
-    height: 100%;
-    width: 100%;
-}
-
-.member-name{
-    height: 100%;
-    width: 70%;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 30px;
 }
 
-.about-shop-header{
-    height: 30px;
-    width: 70%;
-    font-size: 25px;
-    color: white;
-    background: #333131;
-    border-radius: 20px;
+.shelf{
+    height: 90%;
+    width: 100%;
     display: flex;
-    justify-content: center;
-    align-items: center;
+    overflow-x: hidden;
+    overflow-y: auto;
+    white-space: revert;
+    transition: 0.6s;
+    border-radius: 25px;
+    border: 2px solid #615e5e;
+    padding-top: 15px;
+    padding-left: 15px;
+    padding-right: 15px;
 }
 
-.about-shop{
-    height: 15vh;
-    width: 70%;
+.shelf:hover{
+    box-shadow: 0 0 30px 2px #615e5e, 0 0 15px 2px #615e5e inset;
+}
+
+.shelf li{
+    height: 250px;
+    width: 180px;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    border: 2px solid gray;
+    margin: 0 2px 13px;
+    background: #383636;
+    transition: 0.2s linear;
+}
+
+.shelf li:hover{
+    box-shadow: 3px 3px 5px 4px #444242, 0 0 5px 4px #444242 inset;
+}
+
+.shelf li a{
+    height: 140px;
+    width: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+}
+
+.text-box-wrapper{
+    max-height: 50px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-top: 5px;
+    padding-left: 25px;
+    padding-top: 10px;
+}
+
+.book-name-span{
     font-size: 20px;
 }
 
-.shipping{
-    height: 35vh;
-    width: 70%;
+.price-box-wrapper{
+    height: 30px;
+    width: 120px;
     display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 50px;
+    align-items: end;
+    justify-content: right;
+    margin-top: 5px;
+    padding-left: 35px;
 }
 
-.shipping img{
+.shelf li a img{
     height: 100%;
-    width: 60%;
+    width: 100%;
+    border-radius: 10px;
 }
