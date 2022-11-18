@@ -4,6 +4,7 @@
     background: #201F1F;
     display: flex;
     flex-direction: column;
+    font-family: 'Syne Mono', monospace;
 }
 
 .header{
@@ -128,6 +129,7 @@
 
 .books-to-buy{
     font-size: 50px;
+    margin-bottom: 20px;
 }
 
 .to-buy-box-wrapper{
@@ -313,7 +315,7 @@
     height: 100%;
     width: 100%;
     border-radius: 30px;
-    font-size: 25px;
+    font-size: 27px;
     background: none;
     border: none;
     color: white;

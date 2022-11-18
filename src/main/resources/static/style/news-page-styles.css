@@ -4,6 +4,7 @@
     background: #201F1F;
     display: flex;
     flex-direction: column;
+    font-family: 'Syne Mono', monospace;
 }
 
 .header{

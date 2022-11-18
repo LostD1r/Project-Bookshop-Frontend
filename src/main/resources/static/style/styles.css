@@ -2,6 +2,7 @@
     height: 100%;
     width: 100vw;
     background: #201F1F;
+    font-family: 'Syne Mono', monospace;
 }
 
 .header{
@@ -180,7 +181,6 @@
     width: 100%;
     display: flex;
     align-items: center;
-    /*justify-content: center;*/
     margin-top: 5px;
     padding-left: 25px;
     padding-top: 10px;
@@ -215,6 +215,7 @@
     font-size: 35px;
     margin-bottom: 25px;
     margin-top: 25px;
+    font-family: 'Syne Mono', monospace;
 }
 
 .footer{
@@ -225,6 +226,7 @@
     justify-content: center;
     margin-top: 100px;
     box-shadow: 0 2px 15px;
+    font-family: 'Syne Mono', monospace;
 }
 
 .logo-footer{

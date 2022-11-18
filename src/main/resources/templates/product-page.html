@@ -9,7 +9,7 @@
     <link rel="stylesheet" type="text/css" href="/static/style/reset.css" media="all" th:href="@{/style/reset.css}"/>
     <script src="../static/scripts/product-page-scripts.js" th:src="@{/scripts/product-page-scripts.js}"></script>
     <script src="../static/scripts/search-script.js" th:src="@{/scripts/search-script.js}"></script>
-    <title>Product page</title>
+    <title>Товар</title>
 </head>
 <body>
 <div class="container">
@@ -81,8 +81,7 @@
                     </div>
                 </div>
                 <button class="add-to-cart" type="button">
-                    <a th:if="${book.getShopAmount()} > 0" th:href="@{/catalog/book/{id}/bucket(id=${book.id})}">Додати до кошику</a>
-                    <a th:unless="${book.getShopAmount()}" type="hidden">Додати до кошику</a>
+                    <a th:if="${book.getShopAmount()} > 0" th:href="@{/catalog/book/{id}/bucket(id=${book.id})}" onsubmit="alert('Книгу додано до кошику')">Додати до кошику</a><a th:unless="${book.getShopAmount()}" type="hidden">Додати до кошику</a>
                 </button>
             </div>
             <div class="buttons">
