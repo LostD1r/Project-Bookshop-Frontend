@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -56,19 +56,19 @@
         </div>
     </div>
     <div class="content">
-        <form class="change-box">
+        <form class="change-box" th:method="PATCH" th:action="@{/admin/news/{id}(id = ${id})}" th:object="${feed}">
             <label for="news-name">
                 Введіть назву новини
             </label>
-            <input type="text" id="news-name">
+            <input type="text" id="news-name" th:field="*{title}">
             <label for="news-text">
                 Введіть текст новини
             </label>
-            <textarea id="news-text" cols="50" rows="10"></textarea>
+            <textarea id="news-text" cols="50" rows="10" th:field="*{message}"></textarea>
             <label for="news-photo">
                 Вставте посилання на фото новини
             </label>
-            <input type="text" id="news-photo">
+            <input type="text" id="news-photo" th:field="*{image}">
             <button type="submit">
                 Зберегти зміни
             </button>

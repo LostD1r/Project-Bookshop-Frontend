@@ -22,27 +22,33 @@ public class AdminAuthorController {
 
     @GetMapping("/new")
     public String getAuthorForm(Model model){
-        model.addAttribute("author", new AuthorDto());
-        return "admin";
+        model.addAttribute("authorNew", new AuthorDto());
+        return "admin/add-author-list";
     }
 
-    @PostMapping("/new")
-    public String addNewAuthor(@PathVariable("author") AuthorDto authorDto){
+    @PostMapping("/add")
+    public String addNewAuthor(@ModelAttribute("authorNew") AuthorDto authorDto){
         authorService.addAuthor(authorDto);
         return "redirect:/admin";
     }
 
     @GetMapping("/{id}/edit")
     public String edite(@PathVariable("id") long id, Model model){
-        model.addAttribute("author", new AuthorDto());
-        return "admin";
+        Author author = authorService.getById(id);
+        AuthorDto authorDto = AuthorDto.builder()
+                .name(author.getName())
+                .description(author.getDescription())
+                .image(author.getImage())
+                .build();
+        model.addAttribute("author", authorDto);
+        model.addAttribute("id", id);
+        return "admin/change-author-list";
     }
 
     @PatchMapping("/{id}")
-    public String update(@PathVariable("id") long id, Model model){
-        AuthorDto authorDto = (AuthorDto) model.getAttribute("author");
+    public String update(@PathVariable("id") long id, @ModelAttribute("author") AuthorDto authorDto){
         authorService.updateAuthor(authorDto, id);
-        return "redirect:/admin/author";
+        return "redirect:/admin";
     }
 
     @DeleteMapping("/{id}/delete")

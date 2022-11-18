@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" media="all" href="/static/style/admin/change-genres-list-styles.css"
-          th:href="@{/style/admin/change-genres-list-styles.css}"/>
+    <link rel="stylesheet" type="text/css" media="all" href="/static/style/admin/change-publishing-list-styles.css"
+          th:href="@{/style/admin/change-publishing-list-styles.css}"/>
     <link rel="stylesheet" href="/static/style/reset.css" media="all" th:href="@{/style/reset.css}"/>
-    <title>Сторінка редагування жанрів</title>
+    <title>Сторінка редагування видавництв</title>
 </head>
 <body>
 <div class="container">
@@ -38,8 +38,7 @@
             <div class="search-bar-background">
                 <input id="search" type="text" placeholder="Пошук...">
                 <a class="make-search" onclick="makeSearch()">
-                    <img src="../../static/Photos/search-icon.png" th:src="@{/Photos/search-icon.png}"
-                         alt="Іконка пошуку">
+                    <img src="../../static/Photos/search-icon.png" th:src="@{/Photos/search-icon.png}" alt="Іконка пошуку">
                 </a>
             </div>
         </div>
@@ -50,17 +49,24 @@
         </div>
         <div class="account">
             <a href="/profile">
-                <img src="../../static/Photos/account-icon.png" th:src="@{/Photos/account-icon.png}"
-                     alt="Іконка аккаунту">
+                <img src="../../static/Photos/account-icon.png" th:src="@{/Photos/account-icon.png}" alt="Іконка аккаунту">
             </a>
         </div>
     </div>
     <div class="content">
-        <form class="change-box" th:method="PATCH" th:action="@{/admin/genre/{id}(id = ${id})}" th:object="${genre}">
-            <label for="genres-name">
-                Введіть назву жанру
+        <form class="change-box" th:method="POST" th:action="@{/admin/publishing/new}" th:object="${pub}">
+            <label for="publishing-name">
+                Введіть назву видавництва
             </label>
-            <input type="text" id="genres-name" th:field="*{name}">
+            <input type="text" id="publishing-name" th:field="*{name}">
+            <label for="publishing-description">
+                Введіть опис видавництва
+            </label>
+            <textarea id="publishing-description" cols="50" rows="10" th:field="*{description}"></textarea>
+            <label for="publishing-photo">
+                Вставте посилання на фото видавництва
+            </label>
+            <input type="text" id="publishing-photo" th:field="*{image}">
             <button type="submit">
                 Зберегти зміни
             </button>

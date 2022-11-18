@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -54,19 +54,19 @@
         </div>
     </div>
     <div class="content">
-        <form class="change-box">
+        <form class="change-box" th:method="PATCH" th:action="@{/admin/publishing/{id}(id = ${id})}" th:object="${pub}">
             <label for="publishing-name">
                 Введіть назву видавництва
             </label>
-            <input type="text" id="publishing-name">
+            <input type="text" id="publishing-name" th:field="*{name}">
             <label for="publishing-description">
                 Введіть опис видавництва
             </label>
-            <textarea id="publishing-description" cols="50" rows="10"></textarea>
+            <textarea id="publishing-description" cols="50" rows="10" th:field="*{description}"></textarea>
             <label for="publishing-photo">
                 Вставте посилання на фото видавництва
             </label>
-            <input type="text" id="publishing-photo">
+            <input type="text" id="publishing-photo" th:field="*{image}">
             <button type="submit">
                 Зберегти зміни
             </button>

@@ -37,4 +37,8 @@ public class EventService {
     public void delete(long id) {
         eventRepository.delete(eventRepository.findById(id));
     }
+
+    public Event getById(long id) {
+        return eventRepository.getById(id);
+    }
 }

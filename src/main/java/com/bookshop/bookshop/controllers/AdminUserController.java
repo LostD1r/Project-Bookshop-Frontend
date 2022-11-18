@@ -22,15 +22,17 @@ public class AdminUserController {
 
     @GetMapping("/{id}/edit")
     public String edite(@PathVariable("id") long id, Model model){
-        model.addAttribute("user", new ChangeUserRoleDto());
-        return "admin";
+        User user = personDetailsService.findById(id);
+        ChangeUserRoleDto userDto = new ChangeUserRoleDto(user.getRole().name());
+        model.addAttribute("id", id);
+        model.addAttribute("user", userDto);
+        return "admin/change-users-list";
     }
 
     @PatchMapping("/{id}")
-    public String update(@PathVariable("id") long id, Model model){
-        ChangeUserRoleDto changeUserRoleDto = (ChangeUserRoleDto) model.getAttribute("user");
-        personDetailsService.updateUserRole(changeUserRoleDto, id);
-        return "redirect:/admin/book";
+    public String update(@PathVariable("id") long id, @ModelAttribute("user") ChangeUserRoleDto userDto){
+        personDetailsService.updateUserRole(userDto, id);
+        return "redirect:/admin";
     }
 
     @DeleteMapping("/{id}/delete")

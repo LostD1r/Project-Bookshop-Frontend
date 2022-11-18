@@ -45,4 +45,8 @@ public class GenreService {
     public void delete(long id) {
         genreRepository.delete(genreRepository.findById(id));
     }
+
+    public Genre getById(long id) {
+        return genreRepository.getById(id);
+    }
 }
