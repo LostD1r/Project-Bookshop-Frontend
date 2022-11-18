@@ -198,14 +198,26 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: row;
-    gap: 30px;
+    gap: 20px;
 }
 
 .edit-profile,
-.exit-profile{
+.settings-exit-buttons form{
     height: 100%;
     width: 30%;
+    font-size: 25px;
+    background: none;
+    color: white;
+    border: none;
+    transition: 0.3s;
+    border-radius: 20px;
+    box-shadow: 0 3px 15px black;
+    padding: 0 0 0 0;
+}
+
+.exit-profile{
+    height: 100%;
+    width: 100%;
     font-size: 25px;
     background: none;
     color: white;

@@ -8,4 +8,4 @@ VALUES (1, '/Photos/Latin_dictionary.jpg', 'aesdfrewqefd', 'awesrваfrewaefg'),
        (6, '/Photos/Latin_dictionary.jpg', 'aesdfreіваefd', 'awesrdfrewaefg'),
        (7, '/Photos/Latin_dictionary.jpg', 'aesdfrewqefd', 'awesrdfrewaefg');
 
-ALTER SEQUENCE author_seq RESTART WITH 8;
+ALTER SEQUENCE publishing_seq RESTART WITH 8;

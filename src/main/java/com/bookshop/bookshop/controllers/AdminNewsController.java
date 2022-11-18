@@ -22,27 +22,33 @@ public class AdminNewsController {
 
     @GetMapping("/new")
     public String getNewsForm(Model model){
-        model.addAttribute("new", new NewDto());
-        return "admin";
+        model.addAttribute("feed", new NewDto());
+        return "admin/add-news-list";
     }
 
     @PostMapping("/new")
-    public String addNew(@PathVariable("new") NewDto newDto){
+    public String addNew(@ModelAttribute("feed") NewDto newDto){
         newsService.addNew(newDto);
         return "redirect:/admin";
     }
 
     @GetMapping("/{id}/edit")
-    public String edite(@PathVariable("id") long id,Model model){
-        model.addAttribute("book", new BookDto());
-        return "admin";
+    public String edite(@PathVariable("id") long id, Model model){
+        New feed = newsService.getById(id);
+        NewDto newDto = NewDto.builder()
+                .title(feed.getTitle())
+                .message(feed.getMessage())
+                .image(feed.getImage())
+                .build();
+        model.addAttribute("id", id);
+        model.addAttribute("feed", newDto);
+        return "admin/change-news-list";
     }
 
     @PatchMapping("/{id}")
-    public String update(@PathVariable("id") long id, Model model){
-        NewDto newDto = (NewDto) model.getAttribute("new");
+    public String update(@PathVariable("id") long id, @ModelAttribute("feed") NewDto newDto){
         newsService.updateNew(newDto, id);
-        return "redirect:/admin/book";
+        return "redirect:/admin";
     }
 
     @DeleteMapping("/{id}/delete")

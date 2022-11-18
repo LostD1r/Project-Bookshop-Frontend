@@ -54,21 +54,21 @@
             </div>
         </div>
         <div class="content">
-            <form class="change-box" th:method="PATCH" th:action="@{/admin/author/{id}(id = ${id})}" th:object="${author}">
+            <form class="change-box" th:method="POST" th:action="@{/admin/author/add}" th:object="${authorNew}">
                 <label for="author-name">
-                    Введіть нове ім'я автора
+                    Введіть ім'я автора
                 </label>
                 <input type="text" id="author-name" th:field="*{name}">
                 <label for="author-description">
-                    Введіть новий опис
+                    Введіть опис
                 </label>
                 <textarea id="author-description" cols="50" rows="10" th:field="*{description}"></textarea>
                 <label for="author-photo">
-                    Вставте посилання на нове фото
+                    Вставте посилання на фото
                 </label>
                 <input type="text" id="author-photo" th:field="*{image}">
                 <button type="submit">
-                    Зберегти зміни
+                    Зберегти
                 </button>
             </form>
         </div>

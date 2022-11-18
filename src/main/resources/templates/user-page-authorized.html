@@ -87,9 +87,10 @@
                         <button class="edit-profile">
                             <a href="/profile/settings">Редагувати профіль</a>
                         </button>
-                        <button class="exit-profile">
-                            <a href="/profile/settings">Вихід</a>
-                        </button>
+                        <form th:method="POST" th:action="@{/logout}">
+                            <button class="exit-profile" type="submit">Вихід</button>
+                        </form>
+
                     </div>
                 </div>
             </div>

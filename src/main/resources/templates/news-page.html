@@ -56,24 +56,24 @@
       <div class="content">
           <div class="news-box-wrapper">
               <div class="news-box">
-                  <ul th:each="new : ${news}">
+                  <ul th:each="feed : ${news}">
                       <li>
                           <div class="photo-box">
-                              <img th:src="${new.getImage()}">
+                              <img th:src="${feed.getImage()}">
                           </div>
                           <div class="text-box-news-wrapper">
                               <div class="header-news">
-                                  <p th:text="${new.getTitle()}">
+                                  <p th:text="${feed.getTitle()}">
                                       Новина
                                   </p>
                               </div>
                               <div class="text-box-news">
-                                  <p th:text="${new.getMessage()}">
+                                  <p th:text="${feed.getMessage()}">
 
                                   </p>
                               </div>
                               <div class="upload-date">
-                                  Опубліковано<p th:text="${new.getCreated()}">1 вересня 2022</p>
+                                  Опубліковано<p th:text="${feed.getCreated()}">1 вересня 2022</p>
                               </div>
                           </div>
                       </li>

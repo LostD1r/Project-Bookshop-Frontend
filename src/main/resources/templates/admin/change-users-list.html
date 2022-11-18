@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -54,11 +54,11 @@
             </div>
         </div>
         <div class="content">
-            <form class="change-box">
+            <form class="change-box" th:method="PATCH" th:action="@{/admin/user/{id}(id = ${id})}" th:object="${user}">
                 <label for="select-user-role">
                     Оберіть роль для користувача
                 </label>
-                <input type="text" id="select-user-role">
+                <input type="text" id="select-user-role" th:field="*{role}">
                 <button type="submit">
                     Зберегти зміни
                 </button>

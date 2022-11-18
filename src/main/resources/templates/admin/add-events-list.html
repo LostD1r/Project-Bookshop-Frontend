@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" media="all" href="/static/style/admin/change-genres-list-styles.css"
-          th:href="@{/style/admin/change-genres-list-styles.css}"/>
+    <link rel="stylesheet" type="text/css" media="all" href="/static/style/admin/change-events-list-styles.css"
+          th:href="@{/style/admin/change-events-list-styles.css}"/>
     <link rel="stylesheet" href="/static/style/reset.css" media="all" th:href="@{/style/reset.css}"/>
-    <title>Сторінка редагування жанрів</title>
+    <title>Сторінка редагування подій</title>
 </head>
 <body>
 <div class="container">
@@ -56,13 +56,17 @@
         </div>
     </div>
     <div class="content">
-        <form class="change-box" th:method="PATCH" th:action="@{/admin/genre/{id}(id = ${id})}" th:object="${genre}">
-            <label for="genres-name">
-                Введіть назву жанру
+        <form class="change-box" th:method="POST" th:action="@{/admin/event/new}" th:object="${event}">
+            <label for="events-name">
+                Введіть назву події
             </label>
-            <input type="text" id="genres-name" th:field="*{name}">
+            <input type="text" id="events-name" th:field="*{title}">
+            <label for="events-text">
+                Введіть текст події
+            </label>
+            <textarea id="events-text" cols="50" rows="10" th:field="*{message}"></textarea>
             <button type="submit">
-                Зберегти зміни
+                Зберегти
             </button>
         </form>
     </div>

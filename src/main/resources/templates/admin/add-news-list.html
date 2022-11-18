@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" media="all" href="/static/style/admin/change-genres-list-styles.css"
-          th:href="@{/style/admin/change-genres-list-styles.css}"/>
+    <link rel="stylesheet" type="text/css" media="all" href="/static/style/admin/change-news-list-styles.css"
+          th:href="@{/style/admin/change-news-list-styles.css}"/>
     <link rel="stylesheet" href="/static/style/reset.css" media="all" th:href="@{/style/reset.css}"/>
-    <title>Сторінка редагування жанрів</title>
+    <title>Сторінка редагування новин</title>
 </head>
 <body>
 <div class="container">
@@ -56,11 +56,19 @@
         </div>
     </div>
     <div class="content">
-        <form class="change-box" th:method="PATCH" th:action="@{/admin/genre/{id}(id = ${id})}" th:object="${genre}">
-            <label for="genres-name">
-                Введіть назву жанру
+        <form class="change-box" th:method="POST" th:action="@{/admin/news/new}" th:object="${feed}">
+            <label for="news-name">
+                Введіть назву новини
             </label>
-            <input type="text" id="genres-name" th:field="*{name}">
+            <input type="text" id="news-name" th:field="*{title}">
+            <label for="news-text">
+                Введіть текст новини
+            </label>
+            <textarea id="news-text" cols="50" rows="10" th:field="*{message}"></textarea>
+            <label for="news-photo">
+                Вставте посилання на фото новини
+            </label>
+            <input type="text" id="news-photo" th:field="*{image}">
             <button type="submit">
                 Зберегти зміни
             </button>

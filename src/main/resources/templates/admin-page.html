@@ -108,7 +108,7 @@
         <div class="change-box-wrapper">
             <div class="change-book-box" id="change-book-box">
                 <div class="change-button">
-                    <a href="#" target="_blank">
+                    <a href="/admin/book/new" target="_blank">
                         Додати книжку
                     </a>
                 </div>
@@ -130,7 +130,7 @@
                             </div>
                             <div class="buttons-price-box">
                                 <div class="book-buttons">
-                                   <form>
+                                   <form th:method="GET" th:action="@{/admin/book/{id}/edit(id = ${book.getId()})}">
                                        <button type="submit">
                                            Змінити
                                        </button>
@@ -151,7 +151,7 @@
             </div>
             <div class="change-author-box" id="change-author-box">
                 <div class="change-button">
-                    <a href="#" target="_blank">
+                    <a href="/admin/author/new" target="_blank">
                         Додати автора
                     </a>
                 </div>
@@ -173,7 +173,7 @@
                             </div>
                             <div class="buttons-box">
                                 <div class="author-buttons">
-                                    <form>
+                                    <form th:method="GET" th:action="@{/admin/author/{id}/edit(id = ${author.getId()})}">
                                         <button type="submit">
                                             Змінити
                                         </button>
@@ -191,7 +191,7 @@
             </div>
             <div class="change-publishing-box" id="change-publishing-box">
                 <div class="change-button">
-                    <a href="#" target="_blank">
+                    <a href="/admin/publishing/new" target="_blank">
                         Додати видавництво
                     </a>
                 </div>
@@ -213,7 +213,7 @@
                             </div>
                             <div class="buttons-box">
                                 <div class="publishing-buttons">
-                                    <form>
+                                    <form th:method="GET" th:action="@{/admin/publishing/{id}/edit(id = ${pub.getId()})}">
                                         <button type="submit">
                                             Змінити
                                         </button>
@@ -242,7 +242,7 @@
                             </div>
                             <div class="buttons-box">
                                 <div class="users-buttons">
-                                    <form>
+                                    <form th:method="GET" th:action="@{/admin/user/{id}/edit(id = ${user.getId()})}">
                                         <button type="submit">
                                             Змінити
                                         </button>
@@ -260,25 +260,22 @@
             </div>
             <div class="change-orders-box" id="change-orders-box">
                 <ul>
-                    <li>
+                    <li th:each="order : ${orders}">
                         <div class="orders-text-box">
                             <div class="name-box">
                                 <div class="orders-id">
-                                    Номер замовлення:&nbsp;<p></p>
-                                    Логін користувача:&nbsp;<p></p>
+                                    Номер замовлення:&nbsp;<p th:text="${order.getId()}"></p>
+                                    Логін користувача:&nbsp;<p th:text="${order.getUser().getName()}"></p>
                                 </div>
                             </div>
                             <div class="buttons-box">
                                 <div class="orders-buttons">
-                                    <form>
+                                    <form th:method="GET" th:action="@{/admin/order/{id}/edit(id = ${order.getId()})}">
                                         <button type="submit">
                                             Змінити
                                         </button>
                                     </form>
                                     <form>
-                                        <button type="submit">
-                                            Видалити
-                                        </button>
                                     </form>
                                 </div>
                             </div>
@@ -288,7 +285,7 @@
             </div>
             <div class="change-genres-box" id="change-genres-box">
                 <div class="change-button">
-                    <a href="#" target="_blank">
+                    <a href="/admin/genre/new" target="_blank">
                         Додати жанр
                     </a>
                 </div>
@@ -302,7 +299,7 @@
                             </div>
                             <div class="buttons-box">
                                 <div class="genres-buttons">
-                                    <form>
+                                    <form th:method="GET" th:action="@{/admin/genre/{id}/edit(id = ${genre.getId()})}">
                                         <button type="submit">
                                             Змінити
                                         </button>
@@ -320,29 +317,29 @@
             </div>
             <div class="change-news-box" id="change-news-box">
                 <div class="change-button">
-                    <a href="#" target="_blank">
+                    <a href="/admin/news/new" target="_blank">
                         Додати новину
                     </a>
                 </div>
                 <ul>
-                    <li th:each="new : ${news}">
-                        <img th:src="${new.getImage()}" alt="Фото новини">
+                    <li th:each="feed : ${news}">
+                        <img th:src="${feed.getImage()}" alt="Фото новини">
                         <div class="news-text-box">
                             <div class="name-box">
                                 <div class="news-name">
-                                    <p th:text="${new.getTitle()}">
+                                    <p th:text="${feed.getTitle()}">
                                         Назва новини
                                     </p>
                                 </div>
                             </div>
                             <div class="buttons-box">
                                 <div class="news-buttons">
-                                    <form>
+                                    <form th:method="GET" th:action="@{/admin/news/{id}/edit(id = ${feed.getId()})}">
                                         <button type="submit">
                                             Змінити
                                         </button>
                                     </form>
-                                    <form th:method="DELETE" th:action="@{/admin/new/{id}/delete(id = ${new.getId()})}">
+                                    <form th:method="DELETE" th:action="@{/admin/new/{id}/delete(id = ${feed.getId()})}">
                                         <button type="submit">
                                             Видалити
                                         </button>
@@ -355,7 +352,7 @@
             </div>
             <div class="change-events-box" id="change-events-box">
                 <div class="change-button">
-                    <a href="#" target="_blank">
+                    <a href="/admin/event/new" target="_blank">
                         Додати подію
                     </a>
                 </div>
@@ -371,7 +368,7 @@
                             </div>
                             <div class="buttons-box">
                                 <div class="events-buttons">
-                                    <form>
+                                    <form th:method="GET" th:action="@{/admin/event/{id}/edit(id = ${event.getId()})}">
                                         <button type="submit">
                                             Змінити
                                         </button>

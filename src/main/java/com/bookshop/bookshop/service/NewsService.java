@@ -42,4 +42,8 @@ public class NewsService {
     public void delete(long id) {
         newsRepository.delete(newsRepository.findById(id));
     }
+
+    public New getById(long id) {
+        return newsRepository.getById(id);
+    }
 }

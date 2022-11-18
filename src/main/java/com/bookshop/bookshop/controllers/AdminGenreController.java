@@ -24,26 +24,30 @@ public class AdminGenreController {
     @GetMapping("/new")
     public String getGenreForm(Model model){
         model.addAttribute("genre", new GenreDto());
-        return "admin";
+        return "admin/add-genres-list";
     }
 
     @PostMapping("/new")
-    public String addNewGenre(@PathVariable("genre") GenreDto genreDto){
+    public String addNewGenre(@ModelAttribute("genre") GenreDto genreDto){
         genreService.addGenre(genreDto);
         return "redirect:/admin";
     }
 
     @GetMapping("/{id}/edit")
     public String edite(@PathVariable("id") long id, Model model){
-        model.addAttribute("genre", new AuthorDto());
-        return "admin";
+        Genre genre = genreService.getById(id);
+        GenreDto genreDto = GenreDto.builder()
+                .name(genre.getName())
+                .build();
+        model.addAttribute("genre", genreDto);
+        model.addAttribute("id", id);
+        return "admin/change-genres-list";
     }
 
     @PatchMapping("/{id}")
-    public String update(@PathVariable("id") long id, Model model){
-        GenreDto genreDto = (GenreDto) model.getAttribute("genre");
+    public String update(@PathVariable("id") long id, @ModelAttribute("genre") GenreDto genreDto){
         genreService.updateGenre(genreDto, id);
-        return "redirect:/admin/author";
+        return "redirect:/admin";
     }
 
     @DeleteMapping("/{id}/delete")

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,7 +13,7 @@
 <div class="container">
     <div class="header">
         <div class="logo">
-            <a href="/static">
+            <a href="/">
                 <img src="../../static/Photos/Logo3.png" th:src="@{/Photos/Logo3.png}" alt="Іконка логотипу">
             </a>
         </div>
@@ -56,11 +56,11 @@
         </div>
     </div>
     <div class="content">
-        <form class="change-box">
+        <form class="change-box" th:method="PATCH" th:action="@{/admin/order/{id}(id = ${id})}" th:object="${order}">
             <label for="order-status">
                 Введіть статус замовлення
             </label>
-            <input type="text" id="order-status">
+            <input type="text" id="order-status" th:field="*{status}">
             <button type="submit">
                 Зберегти зміни
             </button>

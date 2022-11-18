@@ -56,7 +56,7 @@
         </div>
     </div>
     <div class="content">
-        <form class="change-box" th:method="PATCH" th:action="@{/admin/genre/{id}(id = ${id})}" th:object="${genre}">
+        <form class="change-box" th:method="POST" th:action="@{/admin/genre/new}" th:object="${genre}">
             <label for="genres-name">
                 Введіть назву жанру
             </label>
