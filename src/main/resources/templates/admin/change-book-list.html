@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" media="all" href="/static/style/admin/change-book-list-styles.css"
+          th:href="@{/style/admin/change-book-list-styles.css}"/>
+    <link rel="stylesheet" href="/static/style/reset.css" media="all" th:href="@{/style/reset.css}"/>
+    <title>Сторінка редагування інформації про книжку</title>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">
+                <a href="/static">
+                    <img src="../../static/Photos/Logo3.png" th:src="@{/Photos/Logo3.png}" alt="Іконка логотипу">
+                </a>
+            </div>
+            <div class="nav-buttons">
+                <a href="/about">
+                    <button class="nav-button">
+                        Про нас
+                    </button>
+                </a>
+                <a href="/news">
+                    <button class="nav-button">
+                        Новини
+                    </button>
+                </a>
+                <a href="/catalog">
+                    <button class="nav-button">
+                        Каталог
+                    </button>
+                </a>
+            </div>
+            <div class="search-bar">
+                <div class="search-bar-background">
+                    <input id="search" type="text" placeholder="Пошук...">
+                    <a class="make-search" onclick="makeSearch()">
+                        <img src="../../static/Photos/search-icon.png" th:src="@{/Photos/search-icon.png}" alt="Іконка пошуку">
+                    </a>
+                </div>
+            </div>
+            <div class="cart">
+                <a href="/bucket">
+                    <img src="../../static/Photos/cart-icon.png" th:src="@{/Photos/cart-icon.png}" alt="Інонка корзини">
+                </a>
+            </div>
+            <div class="account">
+                <a href="/profile">
+                    <img src="../../static/Photos/account-icon.png" th:src="@{/Photos/account-icon.png}" alt="Іконка аккаунту">
+                </a>
+            </div>
+        </div>
+        <div class="content">
+            <form class="change-box" id="change-box">
+                <div class="left">
+                    <label for="book-name">
+                        Введіть назву книжки
+                    </label>
+                    <input type="text" id="book-name">
+                    <label for="book-english-name">
+                        Введіть назву книжки англійською
+                    </label>
+                    <input type="text" id="book-english-name">
+                    <label for="book-description">
+                        Введіть опис книжки
+                    </label>
+                    <textarea id="book-description" cols="50" rows="10"></textarea>
+                    <label for="book-characteristic">
+                        Введіть характеристику книжки
+                    </label>
+                    <textarea id="book-characteristic" cols="50" rows="10"></textarea>
+                    <label for="book-price">
+                        Введіть ціну книжки
+                    </label>
+                    <input type="text" id="book-price">
+                </div>
+                <div class="right">
+                    <label for="book-author">
+                        Введіть автора книжки
+                    </label>
+                    <input type="text" id="book-author">
+                    <label for="book-genres">
+                        Введіть перелік жанрів
+                    </label>
+                    <input type="text" id="book-genres">
+                    <label for="book-publishing">
+                        Введіть видавництво книжки
+                    </label>
+                    <input type="text" id="book-publishing">
+                    <label for="book-photo">
+                        Вставте посилання на обложку книжки
+                    </label>
+                    <input type="text" id="book-photo">
+                    <label for="book-amount">
+                        Введіть кількість книжок
+                    </label>
+                    <input type="text" id="book-amount">
+                </div>
+            </form>
+            <button type="submit" form="change-box">
+                Зберегти зміни
+            </button>
+        </div>
+    </div>
+</body>
+</html>
