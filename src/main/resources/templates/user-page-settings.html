@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,30 +10,35 @@
 </head>
 <body>
     <div class="container">
-        <form class="config-form" action="">
+        <form class="config-form" th:method="PATCH" th:action="@{/profile/settings/data}" th:object="${data}">
             <div class="text-box">
                 Зміна даних профілю
             </div>
             <label for="nickname">Введіть новий нік</label>
-            <input id="nickname" type="text">
+            <input id="nickname" type="text" th:field="*{name}">
+            <p style="color:red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Error</p>
             <label for="email">Введіть нову пошту</label>
-            <input id="email" type="email">
+            <input id="email" type="email" th:field="*{email}">
+            <p style="color:red" th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Error</p>
             <label for="about">Введіть новий опис</label>
-            <textarea id="about" cols="48" rows="5" maxlength="500"></textarea>
+            <textarea id="about" cols="48" rows="5" maxlength="500" th:field="*{about}"></textarea>
+            <p style="color:red" th:if="${#fields.hasErrors('about')}" th:errors="*{about}">Error</p>
             <button class="config-form-button" type="submit">
                 Змінити дані
             </button>
         </form>
-        <form class="config-form-pass" action="">
+        <form class="config-form-pass" th:method="PATCH" th:action="@{/profile/settings/password}" th:object="${password}">
             <div class="text-box-pass">
                 Зміна паролю
             </div>
             <label for="old-password">Введіть старий пароль</label>
-            <input type="password" id="old-password" required="required">
+            <input type="password" id="old-password" th:field="*{oldPassword}">
+            <p style="color:red" th:if="${#fields.hasErrors('oldPassword')}" th:errors="*{oldPassword}">Error</p>
             <label for="new-password">Введіть новий пароль</label>
-            <input type="password" id="new-password" required="required">
+            <input type="password" id="new-password" th:field="*{newPassword}">
+            <p style="color:red" th:if="${#fields.hasErrors('newPassword')}" th:errors="*{newPassword}">Error</p>
             <label for="confirm-new-password">Підтвердьте новий пароль</label>
-            <input type="password" id="confirm-new-password" required="required">
+            <input type="password" id="confirm-new-password" th:field="*{matchingNewPassword}">
             <button class="config-form-pass-button" type="submit">
                 Змінити пароль
             </button>

@@ -4,11 +4,12 @@ import com.bookshop.bookshop.dao.BookRepository;
 import com.bookshop.bookshop.dao.BucketRepository;
 import com.bookshop.bookshop.dto.BucketDTO;
 import com.bookshop.bookshop.dto.BucketDetailDto;
-import com.bookshop.bookshop.models.Book;
-import com.bookshop.bookshop.models.Bucket;
-import com.bookshop.bookshop.models.User;
+import com.bookshop.bookshop.dto.OrderDto;
+import com.bookshop.bookshop.models.*;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
+import java.math.BigDecimal;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -18,11 +19,14 @@ public class BucketService {
     private final BookRepository bookRepository;
     private final BucketRepository bucketRepository;
     private final PersonDetailsService personDetailsService;
+    private final OrderService orderService;
 
-    public BucketService(BookRepository bookRepository, BucketRepository bucketRepository, PersonDetailsService personDetailsService) {
+
+    public BucketService(BookRepository bookRepository, BucketRepository bucketRepository, PersonDetailsService personDetailsService, OrderService orderService) {
         this.bookRepository = bookRepository;
         this.bucketRepository = bucketRepository;
         this.personDetailsService = personDetailsService;
+        this.orderService = orderService;
     }
 
     @javax.transaction.Transactional
@@ -65,7 +69,7 @@ public class BucketService {
                 mapByProductId.put(book.getId(), new BucketDetailDto(book));
             }
             else {
-                detail.setAmount(detail.getAmount() + 1.0);
+                detail.setAmount(detail.getAmount() + 1);
                 detail.setSum(detail.getSum() + book.getPrice());
             }
         }
@@ -82,6 +86,47 @@ public class BucketService {
         Bucket bucket = user.getBucket();
         Book book = bookRepository.findById(id);
         bucket.getBooks().remove(bucket.getBooks().indexOf(book));
+        bucketRepository.save(bucket);
+    }
+
+    @Transactional
+    public void commitBucketToOrder(String username, OrderDto orderDto) {
+        User user = personDetailsService.findByName(username);
+        Bucket bucket = user.getBucket();
+        if(bucket == null || bucket.getBooks().isEmpty()){
+            return;
+        }
+
+        Order order = new Order();
+        order.setOrderStatus(OrderStatus.NEW);
+        order.setUser(user);
+        order.setFullName(orderDto.getFullName());
+        order.setPhoneNumber(orderDto.getPhoneNumber());
+        order.setAddress(orderDto.getAddress());
+
+        Map<Book, Long> productWithAmount = bucket.getBooks().stream()
+                .collect(Collectors.groupingBy(product -> product, Collectors.counting()));
+
+        List<OrderDetails> orderDetails = productWithAmount.entrySet().stream()
+                .map(pair -> new OrderDetails(order, pair.getKey(), pair.getValue()))
+                .collect(Collectors.toList());
+
+        BigDecimal total = new BigDecimal(orderDetails.stream()
+                .map(detail -> detail.getPrice().multiply(detail.getAmount()))
+                .mapToDouble(BigDecimal::doubleValue).sum());
+
+        order.setDetails(orderDetails);
+        order.setSum(total);
+        order.setAddress("none");
+
+        orderService.saveOrder(order);
+        List<Book> books = new ArrayList<>();
+        for(Book book : bucket.getBooks()){
+            books.add(book);
+        }
+        user.setBooks(books);
+        personDetailsService.save(user);
+        bucket.getBooks().clear();
         bucketRepository.save(bucket);
     }
 }

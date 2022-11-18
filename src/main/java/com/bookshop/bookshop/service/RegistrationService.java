@@ -1,12 +1,14 @@
 package com.bookshop.bookshop.service;
 
 import com.bookshop.bookshop.dao.UserRepository;
+import com.bookshop.bookshop.dto.PasswordDto;
 import com.bookshop.bookshop.models.Book;
 import com.bookshop.bookshop.models.User;
 import com.bookshop.bookshop.dto.UserDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.validation.Errors;
 
 import java.util.ArrayList;
 
@@ -38,6 +40,14 @@ public class RegistrationService {
                 .books(new ArrayList<Book>())
                 .build();
         userRepository.save(newUser);
+        return true;
+    }
+
+    @javax.transaction.Transactional
+    public boolean changePassword(String name, PasswordDto passwordDto){
+        User user = userRepository.findFirstByName(name);
+        user.setPassword(passwordEncoder.encode(passwordDto.getNewPassword()));
+        userRepository.save(user);
         return true;
     }
 }

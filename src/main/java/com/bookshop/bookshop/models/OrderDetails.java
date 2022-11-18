@@ -29,4 +29,11 @@ public class OrderDetails {
     private Book book;
     private BigDecimal amount;
     private BigDecimal price;
+
+    public OrderDetails(Order order, Book book, Long amount) {
+        this.order = order;
+        this.book = book;
+        this.amount = new BigDecimal(amount);
+        this.price = new BigDecimal(book.getPrice());
+    }
 }

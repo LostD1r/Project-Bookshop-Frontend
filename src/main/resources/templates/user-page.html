@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://thymeleaf.org" xmlns="http://www.w3.org/1999/html">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -75,7 +75,8 @@
                         Кількість придбаних книг:&nbsp;<p th:text="${user.getBooks().size()}"></p>
                     </div>
                     <div class="status">
-                        Статус:&nbsp;<p th:text="${user.getRole()}">учасник</p>
+                        Статус:&nbsp;<p th:if="${user.getRole().name()} == 'ROLE_ADMIN'">Адміністратор</p>
+                        <p th:if="${user.getRole().name()} == 'ROLE_USER'">Покупець</p>
                     </div>
                 </div>
             </div>
@@ -83,11 +84,11 @@
                 Придбані книги
             </div>
             <div class="bought-books-list">
-                <ul th:each="book : ${user.getBooks()}">
-                    <li>
+                <ul>
+                    <li th:each="book : ${user.getBooks()}">
                         <div class="bought-books-list-photo">
                             <a th:href="@{/catalog/book/{id}(id = ${book.getId()})}">
-                                <img src="../static/Photos/Latin_dictionary.jpg" alt="">
+                                <img th:src="${book.getImage()}" alt="">
                             </a>
                         </div>
                         <div class="bought-books-list-text-wrapper">

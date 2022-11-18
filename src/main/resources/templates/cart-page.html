@@ -84,8 +84,13 @@
                                         Вилучити
                                     </button>
                                 </form>
-                                <div class="price">
-                                    Ціна:&nbsp;<p th:text="${detail.getPrice()}">999</p>&nbsp;UAH
+                                <div class="price-presence-wrapper">
+                                    <div class="presence">
+                                        Кількість:&nbsp;<p th:text="${detail.getAmount()}"></p>
+                                    </div>
+                                    <div class="price">
+                                        Ціна:&nbsp;<p th:text="${detail.getSum()}"></p>грн
+                                    </div>
                                 </div>
                             </div>
                         </li>
@@ -101,7 +106,7 @@
                         Загальна сума:&nbsp;<p th:text="${bucket.getSum()}">999</p>&nbsp;UAH
                     </div>
                 </div>
-                <form class="ready-to-buy-button">
+                <form class="ready-to-buy-button" th:method="GET" th:action="@{/bucket/createorder}">
                     <button class="ready-to-buy-button-btn">
                         Оформити замовлення
                     </button>

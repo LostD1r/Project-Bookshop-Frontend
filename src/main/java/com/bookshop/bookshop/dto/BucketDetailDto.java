@@ -16,14 +16,14 @@ public class BucketDetailDto {
     private String author;
     private Long productId;
     private Double price;
-    private Double amount;
+    private Long amount;
     private Double sum;
 
     public BucketDetailDto(Book book){
         this.title = book.getName();
         this.productId = book.getId();
         this.price = book.getPrice();
-        this.amount = 1.0;
+        this.amount = 1l;
         this.sum = book.getPrice();
         this.img = book.getImage();
         this.author = book.getAuthor().getName();

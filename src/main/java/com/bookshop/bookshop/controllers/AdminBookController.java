@@ -19,13 +19,6 @@ public class AdminBookController {
         this.bookService = bookService;
     }
 
-    @GetMapping("")
-    public String getAll(Model model){
-        List<Book> books = bookService.getAll();
-        model.addAttribute("books", books);
-        return "admin";
-    }
-
     @GetMapping("/new")
     public String getBookForm(Model model){
         model.addAttribute("book", new BookDto());
@@ -54,6 +47,6 @@ public class AdminBookController {
     @DeleteMapping("/{id}/delete")
     public String deleteBook(@PathVariable("id") long id){
         bookService.delete(id);
-        return "redirect:/admin/book";
+        return "redirect:/admin";
     }
 }

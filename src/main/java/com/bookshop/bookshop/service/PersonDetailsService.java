@@ -2,15 +2,23 @@ package com.bookshop.bookshop.service;
 
 import com.bookshop.bookshop.dao.UserRepository;
 import com.bookshop.bookshop.dto.ChangeUserRoleDto;
+import com.bookshop.bookshop.dto.PasswordDto;
+import com.bookshop.bookshop.dto.PersonDataChangeDto;
 import com.bookshop.bookshop.models.Role;
 import com.bookshop.bookshop.models.User;
 import com.bookshop.bookshop.security.PersonDetails;
-import org.mapstruct.control.MappingControl;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.validation.Errors;
+import org.springframework.web.context.request.RequestAttributes;
+import org.springframework.web.context.request.RequestContextHolder;
 
 import java.util.List;
 import java.util.Optional;
@@ -66,6 +74,15 @@ public class PersonDetailsService implements UserDetailsService {
 
     public void delete(long id) {
         userRepository.delete(userRepository.findById(id));
+    }
+
+    public void changeUserData(String username, PersonDataChangeDto personDataChangeDto) {
+        User user = userRepository.findFirstByName(username);
+        user.setName(personDataChangeDto.getName());
+        user.setAbout(personDataChangeDto.getAbout());
+        user.setEmail(personDataChangeDto.getEmail());
+        userRepository.save(user);
+
     }
 }
 

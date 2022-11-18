@@ -19,12 +19,6 @@ public class AdminAuthorController {
         this.authorService = authorService;
     }
 
-    @GetMapping("")
-    public String getAll(Model model){
-        List<Author> authors = authorService.getAll();
-        model.addAttribute("authors", authors);
-        return "admin";
-    }
 
     @GetMapping("/new")
     public String getAuthorForm(Model model){
@@ -54,6 +48,6 @@ public class AdminAuthorController {
     @DeleteMapping("/{id}/delete")
     public String delete(@PathVariable("id") long id){
         authorService.delete(id);
-        return "redirect:/admin/author";
+        return "redirect:/admin";
     }
 }

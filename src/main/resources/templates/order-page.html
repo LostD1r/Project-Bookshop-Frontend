@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -60,25 +60,25 @@
                 </div>
                 <div class="list-to-buy">
                     <ul>
-                        <li>
+                        <li th:each="detail : ${bucket.getBucketDetails()}">
                             <div class="list-photo">
-                                <img src="../static/Photos/Latin_dictionary.jpg" alt="Фото книжки">
+                                <img th:src="${detail.getImg()}" alt="Фото книжки">
                             </div>
                             <div class="list-text">
                                 <div class="name-description-wrapper">
                                     <div class="name">
-                                        <p>Назва</p>
+                                        <p th:text="${detail.getTitle()}">Назва</p>
                                     </div>
                                     <div class="brief-description">
-                                        <p>Короткий опис</p>
+                                        <p th:text="${detail.getAuthor()}">Короткий опис</p>
                                     </div>
                                 </div>
                                 <div class="price-presence-wrapper">
                                     <div class="price">
-                                        Ціна:&nbsp;<p></p>грн
+                                        Ціна:&nbsp;<p th:text="${detail.getSum()}"></p>грн
                                     </div>
                                     <div class="presence">
-                                        Кількість:&nbsp;<p></p>
+                                        Кількість:&nbsp;<p th:text="${detail.getAmount()}"></p>
                                     </div>
                                 </div>
                             </div>
@@ -91,18 +91,18 @@
                     Оформлення замовлення
                 </div>
                 <div class="ordering-box-wrapper">
-                    <form class="ordering-box">
+                    <form class="ordering-box" th:method="POST" th:action="@{/bucket/createorder}" th:object="${orderinfo}">
                         <div class="user-info">
                             <div class="user-info-header">
                                 Контактні дані
                             </div>
                             <div class="user-info-inputs">
                                 <label>ПІБ</label>
-                                <input type="text" id="user-full-name" required="required">
+                                <input type="text" id="user-full-name" required="required" th:field="*{fullName}">
                                 <label for="user-address">Адреса доставки</label>
-                                <input type="text" id="user-address" required="required">
+                                <input type="text" id="user-address" required="required" th:field="*{address}">
                                 <label for="user-phone-number">Номер телефону дял уточнення замовлення</label>
-                                <input type="text" id="user-phone-number" required="required">
+                                <input type="text" id="user-phone-number" required="required" th:field="*{phoneNumber}">
                             </div>
                             <button type="submit">
                                 Підтвердити замовлення
