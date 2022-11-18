@@ -123,7 +123,7 @@
             </div>
             <div class="books">
                 <div class="shelf">
-                    <ul >
+                    <ul>
                         <li th:each="book : ${books}">
                             <a th:href="@{/catalog/book/{id}(id=${book.id})}">
                                 <img th:src="${book.image}" th:alt="${book.price}">
