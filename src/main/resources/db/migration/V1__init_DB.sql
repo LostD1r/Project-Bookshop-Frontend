@@ -32,10 +32,10 @@ alter table if exists books_genres add constraint book_genres_fk_books foreign k
 alter table if exists bucket_books add constraint bucket_books_fk_books foreign key (book_id) references books ON DELETE CASCADE;
 alter table if exists bucket_books add constraint bucket_books_fk_buckets foreign key (bucket_id) references buckets ON DELETE CASCADE;
 alter table if exists buckets add constraint buckets_fk_users foreign key (user_id) references users;
-alter table if exists comments add constraint comments_fk_books foreign key (book_id) references books;
-alter table if exists comments add constraint comments_fk_users foreign key (user_id) references users;
-alter table if exists orders add constraint orders_fk_users foreign key (user_id) references users;
-alter table if exists orders_details add constraint order_detail_fk_books foreign key (book_id) references books;
-alter table if exists orders_details add constraint order_detail_fk_orders foreign key (order_id) references orders;
-alter table if exists users_books add constraint users_books_fk_books foreign key (book_id) references books;
+alter table if exists comments add constraint comments_fk_books foreign key (book_id) references books ON DELETE CASCADE;
+alter table if exists comments add constraint comments_fk_users foreign key (user_id) references users ON DELETE CASCADE;
+alter table if exists orders add constraint orders_fk_users foreign key (user_id) references users ON DELETE CASCADE;
+alter table if exists orders_details add constraint order_detail_fk_books foreign key (book_id) references books ON DELETE CASCADE;
+alter table if exists orders_details add constraint order_detail_fk_orders foreign key (order_id) references orders ON DELETE CASCADE;
+alter table if exists users_books add constraint users_books_fk_books foreign key (book_id) references books ON DELETE CASCADE;
 alter table if exists users_books add constraint users_books_fk_users foreign key (user_id) references users;
