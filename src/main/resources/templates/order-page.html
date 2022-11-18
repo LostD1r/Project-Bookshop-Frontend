@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" media="all" href="/static/style/order-page-styles.css"
           th:href="@{/style/order-page-styles.css}"/>
     <link rel="stylesheet" href="/static/style/reset.css" media="all" th:href="@{/style/reset.css}"/>
-    <title>Order page</title>
+    <title>Замовлення</title>
 </head>
 <body>
     <div class="container">
@@ -91,7 +91,7 @@
                     Оформлення замовлення
                 </div>
                 <div class="ordering-box-wrapper">
-                    <form class="ordering-box" th:method="POST" th:action="@{/bucket/createorder}" th:object="${orderinfo}">
+                    <form class="ordering-box" th:method="POST" th:action="@{/bucket/createorder}" th:object="${orderinfo}" onsubmit="alert('Дякую за замовлення')">
                         <div class="user-info">
                             <div class="user-info-header">
                                 Контактні дані
@@ -101,10 +101,10 @@
                                 <input type="text" id="user-full-name" required="required" th:field="*{fullName}">
                                 <label for="user-address">Адреса доставки</label>
                                 <input type="text" id="user-address" required="required" th:field="*{address}">
-                                <label for="user-phone-number">Номер телефону дял уточнення замовлення</label>
+                                <label for="user-phone-number">Номер телефону для уточнення замовлення</label>
                                 <input type="text" id="user-phone-number" required="required" th:field="*{phoneNumber}">
                             </div>
-                            <button type="submit">
+                            <button type="submit" onclick="">
                                 Підтвердити замовлення
                             </button>
                         </div>

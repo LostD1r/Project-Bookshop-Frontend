@@ -8,12 +8,12 @@ body{
     background: #201F1F;
     display: flex;
     flex-direction: column;
+    font-family: 'Syne Mono', monospace;
 }
 
 .header{
     height: 10%;
     width: 100%;
-    /*position: fixed;*/
     display: flex;
     background: #333131;
     box-shadow: 0 2px 15px;
@@ -160,12 +160,12 @@ body{
     width: 50%;
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 10px;
 }
 
 .created-at{
     font-size: 25px;
-    margin-left: 20px;
     margin-top: 20px;
     display: flex;
     flex-flow: row wrap;
@@ -174,16 +174,16 @@ body{
 .number-of-bought-books,
 .status{
     font-size: 25px;
-    margin-left: 20px;
     display: flex;
     flex-flow: row wrap;
 }
 
 .admin-panel{
+    height: 15%;
+    width: 100%;
     display: flex;
-    justify-content: end;
+    justify-content: center;
     align-items: center;
-    margin-right: 30px;
     font-size: 25px;
 }
 
@@ -192,23 +192,32 @@ body{
     color: #9b4747;
 }
 
-.edit-profile{
-    height: 50px;
-    width: 280px;
-    position: relative;
-    top: 20px;
-    left: 670px;
+.settings-exit-buttons{
+    height: 25%;
+    width: 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    gap: 30px;
+}
+
+.edit-profile,
+.exit-profile{
+    height: 100%;
+    width: 30%;
     font-size: 25px;
     background: none;
     color: white;
     border: none;
     transition: 0.3s;
-    border-radius: 10px;
+    border-radius: 20px;
     box-shadow: 0 3px 15px black;
     padding: 0 0 0 0;
 }
 
-.edit-profile a{
+.edit-profile a,
+.exit-profile a{
     height: 100%;
     width: 100%;
     text-decoration: none;
@@ -219,11 +228,13 @@ body{
     border-radius: 10px;
 }
 
-.edit-profile a:hover{
+.edit-profile a:hover,
+.exit-profile a:hover{
     color: black;
 }
 
-.edit-profile:hover{
+.edit-profile:hover,
+.exit-profile:hover{
     background: white;
     color: black;
 }
@@ -247,7 +258,7 @@ body{
 }
 
 .bought-books-list ul li{
-    height: 200px;
+    height: 20vh;
     width: 100%;
     display: flex;
     align-items: center;
