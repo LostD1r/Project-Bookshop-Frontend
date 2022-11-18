@@ -130,7 +130,7 @@
                             </div>
                             <div class="buttons-price-box">
                                 <div class="book-buttons">
-                                   <form>
+                                   <form th:method="GET" th:action="@{/admin/book/{id}/edit(id = ${book.getId()})}">
                                        <button type="submit">
                                            Змінити
                                        </button>

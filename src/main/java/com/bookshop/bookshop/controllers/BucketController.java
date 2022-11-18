@@ -44,6 +44,9 @@ public class BucketController {
     @GetMapping("/bucket/createorder")
     public String createOrder(Model model, Principal principal){
         BucketDTO bucketDTO = bucketService.getBucketByUser(principal.getName());
+        if (bucketDTO.getBucketDetails().isEmpty()){
+            return "redirect:/bucket";
+        }
         model.addAttribute("bucket", bucketDTO);
         model.addAttribute("orderinfo", new OrderDto());
         return "order-page";

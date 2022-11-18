@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns="http://www.w3.org/1999/html">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -59,13 +59,13 @@
         <div class="content">
             <div class="shelf-wrapper">
                 <div class="shelf-header">
-                    <p>
+                    <p th:text="${genre.getName()}">
                         Жанр
                     </p>
                 </div>
                 <div class="shelf">
                     <ul>
-                        <li th:each="book : ${books}">
+                        <li th:each="book : ${genre.getBooks()}">
                             <a th:href="@{/catalog/book/{id}(id=${book.id})}">
                                 <img th:src="${book.image}" th:alt="${book.price}">
                             </a>

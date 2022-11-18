@@ -49,4 +49,12 @@ public class GenreService {
     public Genre getById(long id) {
         return genreRepository.getById(id);
     }
+
+    public String fromListToString(List<Genre> genres) {
+        String res = " ";
+        for(Genre genre : genres){
+            res += genre.getName() + " ";
+        }
+        return res;
+    }
 }
